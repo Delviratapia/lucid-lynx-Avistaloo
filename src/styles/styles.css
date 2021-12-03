@@ -10,3 +10,15 @@
   justify-content: space-around;
   flex-direction: column;
 }
+
+.header-button {
+  background-color: white;
+  border-radius: 20px;
+
+  box-shadow: 2px 2px 1px grey;
+
+  text-align: center;
+  font-size: 24px;
+
+  padding: 10px 20px 10px 20px;
+}
