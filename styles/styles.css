@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.navbar{
+    border-bottom: 3px solid #335963;
+}
+
+.navbar-item img {
+    max-height: 10em;
+}
+
+.title{
+    color: #335963;
+    line-height: 2.5;
+}
+
+.navbar-item{
+    color: #335963;
+    font-size: 1.2rem;
+}
+
+#separador{
+    width: 100px;
+}
+
+.button{
+    background-color: white ;
+    color:#335963;
+    border: 1px solid #335963;
+}
+
+.button.is-light{
+    background-color: #335963 ;
+    border: 1px solid #335963;
+    color:white;
+}
