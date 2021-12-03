@@ -1,3 +1,11 @@
+:root {
+   --primaryColor: #335963;
+   --secondaryColor: #c5c6c0;
+   --tertiaryColor: #242734;
+   --whiteColor: #ebebeb;
+   --blackColor: #333;
+}
+
 input {
     position: absolute;
     left: 50%;
@@ -39,4 +47,41 @@ input:focus {
     top: 45px;
     width: 50px;
     height: 5px;
+}
+
+/* ESTILOS SERGIO [FOOTER]*/
+
+footer {
+   margin-top:50px;
+}
+
+.footer-section {
+   background-color:var(--primaryColor);
+}
+.footer-wrap {
+   padding:10px;
+}
+.center-footer p {
+   font-size:48px;
+   margin-top:-40px;
+   color:var(--whiteColor);
+}
+.nav-footer ul {
+   gap:2rem;
+}
+.nav-footer a {
+   color:var(--whiteColor);
+   font-weight:600;
+}
+
+.fix-position {
+   position:relative;
+}
+.copyright {
+   position:absolute;
+   bottom:16px;
+   right:16px;
+}
+.copyright p {
+   color:var(--whiteColor);
 }
