@@ -1,0 +1,12 @@
+.header-background {
+  width: 100%;
+  height: 954px;
+
+  background-image: url(/src/img/background-header.jpg);
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
