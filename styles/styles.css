@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+:root {
+   --primaryColor: #335963;
+   --secondaryColor: #c5c6c0;
+   --tertiaryColor: #242734;
+   --whiteColor: #ebebeb;
+   --blackColor: #333;
+}
+
 .navbar {
    border-bottom: 3px solid #335963;
 }
@@ -79,4 +87,41 @@
 .lynx-primary{
    background-color: #335963;
    color: white;
+}
+
+/* ESTILOS SERGIO [FOOTER]*/
+
+footer {
+   margin-top:50px;
+}
+
+.footer-section {
+   background-color:var(--primaryColor);
+}
+.footer-wrap {
+   padding:10px;
+}
+.center-footer p {
+   font-size:48px;
+   margin-top:-40px;
+   color:var(--whiteColor);
+}
+.nav-footer ul {
+   gap:2rem;
+}
+.nav-footer a {
+   color:var(--whiteColor);
+   font-weight:600;
+}
+
+.fix-position {
+   position:relative;
+}
+.copyright {
+   position:absolute;
+   bottom:16px;
+   right:16px;
+}
+.copyright p {
+   color:var(--whiteColor);
 }
