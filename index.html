@@ -8,205 +8,242 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/styles/fontawesome/css/all.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Document</title>
+    <title>Avistaloo</title>
 </head>
 
 <body>
 
-    <header>
-        <!-- AQUI EMPIEZA CARLOS -->
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="index.html">
-                    <img src="assets/logo.png" width="70" height="70">
-                </a>
-                <h1 class="title">Avistaloo</h1>
-            </div>
-            <div class="navbar-menu">
-                <div class="navbar-start">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="assets/logo.png" width="70" height="70">
+            </a>
+            <h1 class="title">Avistaloo</h1>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
 
-                    <div class="navbar-item" id="separador"></div>
+                <div class="navbar-item" id="separador"></div>
 
-                    <!-- Searchbar -->
-                    <div class="searchbar-container">
-                        <input class="searchbar-input" placeholder="Buscar..."></input>
-                    </div>
-
-                    <!-- End of searchbar -->
-                    <a class="navbar-item">
-                        Wiki
-                    </a>
-                    <a class="navbar-item">
-                        ¿Qué es?
-                    </a>
-
-                    <a class="navbar-item">
-                        Características
-                    </a>
+                <!-- Searchbar -->
+                <div class="searchbar-container">
+                    <input class="searchbar-input" placeholder="Buscar..."></input>
                 </div>
 
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button modal-button" data-target="#modal" aria-haspopup="true">
-                                <strong>Iniciar Sesión</strong>
-                            </a>
-                            <div id="modal" class="modal">
-                                <div class="modal-background"></div>
-                                <div class="modal-content">
-                                    <div class="box">
-                                        <article class="media">
-                                            <div class="media-content">
-                                                <div class="tabs is-centered">
-                                                    <ul>
-                                                        <li class="is-active">
-                                                            <a href="javascript:void(0)">
-                                                                <span class="icon is-small"><i
-                                                                        class="fas fa-sign-in-alt"
-                                                                        aria-hidden="true"></i></span>
-                                                                <span>Iniciar sesión</span>
-                                                            </a>
-                                                        </li>
+                <!-- End of searchbar -->
+                <a class="navbar-item">
+                    Wiki
+                </a>
+                <a class="navbar-item">
+                    ¿Qué es?
+                </a>
 
-                                                    </ul>
-                                                </div>
+                <a class="navbar-item">
+                    Características
+                </a>
+            </div>
 
-                                                <!-- Login modal -->
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button modal-button" data-target="#modal" aria-haspopup="true">
+                            <strong>Iniciar Sesión</strong>
+                        </a>
+                        <div id="modal" class="modal">
+                            <div class="modal-background"></div>
+                            <div class="modal-content">
+                                <div class="box">
+                                    <article class="media">
+                                        <div class="media-content">
+                                            <div class="tabs is-centered">
+                                                <ul>
+                                                    <li class="is-active">
+                                                        <a href="javascript:void(0)">
+                                                            <span class="icon is-small"><i
+                                                                    class="fas fa-sign-in-alt"
+                                                                    aria-hidden="true"></i></span>
+                                                            <span>Iniciar sesión</span>
+                                                        </a>
+                                                    </li>
 
-                                                <div class="login">
-                                                    <div class="field">
-                                                        <label class="label">Usuario</label>
-                                                        <div class="control has-icons-left has-icons-right">
-                                                            <input class="input" type="text" placeholder="Usuario">
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fas fa-user"></i>
-                                                            </span>
-                                                            <span class="icon is-small is-right">
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="field">
-                                                        <label class="label">Contraseña</label>
-                                                        <p class="control has-icons-left">
-                                                            <input class="input" type="password"
-                                                                placeholder="Contraseña">
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fas fa-lock"></i>
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="field">
-                                                        <div class="control mt-5">
-                                                            <button class="button is-link">Iniciar sesión</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+                                                </ul>
                                             </div>
-                                    </div>
-                                    </article>
-                                </div>
-                                <button class="modal-close is-large" aria-label="close"></button>
-                            </div>
-                            <!-- End of login modal -->
 
-                            <a class="button is-light modal-button" data-target="#modal-register" aria-haspopup="true">
+                                            <!-- Login modal -->
 
-                                Registrarse
-                            </a>
-
-                            <!-- Register modal -->
-
-                            <div id="modal-register" class="modal">
-                                <div class="modal-background"></div>
-                                <div class="modal-content">
-                                    <div class="box">
-                                        <article class="media">
-                                            <div class="media-content">
-                                                <div class="tabs is-centered">
-                                                    <ul>
-
-                                                        <li>
-                                                            <a href="javascript:void(0)">
-                                                                <span class="icon is-small"><i class="fas fa-key"
-                                                                        aria-hidden="true"></i></span>
-                                                                <span>Registrarse</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                            <div class="login">
+                                                <div class="field">
+                                                    <label class="label">Usuario</label>
+                                                    <div class="control has-icons-left has-icons-right">
+                                                        <input class="input" type="text" placeholder="Usuario">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-user"></i>
+                                                        </span>
+                                                        <span class="icon is-small is-right">
+                                                        </span>
+                                                    </div>
                                                 </div>
-
-                                                <!-- Register modal-->
-
-                                                <div class="register">
-                                                    <div class="field">
-                                                        <label class="label">Nombre</label>
-                                                        <div class="control">
-                                                            <input class="input" type="text"
-                                                                placeholder="Ingrese su nombre">
-                                                        </div>
-                                                    </div>
-                                                    <div class="field">
-                                                        <label class="label">Usuario</label>
-                                                        <div class="control has-icons-left has-icons-right">
-                                                            <input class="input" type="text" placeholder="Usuario">
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fas fa-user"></i>
-                                                            </span>
-                                                            <span class="icon is-small is-right">
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="field">
-                                                        <label class="label">Contraseña</label>
-                                                        <p class="control has-icons-left">
-                                                            <input class="input" type="password"
-                                                                placeholder="Ingrese una contraseña">
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fas fa-lock"></i>
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="field">
-                                                        <label class="label">Confirmar contraseña</label>
-                                                        <p class="control has-icons-left">
-                                                            <input class="input" type="password"
-                                                                placeholder="Confirme su contraseña">
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fas fa-lock"></i>
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="field">
-                                                        <label class="label">Correo</label>
-                                                        <div class="control has-icons-left has-icons-right">
-                                                            <input class="input" type="email"
-                                                                placeholder="Ingrese su correo electronico">
-                                                            <span class="icon is-small is-left">
-                                                                <i class="fas fa-envelope"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="field">
-                                                        <div class="control mt-5">
-                                                            <button class="button is-link">Registrarse</button>
-                                                        </div>
+                                                <div class="field">
+                                                    <label class="label">Contraseña</label>
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="password"
+                                                            placeholder="Contraseña">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-lock"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="field">
+                                                    <div class="control mt-5">
+                                                        <button class="button is-link">Iniciar sesión</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                    </div>
-                                    </article>
+
+                                        </div>
                                 </div>
-                                <button class="modal-close is-large" aria-label="close"></button>
+                                </article>
                             </div>
+                            <button class="modal-close is-large" aria-label="close"></button>
+                        </div>
+                        <!-- End of login modal -->
+
+                        <a class="button is-light modal-button" data-target="#modal-register" aria-haspopup="true">
+
+                            Registrarse
+                        </a>
+
+                        <!-- Register modal -->
+
+                        <div id="modal-register" class="modal">
+                            <div class="modal-background"></div>
+                            <div class="modal-content">
+                                <div class="box">
+                                    <article class="media">
+                                        <div class="media-content">
+                                            <div class="tabs is-centered">
+                                                <ul>
+
+                                                    <li>
+                                                        <a href="javascript:void(0)">
+                                                            <span class="icon is-small"><i class="fas fa-key"
+                                                                    aria-hidden="true"></i></span>
+                                                            <span>Registrarse</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Register modal-->
+
+                                            <div class="register">
+                                                <div class="field">
+                                                    <label class="label">Nombre</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text"
+                                                            placeholder="Ingrese su nombre">
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">Usuario</label>
+                                                    <div class="control has-icons-left has-icons-right">
+                                                        <input class="input" type="text" placeholder="Usuario">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-user"></i>
+                                                        </span>
+                                                        <span class="icon is-small is-right">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">Contraseña</label>
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="password"
+                                                            placeholder="Ingrese una contraseña">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-lock"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">Confirmar contraseña</label>
+                                                    <p class="control has-icons-left">
+                                                        <input class="input" type="password"
+                                                            placeholder="Confirme su contraseña">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-lock"></i>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">Correo</label>
+                                                    <div class="control has-icons-left has-icons-right">
+                                                        <input class="input" type="email"
+                                                            placeholder="Ingrese su correo electronico">
+                                                        <span class="icon is-small is-left">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <div class="control mt-5">
+                                                        <button class="button is-link">Registrarse</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                </article>
+                            </div>
+                            <button class="modal-close is-large" aria-label="close"></button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- End of register modal -->
+        <!-- End of register modal -->
 
-        </nav>
+    </nav>
+
+    <header class="header-background">
+        <!-- AQUI EMPIEZA CARLOS -->
+        
+
+        <div class="block">
+            <p class="
+                  title
+                  is-2
+                  has-text-centered has-text-white has-text-weight-bold
+                ">
+              ¡BIENVENIDO OBSERVADOR!
+            </p>
+            <br />
+            <p class="
+                  subtitle
+                  is-4
+                  has-text-centered has-text-white has-text-weight-semibold
+                ">
+              Te presentamos Avistaloo
+            </p>
+            <br />
+            <p class="
+                  subtitle
+                  is-4
+                  has-text-centered has-text-white has-text-weight-semibold
+                ">
+              La web donde podras subir tus avistamientos y compartirlos con la
+              comunidad
+            </p>
+          </div>
+          <button class="header-button">UNIRSE AHORA</button>
+          <div class="content has-text-white has-text-weight-semibold">
+            <ul>
+              <li>Comparte tus avistamientos</li>
+              <li>Localiza avistamientos cercanos a tu zona</li>
+              <li>Aprende las diferentes especies que existen</li>
+            </ul>
+          </div>
 
         <!-- AQUI TERMINA CARLOS -->
     </header>
@@ -215,6 +252,7 @@
 
 
     </main>
+
     <!-- AQUI TERMINA MARI -->
 
     <footer class="footer-section">
