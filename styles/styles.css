@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+main{
+    color: #335963;
+}
+main .title{
+    color: #335963;
+}
+
+main p{
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+}
+
+.offer-text{width: 800px;}
+
+.void{
+    height: 250px;
+    width: 250px;
+}
+
+.avistamientos{
+    color:black;
+    font-size: 30px;
+}
