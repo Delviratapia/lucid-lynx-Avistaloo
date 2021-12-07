@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="/styles/fontawesome/css/all.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Avistaloo</title>
 </head>
 
@@ -258,46 +259,139 @@
     <footer class="footer-section">
         <div class="container">
             <div class="columns footer-wrap">
-                <div class="column is-align-self-flex-end">
-                    <div class="is-flex ">
-                        <div class="my-icon twitter">
-                            <img width="50" height="50" src="/img/icon-instagram.png" alt="Icono Instagram">
-                        </div>
-                        <div class="my-icon youtube">
-                            <img width="50" height="50" src="/img/icon-instagram.png" alt="Icono Instagram">
-                        </div>
-                        <div class="my-icon facebook">
-                            <img width="50" height="50" src="/img/icon-instagram.png" alt="Icono Instagram">
-                        </div>
-                        <div class="my-icon instagram">
-                            <img width="50" height="50" src="/img/icon-instagram.png" alt="Icono Instagram">
-                        </div>
+                <div class="column is-flex is-align-items-center is-justify-content-space-between">
+                    <div class="my-icon twitter fa-color fa-2x"><a href="https://twitter.com/avistaloo"
+                            style="color: white" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="my-icon youtube fa-color fa-2x"><a href="https://www.youtube.com/" style="color: white"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="my-icon facebook fa-color fa-2x">
+                        <a href="https://www.facebook.com/profile.php?id=100075282414569" style="color: white"
+                            target="_blank" rel="noopener noreferrer"> <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="my-icon instagram fa-color fa-2x"><a href="https://www.instagram.com/avistaloo/"
+                            style="color: white" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i> </a>
                     </div>
                 </div>
                 <div class="column center-footer">
                     <div class="is-flex is-flex-direction-column is-align-items-center">
-                        <img width="150" src="/img/logo.png" alt="Logo Avistaloo.com">
-                        <p>Avistalo.com</p>
-                    </div>
-                </div>
-                <div class="column is-flex is-flex-direction-column fix-position">
-                    <div class="is-flex is-justify-content-flex-end">
-                        <div class="is-flex is-flex-direction-column nav-footer">
-                            <ul class="is-flex is-justify-content-flex-end">
-                                <li><a href="#">Caracteristicas</a></li>
-                                <li><a href="#">¿Quienes somos?</a></li>
-                                <li><a href="#">Legal</a></li>
-                            </ul>
+                        <img class="footer-logo" width="100px" src="/img/logo.png" alt="Logo Avistaloo.com">
+                        <div>
+                            <p class="copyright">© 2021 Avistaloo</p>
                         </div>
                     </div>
-                    <div class="is-flex copyright is-justify-content-flex-end">
-                        <p>© 2021 Avistaloo</p>
+                </div>
+
+                <div class="nav-footer is-flex is-align-items-center">
+                    <ul class="columns is-flex is-vcentered">
+                        <li class="column "><a href="#">¿Quiénes somos?</a></li>
+                        <li class="column "><a href="#">Política de privacidad</a></li>
+                        <li class="column  "><a class="modal-button" data-target="#modal-contact" aria-haspopup="true"
+                                href="#">Contáctanos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact us form -->
+
+
+                <div id="modal-contact" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div class="box">
+                            <div class="media">
+                                <div class="media-content">
+                                    <div class="tabs is-centered">
+                                        <ul>
+                                            <li class="is-active">
+                                                <a href="javascript:void(0)">
+                                                    <span class="icon is-small"><i class="fas fa-inbox"
+                                                            aria-hidden="true"></i></span>
+                                                    <span>Contáctanos</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <!-- form modal  -->
+
+                                    <div class="field">
+                                        <label class="label">Nombre</label>
+                                        <div class="control">
+                                            <input class="input is-success" type="text" placeholder="Ingrese su nombre">
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <div class="control has-icons-left has-icons-right">
+                                            <span class="icon is-small is-right"></span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Correo</label>
+                                        <div class="control has-icons-left has-icons-right">
+                                            <input class="input is-success" data-validation="email not-blank"
+                                                type="email" placeholder="Correo" value="">
+
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <span class="icon is-small is-right">
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Asunto</label>
+                                        <input class="input is-success">
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Mensaje</label>
+                                        <div class="control">
+                                            <textarea class="textarea"
+                                                placeholder="Escribe tu mensaje aquí..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <div class="control">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                I agree to the <a href="#">terms and conditions</a>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <button class="button is-link">Submit</button>
+                                        </div>
+                                        <div class="control">
+                                            <button class="button cancel-button is-link is-light"
+                                                aria-label="close">Cancel</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="/js/contact.js"> </script>
     <script src="js/login.js"></script>
 </body>
 </html>
-

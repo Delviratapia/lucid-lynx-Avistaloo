@@ -117,7 +117,7 @@
 /* ESTILOS SERGIO [FOOTER]*/
 
 footer {
-   margin-top: 50px;
+   margin-top:15px;
 }
 
 .footer-section {
@@ -125,6 +125,31 @@ footer {
 }
 
 .footer-wrap {
+   padding:5px;
+}
+
+.center-footer p {
+   font-size:15px;
+   color:var(--whiteColor);
+}
+
+.footer-logo{
+padding: 10px;
+
+}
+
+.footer-logo p {
+   font-size:15px;
+   /* margin-top:-40px; */
+   color:var(--whiteColor);
+  
+}
+.nav-footer ul {
+   text-align: center;
+   justify-content: space-evenly;
+   margin: 0px;
+   padding: 0;
+   
    padding: 10px;
 }
 
@@ -146,6 +171,16 @@ footer {
 .fix-position {
    position: relative;
 }
+
+.fa-color {
+   color: white;
+ }
+
+ .icons-container{
+   gap:20px;
+   justify-content: space-evenly;
+   
+ }
 
 .copyright {
    position:absolute;
