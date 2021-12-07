@@ -128,11 +128,6 @@ footer {
    padding:5px;
 }
 
-.center-footer p {
-   font-size:15px;
-   color:var(--whiteColor);
-}
-
 .footer-logo{
 padding: 10px;
 
@@ -142,20 +137,19 @@ padding: 10px;
    font-size:15px;
    /* margin-top:-40px; */
    color:var(--whiteColor);
-  
+
 }
 .nav-footer ul {
    text-align: center;
    justify-content: space-evenly;
    margin: 0px;
    padding: 0;
-   
+
    padding: 10px;
 }
 
 .center-footer p {
-   font-size: 48px;
-   margin-top: -40px;
+   font-size: 15px;
    color: var(--whiteColor);
 }
 
@@ -179,17 +173,5 @@ padding: 10px;
  .icons-container{
    gap:20px;
    justify-content: space-evenly;
-   
- }
 
-.copyright {
-   position:absolute;
-   bottom:16px;
-   right:16px;
-}
-.copyright p {
-   color:var(--whiteColor);
-   position: absolute;
-   bottom: 16px;
-   right: 16px;
-}
+ }
