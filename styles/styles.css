@@ -1,9 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 :root {
    --primaryColor: #335963;
    --secondaryColor: #c5c6c0;
    --tertiaryColor: #242734;
    --whiteColor: #ebebeb;
    --blackColor: #333;
+}
+
+.navbar {
+   border-bottom: 3px solid #335963;
+}
+
+.navbar-item img {
+   max-height: 10em;
+}
+
+.title {
+   color: #335963;
+   line-height: 2.5;
+}
+
+.navbar-item {
+   color: #335963;
+   font-size: 1.2rem;
+
+}
+
+#separador {
+   width: 100px;
+}
+
+.button {
+   background-color: white;
+   color: #335963;
+   border: 1px solid #335963;
+}
+
+.button.is-light {
+   background-color: #335963;
+   border: 1px solid #335963;
+   color: white;
+}
+
+/* Searchbar */
+.searchbar-container {
+   width: 250px;
+
+}
+
+.searchbar-input {
+   margin-top: 9%;
+   width: 40px;
+   height: 40px;
+   border-style: solid;
+   border-radius: 20px;
+   padding: 10px;
+   background-color: #335963;
+   outline: none;
+   transition-duration: 500ms;
+   cursor: pointer;
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAAWpJREFUWEfNljFOxDAQRbehoKDnIjTcgYtwAHpOwhE4BA3Vig6Je9ABYZ60kZbVc5xkifRHelrleRzP2rGT3TAM0ahMQmUSKpNQmYTKJFQmoTIJlUmonMFlcV88FW/F5+GXazzt1m8xKjvcFh/FVNBOnvVfhMoJHorvgtgXzNZNcXX45RpPkEe+3Wc2KhswIwz6VTwWF4Xl4Wknj/yzZlKlwDM1LiuDW84p5BH0W/1MqhRYOoLla83cKeSNy01/y+miUmB3EksHGv8Y/a29i0qBI4RgI1h7C/IJ+lt7F5UC5xzBbrX2FuQT9Lf2LiqF+BmMfwbHgWJ3cfw5CEvfJD8FcVdY3ixUTrDkXTzGe3Fd2P26qOww92uGmaM4YnWRKmfAM8VssTs5QlrfgxR1VpEq/5mzilS5AauLVLkRq4pUuSHHRb4WlvMHlRtDkS/F85FrojIJlUmoTEJlEiqTUJmEyiRUJqEyh2H3Cz4WH1fC57RBAAAAAElFTkSuQmCC);
+   background-repeat: no-repeat;
+   font-family: 'Segoe UI';
+   font-size: 15px;
+   color: transparent;
+   overflow: hidden;
+}
+
+.searchbar-input:focus {
+   width: 200px;
+   cursor: text;
+   padding-left: 40px;
+   color: #A0A0A0;
+}
+
+.searchbar-input:hover,
+.searchbar-input:focus {
+   background-color: #FFFFFF;
+   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJTSURBVFiF7ZdNSxtRFIafM5PgJGqXxXy4DIziJhBdFLrwnyi4cym40S4ClkJ/g2B/Qv+BC0s3CtkIDWYZasWtXxEzebswQxGt3sk0Nou8cHfnPTycc+fOOSaJUZb3vwFe0hgwrcaAaTUGTKuRB8wMYrLZ2dxEd3rVPC2aqAoqBi0ZDfXs8DZzsad2++ZfAFrSP0m+NPdO4gtQeSasZcbK9c8f39PAQcIW50vzmxIHQEXQkGzdU2+pc6c3nnpLkq0LGkBF4iBfmt9MC+hcwX7lDgBhfOycTu5IR3ePElotGxSvthFbgJnxPlUlJb14KJdzQSE8CQqhgmJYd/EExbAeFEIFhfCEcjnn4nnqOLV4oju9Sr+tndPJHRdP53RyJ2533z+QnADN0yIAst2n2vqUpKM7ZLsP/EMDFFUAn+gwSfI4PvYPIidA9Z+U6641kySP4/X8k/Ss3CoILYB8RmGS5HF87B9EbhU0GgARfqK7FMfH/kHkBtiz+7tnWjOrZV08ZrUsprUH/mEB3mYu9oCWQTUoXm27eILi1bZBFWj1/cMDVLt9Y8YK0ENs5Upz9b9V0qyWzZXm6ogPAF6PjTSDQ6Jh4f5frE+AJ2gg2/WJDq+71sxnFEb4i5jW+pWL1fS7/vLl+fHZ0AHvId2mGa/HRs/jMxCmgUwMCO7z4NTbhZkoE+2ngRwIMInSQg595L88Pz7zu/4y0ATCKBPtT71dmHH1v8pOkgby1ZamR5DZ6KuL71W3uj+Q9k3SLxfP0D+StBr5vXgMmFZjwLQaA6bVyAP+BkJqfmMbSKF/AAAAAElFTkSuQmCC);
+}
+
+/* end of searchbar */
+
+
+.lynx-primary{
+   background-color: #335963;
+   color: white;
+}
+
+.header-background {
+   width: 100%;
+   height: 954px;
+
+   background-image: url(/img/background-header.jpg);
+   background-repeat: no-repeat;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+}
+
+.header-button {
+   background-color: white;
+   border-radius: 20px;
+
+   box-shadow: 2px 2px 1px grey;
+
+   text-align: center;
+   font-size: 24px;
+
+   padding: 10px 20px 10px 20px;
 }
 
 /* ESTILOS SERGIO [FOOTER]*/
@@ -13,13 +121,12 @@ footer {
 }
 
 .footer-section {
-   background-color:var(--primaryColor);
+   background-color: var(--primaryColor);
 }
+
 .footer-wrap {
    padding:5px;
 }
-
-
 
 .center-footer p {
    font-size:15px;
@@ -43,14 +150,26 @@ padding: 10px;
    margin: 0px;
    padding: 0;
    
+   padding: 10px;
 }
+
+.center-footer p {
+   font-size: 48px;
+   margin-top: -40px;
+   color: var(--whiteColor);
+}
+
+.nav-footer ul {
+   gap: 2rem;
+}
+
 .nav-footer a {
-   color:var(--whiteColor);
-   font-weight:600;
+   color: var(--whiteColor);
+   font-weight: 600;
 }
 
 .fix-position {
-   position:relative;
+   position: relative;
 }
 
 .fa-color {
@@ -63,3 +182,14 @@ padding: 10px;
    
  }
 
+.copyright {
+   position:absolute;
+   bottom:16px;
+   right:16px;
+}
+.copyright p {
+   color:var(--whiteColor);
+   position: absolute;
+   bottom: 16px;
+   right: 16px;
+}
