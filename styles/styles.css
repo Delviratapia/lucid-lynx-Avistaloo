@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+
 :root {
    --primaryColor: #335963;
    --secondaryColor: #c5c6c0;
@@ -112,6 +113,32 @@
    font-size: 24px;
 
    padding: 10px 20px 10px 20px;
+}
+
+/*ESTILOS MAIN*/
+
+main{
+    color: #335963;
+}
+main .title{
+    color: #335963;
+}
+
+main p{
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+}
+
+.offer-text{width: 800px;}
+
+.void{
+    height: 250px;
+    width: 250px;
+}
+
+.avistamientos{
+    color:black;
+    font-size: 30px;
 }
 
 /* ESTILOS SERGIO [FOOTER]*/
