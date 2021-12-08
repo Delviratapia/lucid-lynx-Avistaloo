@@ -94,9 +94,9 @@
    width: 100%;
    height: 954px;
 
-   background-image: url(/img/background-header.jpg);
+   background-image: url(/assets/img/background-header.jpg);
    background-repeat: no-repeat;
-   background-color:black;
+   background-color: black;
 
    display: flex;
    align-items: center;
@@ -105,38 +105,41 @@
 }
 
 .feather-top-icon {
-  transform: translateX(-50px);
-  position: fixed;
-  overflow-y: auto;
-  height: auto;
+   transform: translateX(-50px);
+   position: fixed;
+   overflow-y: auto;
+   height: auto;
 }
 
 /* hover feather */
 
 
-.feather-top-icon::before {  
+.feather-top-icon::before {
    transform: scaleX(0);
    transform-origin: bottom right;
- }
- 
- .feather-top-icon:hover::before {
+}
+
+.feather-top-icon:hover::before {
    transform: scaleX(1);
    transform-origin: bottom left;
- }
- 
- .feather-top-icon::before {
+}
+
+.feather-top-icon::before {
    content: " ";
    display: block;
    position: absolute;
-   top: 0; right: 0; bottom: 0; left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
    inset: 0 0 0 0;
    background: hsl(200 100% 80%);
    z-index: -1;
    transition: transform .3s ease;
    border-radius: 40%;
    background-color: greenyellow;
- }
- 
+}
+
 
 
 
@@ -217,7 +220,6 @@ footer {
 
 .nav-footer ul {
    text-align: center;
-   justify-content: space-evenly;
    margin: 0px;
    padding: 0;
 

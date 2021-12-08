@@ -20,3 +20,12 @@ for (let button of exitButtonsContacts) {
         this.parentNode.classList.remove("is-active")
     })
 }
+
+
+let cancelButtons = qsa(".cancel-button")
+for (let button of cancelButtons) {
+    button.addEventListener("click", function () {
+        qs("html").classList.remove("is-clipped")
+        qs("#modal-contact").classList.remove("is-active")
+    })
+}
