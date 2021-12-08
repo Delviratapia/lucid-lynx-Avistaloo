@@ -85,7 +85,7 @@
 /* end of searchbar */
 
 
-.lynx-primary{
+.lynx-primary {
    background-color: #335963;
    color: white;
 }
@@ -94,14 +94,62 @@
    width: 100%;
    height: 954px;
 
-   background-image: url(/img/background-header.jpg);
+   background-image: url(/assets/img/background-header.jpg);
    background-repeat: no-repeat;
+   background-color: black;
 
    display: flex;
    align-items: center;
    justify-content: space-around;
    flex-direction: column;
 }
+
+.feather-top-icon {
+   transform: translateX(-50px);
+   position: fixed;
+   overflow-y: auto;
+   height: auto;
+}
+
+/* hover feather */
+
+
+.feather-top-icon::before {
+   transform: scaleX(0);
+   transform-origin: bottom right;
+}
+
+.feather-top-icon:hover::before {
+   transform: scaleX(1);
+   transform-origin: bottom left;
+}
+
+.feather-top-icon::before {
+   content: " ";
+   display: block;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   inset: 0 0 0 0;
+   background: hsl(200 100% 80%);
+   z-index: -1;
+   transition: transform .3s ease;
+   border-radius: 40%;
+   background-color: greenyellow;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .header-button {
    background-color: white;
@@ -117,34 +165,37 @@
 
 /*ESTILOS MAIN*/
 
-main{
-    color: #335963;
-}
-main .title{
-    color: #335963;
+main {
+   color: #335963;
 }
 
-main p{
-    font-family: 'Lato', sans-serif;
-    font-size: 30px;
+main .title {
+   color: #335963;
 }
 
-.offer-text{width: 800px;}
-
-.void{
-    height: 250px;
-    width: 250px;
+main p {
+   font-family: 'Lato', sans-serif;
+   font-size: 30px;
 }
 
-.avistamientos{
-    color:black;
-    font-size: 30px;
+.offer-text {
+   width: 800px;
+}
+
+.void {
+   height: 250px;
+   width: 250px;
+}
+
+.avistamientos {
+   color: black;
+   font-size: 30px;
 }
 
 /* ESTILOS SERGIO [FOOTER]*/
 
 footer {
-   margin-top:15px;
+   margin-top: 15px;
 }
 
 .footer-section {
@@ -152,23 +203,23 @@ footer {
 }
 
 .footer-wrap {
-   padding:5px;
+   padding: 5px;
 }
 
-.footer-logo{
-padding: 10px;
+.footer-logo {
+   padding: 10px;
 
 }
 
 .footer-logo p {
-   font-size:15px;
+   font-size: 15px;
    /* margin-top:-40px; */
-   color:var(--whiteColor);
+   color: var(--whiteColor);
 
 }
+
 .nav-footer ul {
    text-align: center;
-   justify-content: space-evenly;
    margin: 0px;
    padding: 0;
 
@@ -195,10 +246,51 @@ padding: 10px;
 
 .fa-color {
    color: white;
- }
+}
 
- .icons-container{
-   gap:20px;
+.icons-container {
+   gap: 20px;
    justify-content: space-evenly;
 
- }
+}
+
+
+/* Username & Password validation */
+
+/* The message box is shown when the user clicks on the password field */
+
+#message {
+   display: none;
+   background: #f1f1f1;
+   color: #000;
+   position: relative;
+   padding: 20px;
+   margin-top: 10px;
+}
+
+#message p {
+   padding: 10px 35px;
+   font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+   color: green;
+}
+
+.valid:before {
+   position: relative;
+   left: -35px;
+   content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+   color: red;
+}
+
+.invalid:before {
+   position: relative;
+   left: -35px;
+   content: "✖";
+}
