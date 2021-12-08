@@ -14,7 +14,7 @@
 
 <body>
 
-<!-- READING PROGRESS BAR -->
+    <!-- READING PROGRESS BAR -->
 
 
 
@@ -168,7 +168,11 @@
                                                         <!-- <input class="input" type="password"
                                                             placeholder="Ingrese una contraseña"> -->
 
-                                                            <input class="input" type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Ingrese una contraseña" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required >
+                                                        <input class="input" type="password" id="psw" name="psw"
+                                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                            placeholder="Ingrese una contraseña"
+                                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                            required>
 
                                                         <span class="icon is-small is-left">
                                                             <i class="fas fa-lock"></i>
@@ -176,15 +180,16 @@
                                                     </p>
                                                 </div>
 
-
+                                                <!-- ejemplo -->
                                                 <div id="message">
                                                     <h3>Password must contain the following:</h3>
                                                     <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                                                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter
+                                                    </p>
                                                     <p id="number" class="invalid">A <b>number</b></p>
                                                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                                                  </div>
-                                                                  
+                                                </div>
+
 
                                                 <div class="field">
                                                     <label class="label">Confirmar contraseña</label>
@@ -360,8 +365,8 @@
                             style="color: white" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-twitter"></i>
                     </div>
-                    <div class="my-icon pinterest fa-color fa-2x"><a href="https://www.pinterest.com/" style="color: white"
-                            target="_blank" rel="noopener noreferrer">
+                    <div class="my-icon pinterest fa-color fa-2x"><a href="https://www.pinterest.com/"
+                            style="color: white" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-pinterest"></i>
                     </div>
                     <div class="my-icon facebook fa-color fa-2x">
@@ -373,137 +378,137 @@
                             <i class="fab fa-instagram"></i> </a>
                     </div>
                 </div>
-                
+
                 <div class="column center-footer">
                     <div class="is-flex is-flex-direction-column is-align-items-center">
                         <img class="footer-logo" width="100px" src="/img/logo.png" alt="Logo Avistaloo.com">
 
-                                 <div>
-                            
+                        <div>
+
                             <p class="copyright">© 2021 Avistaloo</p>
                         </div>
-                        
+
                     </div>
-                    </div>
+                </div>
 
-                    <div class="nav-footer is-flex is-align-items-center">
-                        <ul class="columns is-flex is-vcentered">
-                            <li class="column "><a href="#">¿Quiénes somos?</a></li>
-                            <li class="column "><a href="#">Política de privacidad</a></li>
-                            <li class="column  "><a class="modal-button" data-target="#modal-contact"
-                                    aria-haspopup="true" href="#">Contáctanos</a></li>
-                        </ul>
-                    </div>
-
-
-                    <!-- Contact us form -->
+                <div class="nav-footer is-flex is-align-items-center">
+                    <ul class="columns is-flex is-vcentered">
+                        <li class="column "><a href="#">¿Quiénes somos?</a></li>
+                        <li class="column "><a href="#">Política de privacidad</a></li>
+                        <li class="column  "><a class="modal-button" data-target="#modal-contact" aria-haspopup="true"
+                                href="#">Contáctanos</a></li>
+                    </ul>
+                </div>
 
 
-                    <div id="modal-contact" class="modal">
-                        <div class="modal-background"></div>
-                        <div class="modal-content">
-                            <div class="box">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <div class="tabs is-centered">
-                                            <ul>
-                                                <li class="is-active">
-                                                    <a href="javascript:void(0)">
-                                                        <span class="icon is-small"><i class="fas fa-inbox"
-                                                                aria-hidden="true"></i></span>
-                                                        <span>Contáctanos</span>
-                                                    </a>
-                                                </li>
+                <!-- Contact us form -->
 
-                                            </ul>
+
+                <div id="modal-contact" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div class="box">
+                            <div class="media">
+                                <div class="media-content">
+                                    <div class="tabs is-centered">
+                                        <ul>
+                                            <li class="is-active">
+                                                <a href="javascript:void(0)">
+                                                    <span class="icon is-small"><i class="fas fa-inbox"
+                                                            aria-hidden="true"></i></span>
+                                                    <span>Contáctanos</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <!-- form modal  -->
+
+                                    <div class="field">
+                                        <label class="label">Nombre</label>
+                                        <div class="control">
+                                            <input class="input is-success" type="text" placeholder="Ingrese su nombre">
                                         </div>
+                                    </div>
 
-                                        <!-- form modal  -->
-
-                                        <div class="field">
-                                            <label class="label">Nombre</label>
-                                            <div class="control">
-                                                <input class="input is-success" type="text"
-                                                    placeholder="Ingrese su nombre">
-                                            </div>
-                                        </div>
-
-                                        <div class="field">
-                                            <div class="control has-icons-left has-icons-right">
-                                                <span class="icon is-small is-right"></span>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="field">
-                                            <label class="label">Correo</label>
-                                            <div class="control has-icons-left has-icons-right">
-                                                <input class="input is-success" data-validation="email not-blank"
-                                                    type="email" placeholder="Correo" value="">
-
-                                                <span class="icon is-small is-left">
-                                                    <i class="fas fa-envelope"></i>
-                                                </span>
-                                                <span class="icon is-small is-right">
-
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        <div class="field">
-                                            <label class="label">Asunto</label>
-                                            <input class="input is-success">
-                                        </div>
-
-                                        <div class="field">
-                                            <label class="label">Mensaje</label>
-                                            <div class="control">
-                                                <textarea class="textarea"
-                                                    placeholder="Escribe tu mensaje aquí..."></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="field">
-                                            <div class="control">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">
-                                                    I agree to the <a href="#">terms and conditions</a>
-                                                </label>
-                                            </div>
-
-                                            <!-- get top button -->
-                                            <div class="is flex feather-top-icon">
-                                                <a href="#getTop" class="top-icon"><i
-                                                        class="fas fa-feather-alt"></i></a>
-                                            </div>
-
-
-                                        </div>
-
-
-
-                                        <div class="field is-grouped">
-                                            <div class="control">
-                                                <button class="button is-link">Submit</button>
-                                            </div>
-                                            <div class="control">
-                                                <button class="button cancel-button is-link is-light"
-                                                    aria-label="close">Cancel</button>
-                                            </div>
+                                    <div class="field">
+                                        <div class="control has-icons-left has-icons-right">
+                                            <span class="icon is-small is-right"></span>
                                         </div>
 
                                     </div>
+
+                                    <div class="field">
+                                        <label class="label">Correo</label>
+                                        <div class="control has-icons-left has-icons-right">
+                                            <input class="input is-success" data-validation="email not-blank"
+                                                type="email" placeholder="Correo" value="">
+
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <span class="icon is-small is-right">
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Asunto</label>
+                                        <input class="input is-success">
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Mensaje</label>
+                                        <div class="control">
+                                            <textarea class="textarea"
+                                                placeholder="Escribe tu mensaje aquí..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <div class="control">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                I agree to the <a href="#">terms and conditions</a>
+                                            </label>
+                                        </div>
+
+                                        <!-- get top button -->
+                                        <div class="is flex feather-top-icon">
+                                            <a href="#getTop" class="top-icon"><i class="fas fa-feather-alt"></i></a>
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <button class="button is-link">Submit</button>
+                                        </div>
+                                        <div class="control">
+                                            <button class="button cancel-button is-link is-light"
+                                                aria-label="close">Cancel</button>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                        <button class="modal-close is-large" aria-label="close"></button>
                     </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
                 </div>
             </div>
+        </div>
     </footer>
-    <script src="/js/contact.js"> </script>
-    <script src="js/login.js"></script>
-    
+
+
+    <script type="module" src="js/contact.js"> </script>
+    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/form-validation.js"></script>
 
 </body>
 

@@ -85,7 +85,7 @@
 /* end of searchbar */
 
 
-.lynx-primary{
+.lynx-primary {
    background-color: #335963;
    color: white;
 }
@@ -117,34 +117,37 @@
 
 /*ESTILOS MAIN*/
 
-main{
-    color: #335963;
-}
-main .title{
-    color: #335963;
+main {
+   color: #335963;
 }
 
-main p{
-    font-family: 'Lato', sans-serif;
-    font-size: 30px;
+main .title {
+   color: #335963;
 }
 
-.offer-text{width: 800px;}
-
-.void{
-    height: 250px;
-    width: 250px;
+main p {
+   font-family: 'Lato', sans-serif;
+   font-size: 30px;
 }
 
-.avistamientos{
-    color:black;
-    font-size: 30px;
+.offer-text {
+   width: 800px;
+}
+
+.void {
+   height: 250px;
+   width: 250px;
+}
+
+.avistamientos {
+   color: black;
+   font-size: 30px;
 }
 
 /* ESTILOS SERGIO [FOOTER]*/
 
 footer {
-   margin-top:15px;
+   margin-top: 15px;
 }
 
 .footer-section {
@@ -152,20 +155,21 @@ footer {
 }
 
 .footer-wrap {
-   padding:5px;
+   padding: 5px;
 }
 
-.footer-logo{
-padding: 10px;
+.footer-logo {
+   padding: 10px;
 
 }
 
 .footer-logo p {
-   font-size:15px;
+   font-size: 15px;
    /* margin-top:-40px; */
-   color:var(--whiteColor);
+   color: var(--whiteColor);
 
 }
+
 .nav-footer ul {
    text-align: center;
    justify-content: space-evenly;
@@ -195,54 +199,54 @@ padding: 10px;
 
 .fa-color {
    color: white;
- }
+}
 
- .icons-container{
-   gap:20px;
+.icons-container {
+   gap: 20px;
    justify-content: space-evenly;
 
- }
+}
 
- .feather-top-icon{
-;
- }
+.feather-top-icon {
+   ;
+}
 
 /* Username & Password validation */
 
 /* The message box is shown when the user clicks on the password field */
 
 #message {
-   display:none;
+   display: none;
    background: #f1f1f1;
    color: #000;
    position: relative;
    padding: 20px;
    margin-top: 10px;
- }
- 
- #message p {
+}
+
+#message p {
    padding: 10px 35px;
    font-size: 18px;
- }
- 
- /* Add a green text color and a checkmark when the requirements are right */
- .valid {
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
    color: green;
- }
- 
- .valid:before {
+}
+
+.valid:before {
    position: relative;
    left: -35px;
    content: "✔";
- }
- 
- /* Add a red text color and an "x" when the requirements are wrong */
- .invalid {
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
    color: red;
- }
- 
- .invalid:before {
+}
+
+.invalid:before {
    position: relative;
    left: -35px;
    content: "✖";
- }
+}
