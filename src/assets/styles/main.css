@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Landing Page */
+
+.navbar {
+
+   & .name-logo {
+      font-size:2rem;
+   font-weighty:600;
+   color:#335963;
+   }
+   & .searchbar-container {
+      padding-left:25px;
+
+      & .searchbar-input {
+         margin-top: 9%;
+         width: 40px;
+         height: 40px;
+         border-style: solid;
+         border-radius: 20px;
+         padding: 10px;
+         background-color: #335963;
+         outline: none;
+         transition-duration: 500ms;
+         cursor: pointer;
+         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NCNwAAAWpJREFUWEfNljFOxDAQRbehoKDnIjTcgYtwAHpOwhE4BA3Vig6Je9ABYZ60kZbVc5xkifRHelrleRzP2rGT3TAM0ahMQmUSKpNQmYTKJFQmoTIJlUmonMFlcV88FW/F5+GXazzt1m8xKjvcFh/FVNBOnvVfhMoJHorvgtgXzNZNcXX45RpPkEe+3Wc2KhswIwz6VTwWF4Xl4Wknj/yzZlKlwDM1LiuDW84p5BH0W/1MqhRYOoLla83cKeSNy01/y+miUmB3EksHGv8Y/a29i0qBI4RgI1h7C/IJ+lt7F5UC5xzBbrX2FuQT9Lf2LiqF+BmMfwbHgWJ3cfw5CEvfJD8FcVdY3ixUTrDkXTzGe3Fd2P26qOww92uGmaM4YnWRKmfAM8VssTs5QlrfgxR1VpEq/5mzilS5AauLVLkRq4pUuSHHRb4WlvMHlRtDkS/F85FrojIJlUmoTEJlEiqTUJmEyiRUJqEyh2H3Cz4WH1fC57RBAAAAAElFTkSuQmCC);
+         background-repeat: no-repeat;
+         font-family: 'Segoe UI';
+         font-size: 15px;
+         color: transparent;
+         overflow: hidden;
+      }
+
+   }
+   & .nav-menu {
+      padding-left:20px;
+      & li {
+         font-size:1.2rem;
+         color:#335963;
+      }
+   }
+
+   & .nav-buttons {
+      & button {
+         background-color: white;
+         color: #335963;
+         border: 1px solid #335963;
+         padding-bottom: calc(0.5em - 1px);
+         padding-left: 1em;
+         padding-right: 1em;
+         padding-top: calc(0.5em - 1px);
+         border-radius:5px;
+      }
+      & .background-solid {
+         background-color:#335963;
+         color:#FFF;
+      }
+   }
+   & .menu-mobile {
+      font-size:2rem;
+   }
+}
