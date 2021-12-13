@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,31 +10,244 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script type="module" src="./index.js"></script>
 </head>
+
 <body>
-  <nav class="navbar flex items-center justify-between lg:gap-x-20 gap-x-2 lg:px-5 px-3">
-    <div class="navbar-brand flex items-center">
-      <a class="navbar-item" href="#">
-        <img width="70px" src="/assets/styles/images/logo.png" alt="">
-      </a>
-      <h1 class="name-logo">Avistaloo</h1>
-      <div class="searchbar-container">
-        <input class="searchbar-input">
+  <div>
+    <nav class="navbar flex items-center justify-between lg:gap-x-20 gap-x-2 lg:px-5 px-3">
+      <div class="navbar-brand flex items-center">
+        <a class="navbar-item" href="#">
+          <img width="70px" src="/assets/styles/images/logo.png" alt="">
+        </a>
+        <h1 class="name-logo">Avistaloo</h1>
+        <div class="searchbar-container">
+          <input class="searchbar-input">
+        </div>
       </div>
+      <div class="nav-menu grow">
+        <ul class="menu lg:flex hidden gap-x-5">
+          <li class="item-menu">Wiki</li>
+          <li class="item-menu">¿Qué es?</li>
+          <li class="item-menu">Caracteristicas</li>
+        </ul>
+      </div>
+      <div class="nav-buttons lg:flex hidden gap-x-3">
+        <button>Iniciar Sesión</button>
+        <button class="background-solid">Registrarse</button>
+      </div>
+      <div class="menu-mobile lg:hidden">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+
+  </div>
+
+
+  <!-- home -->
+
+
+
+  <div class="carousel relative rounded relative overflow-hidden shadow-xl">
+    <div class="carousel-inner relative overflow-hidden w-50">
+      <!--Slide 1-->
+
+      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
+        checked="checked" />
+        
+      <div class="carousel-item absolute opacity-0 bg-center" style="
+          height: 500px;
+        ">
+        
+        <img class="relative " src="assets/styles/images/owl-4104670_1280.jpg" alt="owl">
+        
+      </div>
+  
+      <label for="carousel-3" class="
+          control-1
+          w-10
+          h-10
+          ml-2
+          md:ml-10
+          absolute
+          cursor-pointer
+          hidden
+          font-bold
+          text-black
+          hover:text-white
+          rounded-full
+          bg-white
+          hover:bg-primary
+          leading-tight
+          text-center
+          z-10
+          inset-y-0
+          left-0
+          my-auto
+          flex
+          justify-center
+          content-center
+        "><i class="fas fa-angle-left mt-3"></i></label>
+      <label for="carousel-2" class="
+          next
+          control-1
+          w-10
+          h-10
+          mr-2
+          md:mr-10
+          absolute
+          cursor-pointer
+          hidden
+          font-bold
+          text-black
+          hover:text-white
+          rounded-full
+          bg-white
+          hover:bg-primary
+          leading-tight
+          text-center
+          z-10
+          inset-y-0
+          right-0
+          my-auto
+        "><i class="fas fa-angle-right mt-3"></i></label>
+
+      <!--Slide 2-->
+      <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="" />
+      <div class="carousel-item absolute opacity-0 bg-center" style="
+          height: 500px;">
+        <img src="assets/styles/images/colibri.jpg" alt="colibri">
+      </div>
+      <label for="carousel-1" class="
+          control-2
+          w-10
+          h-10
+          ml-2
+          md:ml-10
+          absolute
+          cursor-pointer
+          hidden
+          font-bold
+          text-black
+          hover:text-white
+          rounded-full
+          bg-white
+          hover:bg-primary
+          leading-tight
+          text-center
+          z-10
+          inset-y-0
+          left-0
+          my-auto
+        "><i class="fas fa-angle-left mt-3"></i></label>
+      <label for="carousel-3" class="
+          next
+          control-2
+          w-10
+          h-10
+          mr-2
+          md:mr-10
+          absolute
+          cursor-pointer
+          hidden
+          font-bold
+          text-black
+          hover:text-white
+          rounded-full
+          bg-white
+          hover:bg-primary
+          leading-tight
+          text-center
+          z-10
+          inset-y-0
+          right-0
+          my-auto
+        "><i class="fas fa-angle-right mt-3"></i></label>
+
+      <!--Slide 3-->
+      <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="" />
+      <div class="carousel-item absolute opacity-0" style="
+          height: 500px;">
+        <img src="assets/styles/images/bird.jpg" alt="owl">
+      </div>
+      <label for="carousel-2" class="
+          control-3
+          w-10
+          h-10
+          ml-2
+          md:ml-10
+          absolute
+          cursor-pointer
+          hidden
+          font-bold
+          text-black
+          hover:text-white
+          rounded-full
+          bg-white
+          hover:bg-primary
+          leading-tight
+          text-center
+          z-10
+          inset-y-0
+          left-0
+          my-auto
+        "><i class="fas fa-angle-left mt-3"></i></label>
+      <label for="carousel-1" class="
+          next
+          control-3
+          w-10
+          h-10
+          mr-2
+          md:mr-10
+          absolute
+          cursor-pointer
+          hidden
+          font-bold
+          text-black
+          hover:text-white
+          rounded-full
+          bg-white
+          hover:bg-primary
+          leading-tight
+          text-center
+          z-10
+          inset-y-0
+          right-0
+          my-auto
+        "><i class="fas fa-angle-right mt-3"></i></label>
+
+      <!-- Add additional indicators for each slide-->
+      <ol class="carousel-indicators">
+        <li class="inline-block mr-3">
+          <label for="carousel-1" class="
+              carousel-bullet
+              cursor-pointer
+              block
+              text-4xl text-white
+              hover:text-primary
+            ">•</label>
+        </li>
+        <li class="inline-block mr-3">
+          <label for="carousel-2" class="
+              carousel-bullet
+              cursor-pointer
+              block
+              text-4xl text-white
+              hover:text-primary
+            ">•</label>
+        </li>
+        <li class="inline-block mr-3">
+          <label for="carousel-3" class="
+              carousel-bullet
+              cursor-pointer
+              block
+              text-4xl text-white
+              hover:text-primary
+            ">•</label>
+        </li>
+      </ol>
     </div>
-    <div class="nav-menu grow">
-      <ul class="menu lg:flex hidden gap-x-5">
-        <li class="item-menu">Wiki</li>
-        <li class="item-menu">¿Qué es?</li>
-        <li class="item-menu">Caracteristicas</li>
-      </ul>
-    </div>
-    <div class="nav-buttons lg:flex hidden gap-x-3">
-      <button>Iniciar Sesión</button>
-      <button class="background-solid">Registrarse</button>
-    </div>
-    <div class="menu-mobile lg:hidden">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
+
+  </div>
+
 </body>
+
 </html>
