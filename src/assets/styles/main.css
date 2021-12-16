@@ -233,10 +233,29 @@
    & .card-clickable {
       transition: all 0.2s;
       color:#335963;
+      cursor:pointer;
    }
    & .card-clickable:hover {
       transform:scale(1.02);
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   }
+}
+
+.modal-content {
+   max-height: calc(95vh);
+   overflow-y: auto;
+   & .box-details {
+      border-left:2px solid;
+      padding-left:15px;
+      width:70%;
+   }
+}
+@media(max-width:992px) {
+   .modal-content {
+      & .box-details {
+         border-left:0;
+         padding-left:0;
+      }
    }
 }
 
