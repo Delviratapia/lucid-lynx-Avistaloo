@@ -12,7 +12,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <script type="module" src="./index.js"></script>
 </head>
 
 <body>
@@ -51,61 +50,196 @@
 
 
 
-
-
-
   <!-- component -->
   <!-- Display Container (not part of component) START -->
-  <div class="m-10 mx-auto sm:px-24 lg:px-48 bg-white">
+  <div class="carousel-container m-10 sm:px-24 lg:px-48 bg-white">
 
     <!-- Carousel Body -->
 
-    <div
-      class="carousel-container relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
+    <div class="slides relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
       style="min-height: 19rem;">
-      <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
-        style="min-height: 19rem;">
-        <img
-          class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all ease-in-out duration-1000 transform translate-x-0 slide"
-          src="./assets/styles/images/owl-4104670_1280.jpg" alt="">
-        <div class="absolute inset-0 w-full h-full"></div>
-        <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
-          <svg class="w-full h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 120"></svg>
+
+      <!-- slider 1 -->
+
+      <div
+        class=" card card-1 card-active relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
+        data-next="card-2" data-previous="card-5">
+        <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          style="min-height: 19rem;">
+          <img
+            class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all ease-in-out duration-1000 transform translate-x-0 slide"
+            src="./assets/styles/images/owl-4104670_1280.jpg" alt="">
+          <div class="absolute inset-0 w-full h-full"></div>
+          <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+            <svg class="w-full h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 120"></svg>
+          </div>
+        </div>
+
+        <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
+          <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
+            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
+              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
+              en todos los continentes a excepción de la Antártida.</p>
+            <a class="flex items-baseline mt-3" href="">
+              <span><strong>Aprende mas sobre ellos</strong></span>
+              <span class="text-xs ml-1">&#x279c;</span>
+            </a>
+          </div>
+          <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+            viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="50,0 100,0 50,100 0,100" />
+          </svg>
         </div>
       </div>
 
-      <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
-        <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
-          <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
-            girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
-            en todos los continentes a excepción de la Antártida.</p>
-          <a class="flex items-baseline mt-3" href="">
-            <span><strong>Aprende mas sobre ellos</strong></span>
-            <span class="text-xs ml-1">&#x279c;</span>
-          </a>
+      <!-- slider 2 -->
+
+      <div
+        class="card card-2 relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
+        id="card-22" data-next="card-3" data-previous="card-1">
+        <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          style="min-height: 19rem;">
+          <img
+            class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all ease-in-out duration-1000 transform translate-x-0 slide"
+            src="./assets/styles/images/colibri.jpg" alt="">
+          <div class="absolute inset-0 w-full h-full"></div>
+          <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+            <svg class="w-full h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 120"></svg>
+          </div>
         </div>
-        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
-          viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="50,0 100,0 50,100 0,100" />
-        </svg>
+
+        <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
+          <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
+            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
+              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
+              en todos los continentes a excepción de la Antártida.</p>
+            <a class="flex items-baseline mt-3" href="">
+              <span><strong>Aprende mas sobre ellos</strong></span>
+              <span class="text-xs ml-1">&#x279c;</span>
+            </a>
+          </div>
+          <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+            viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="50,0 100,0 50,100 0,100" />
+          </svg>
+        </div>
       </div>
 
-      <!-- fin carousel body -->
+      <!-- slider 3 -->
 
+      <div
+        class=" card card-3 relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
+        data-next="card-4" data-previous="card-2">
+        <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          style="min-height: 19rem;">
+          <img
+            class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all ease-in-out duration-1000 transform translate-x-0 slide"
+            src="./assets/styles/images/bird.jpg" alt="">
+          <div class="absolute inset-0 w-full h-full"></div>
+          <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+            <svg class="w-full h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 120"></svg>
+          </div>
+        </div>
 
+        <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
+          <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
+            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
+              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
+              en todos los continentes a excepción de la Antártida.</p>
+            <a class="flex items-baseline mt-3" href="">
+              <span><strong>Aprende mas sobre ellos</strong></span>
+              <span class="text-xs ml-1">&#x279c;</span>
+            </a>
+          </div>
+          <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+            viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="50,0 100,0 50,100 0,100" />
+          </svg>
+        </div>
+      </div>
 
+      <!-- slider 4 -->
+
+      <div
+        class=" card card-4 relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
+        data-next="card-5" data-previous="card-3">
+        <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          style="min-height: 19rem;">
+          <img
+            class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all ease-in-out duration-1000 transform translate-x-0 slide"
+            src="./assets/styles/images/huevosColibriAbeja.jpg" alt="">
+          <div class="absolute inset-0 w-full h-full"></div>
+          <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+            <svg class="w-full h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 120"></svg>
+          </div>
+        </div>
+
+        <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
+          <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
+            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
+              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
+              en todos los continentes a excepción de la Antártida.</p>
+            <a class="flex items-baseline mt-3" href="">
+              <span><strong>Aprende mas sobre ellos</strong></span>
+              <span class="text-xs ml-1">&#x279c;</span>
+            </a>
+          </div>
+          <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+            viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="50,0 100,0 50,100 0,100" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- slider 5 -->
+
+      <div
+        class=" card card-5 relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
+        data-next="card-1" data-previous="card-4">
+        <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          style="min-height: 19rem;">
+          <img
+            class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all ease-in-out duration-1000 transform translate-x-0 slide"
+            src="./assets/styles/images/african-gray-parrot.jpg" alt="">
+          <div class="absolute inset-0 w-full h-full"></div>
+          <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+            <svg class="w-full h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 120"></svg>
+          </div>
+        </div>
+
+        <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
+          <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
+            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
+              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
+              en todos los continentes a excepción de la Antártida.</p>
+            <a class="flex items-baseline mt-3" href="">
+              <span><strong>Aprende mas sobre ellos</strong></span>
+              <span class="text-xs ml-1">&#x279c;</span>
+            </a>
+          </div>
+          <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+            viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="50,0 100,0 50,100 0,100" />
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- fin carousel body -->
+
+    <div class="navigation flex justify-between translate-y-[-350%] ">
       <!-- carousel buttons -->
-
       <button
-        class="carousel-btn carousel-btn-left absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-primary hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
+        class="carousel-btn carousel-btn-left bg-white rounded-full shadow-md h-12 w-12 text-2xl text-primary hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
         <span class="block" style="transform: scale(-1);">&#x279c;</span>
       </button>
+
       <button
-        class="carousel-btn carousel-btn-right absolute top-0 mt-32 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-primary hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline">
+        class="carousel-btn carousel-btn-right  bg-white rounded-full shadow-md h-12 w-12 text-2xl text-primary hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline">
         <span class="block" style="transform: scale(1);">&#x279c;</span>
       </button>
     </div>
-
 
     <!-- Carousel Tabs -->
 
@@ -116,8 +250,12 @@
           href="#carousel-1"></a></button>
       <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full"
           src="./assets/styles/images/colibri.jpg" alt="" style="max-height: 60px;"></button>
+
+
       <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full"
           src="./assets/styles/images/bird.jpg" alt="" style="max-height: 60px;"></button>
+
+
       <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full"
           src="./assets/styles/images/huevosColibriAbeja.jpg" alt="" style="max-height: 60px;"></button>
       <button class="px-2 opacity-100 hover:opacity-100 focus:opacity-100"><img class="w-full"
@@ -132,142 +270,259 @@
 
 
 
+  <div class="">
+
+  </div>
+
 
   <!-- Right side twitter -->
 
-  <!-- component -->
-  <div class="flex justify-end content-end flex-col space-y-4 w-1/4 h-1/6 bg-red-600 twitter-row">
-    <p>Twitter</p>
-    <div class="bg-gray-50 object-contain">
-      <div class="bg-white  border-gray-200 border-primary p-4 rounded-xl border max-w-xl">
-        <div class="flex justify-between">
-          <div class="flex items-center">
-            <img class="h-11 w-11 rounded-full" src="./assets/styles/images/colibri.jpg" />
-            <div class="ml-1.5 text-sm leading-tight">
-              <span class="text-blacktext-black font-bold block ">Visualize Value</span>
-              <span class="text-blactext-black-400 font-normal block">@visualizevalue</span>
-            </div>
-          </div>
-          <svg class="text-black h-6 w-auto inline-block fill-current" viewBox="0 0 24 24">
-            <g>
-              <path
-                d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
-              </path>
-            </g>
-          </svg>
-        </div>
-        <p class="text-black block text-sm leading-snug mt-3">“No one ever made a decision because of a
-          number. They need a story.” — Daniel Kahneman</p>
-        <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
-          src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium" />
-        <p class="text-black text-sm py-1 my-0.5">10:05 AM · Dec 19, 2020</p>
-        <div class="border-gray-200 dark:border-gray-600 border border-b-0 my-1"></div>
-        <div class="text-black flex mt-3">
-          <div class="flex items-center mr-6">
-
-            <span class="ml-3 text-sm">615</span>
-          </div>
-          <div class="flex items-center text-sm mr-6">
-            <span class="ml-3">93 people are Tweeting about this</span>
-          </div>
-        </div>
-      </div>
+  <div class="flex justify-end items-end flex-col mx-auto">
+    <div class="">
+      <blockquote class="twitter-tweet">
+        <p lang="es" dir="ltr">&quot;Observando aves en invierno&quot; <a
+            href="https://t.co/d8HsrIhz8Y">https://t.co/d8HsrIhz8Y</a> un documental casero de 15 minutos que
+          esperemos
+          os lleven un poco de naturaleza allá donde estéis. <a
+            href="https://t.co/q2dOk20S3c">pic.twitter.com/q2dOk20S3c</a></p>&mdash; Spainbirds Nature Tours
+        (@SPAINBIRDS_) <a href="https://twitter.com/SPAINBIRDS_/status/1350882329737236488?ref_src=twsrc%5Etfw">January
+          17, 2021</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <blockquote class="twitter-tweet">
+        <p lang="es" dir="ltr"><a
+            href="https://twitter.com/hashtag/camachuelocomun?src=hash&amp;ref_src=twsrc%5Etfw">#camachuelocomun</a>
+          <a href="https://twitter.com/hashtag/paseriforme?src=hash&amp;ref_src=twsrc%5Etfw">#paseriforme</a><br>Uno
+          de
+          los pájaros más bonitos que se pueden ver en mi aldea de a Veiguiña, ourense <a
+            href="https://t.co/LbiQNBaFVg">pic.twitter.com/LbiQNBaFVg</a></p>&mdash; Delfín Gonzalez (@delfingofe) <a
+          href="https://twitter.com/delfingofe/status/1471916011951738891?ref_src=twsrc%5Etfw">December 17, 2021</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <blockquote class="twitter-tweet">
+        <p lang="es" dir="ltr">TODAS EN SUS PUESTOS.. <br>Cada año vuelven antes, desde primeros de diciembre, la foto
+          es de hoy 16.12.21. Malpartida de Cáceres, Los Barruecos, a 15 km de <a
+            href="https://twitter.com/hashtag/C%C3%A1ceres?src=hash&amp;ref_src=twsrc%5Etfw">#Cáceres</a> <br>📷Miguel
+          Ángel Paniagua <a href="https://t.co/EVzVKRnNuT">pic.twitter.com/EVzVKRnNuT</a></p>&mdash; Amigos das
+        Cegoñas
+        (@AmigosCegonas) <a
+          href="https://twitter.com/AmigosCegonas/status/1471514763553300480?ref_src=twsrc%5Etfw">December 16,
+          2021</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-
-
-    <!-- 2 twitter post -->
-
-
-    <div class="bg-gray-50 justify-center object-contain">
-      <div class="bg-white  border-gray-200 border-primary p-4 rounded-xl border max-w-xl">
-        <div class="flex justify-between">
-          <div class="flex items-center">
-            <img class="h-11 w-11 rounded-full" src="./assets/styles/images/colibri.jpg" />
-            <div class="ml-1.5 text-sm leading-tight">
-              <span class="text-blacktext-black font-bold block ">Visualize Value</span>
-              <span class="text-blactext-black-400 font-normal block">@visualizevalue</span>
-            </div>
-          </div>
-          <svg class="text-black h-6 w-auto inline-block fill-current" viewBox="0 0 24 24">
-            <g>
-              <path
-                d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
-              </path>
-            </g>
-          </svg>
-        </div>
-        <p class="text-black block text-sm leading-snug mt-3">“No one ever made a decision because of a
-          number. They need a story.” — Daniel Kahneman</p>
-        <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
-          src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium" />
-        <p class="text-black text-sm py-1 my-0.5">10:05 AM · Dec 19, 2020</p>
-        <div class="border-gray-200 dark:border-gray-600 border border-b-0 my-1"></div>
-        <div class="text-black flex mt-3">
-          <div class="flex items-center mr-6">
-
-            <span class="ml-3 text-sm">615</span>
-          </div>
-          <div class="flex items-center text-sm mr-6">
-            <span class="ml-3">93 people are Tweeting about this</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 3 twitter-row -->
-
-
-    <div class="bg-gray-50 justify-center object-contain">
-      <div class="bg-white  border-gray-200 border-primary p-4 rounded-xl border max-w-xl">
-        <div class="flex justify-between">
-          <div class="flex items-center">
-            <img class="h-11 w-11 rounded-full" src="./assets/styles/images/colibri.jpg" />
-            <div class="ml-1.5 text-sm leading-tight">
-              <span class="text-blacktext-black font-bold block ">Visualize Value</span>
-              <span class="text-blactext-black-400 font-normal block">@visualizevalue</span>
-            </div>
-          </div>
-          <svg class="text-black h-6 w-auto inline-block fill-current" viewBox="0 0 24 24">
-            <g>
-              <path
-                d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
-              </path>
-            </g>
-          </svg>
-        </div>
-        <p class="text-black block text-sm leading-snug mt-3">“No one ever made a decision because of a
-          number. They need a story.” — Daniel Kahneman</p>
-        <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
-          src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium" />
-        <p class="text-black text-sm py-1 my-0.5">10:05 AM · Dec 19, 2020</p>
-        <div class="border-gray-200 dark:border-gray-600 border border-b-0 my-1"></div>
-        <div class="text-black flex mt-3">
-          <div class="flex items-center mr-6">
-
-            <span class="ml-3 text-sm">615</span>
-          </div>
-          <div class="flex items-center text-sm mr-6">
-            <span class="ml-3">93 people are Tweeting about this</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
   </div>
+
+
+
+
+  <!-- component -->
+  <!-- <div class="flex flex-col bg-red-600 container-twitter">
+    <p>Twitter</p>
+
+    <div class="flex bg-gray-50 object-contain container-twitter">
+      <div class="bg-white  border-gray-200 border-primary p-4 rounded-xl border max-w-xl">
+        <div class="flex justify-between">
+          <div class="flex items-center">
+            <img class="h-11 w-11 rounded-full" src="./assets/styles/images/colibri.jpg" />
+            <div class="ml-1.5 text-sm leading-tight">
+              <span class="text-blacktext-black font-bold block ">Visualize Value</span>
+              <span class="text-blactext-black-400 font-normal block">@visualizevalue</span>
+            </div>
+          </div>
+          <svg class="text-black h-6 w-auto inline-block fill-current" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
+              </path>
+            </g>
+          </svg>
+        </div>
+        <p class="text-black block text-sm leading-snug mt-3">“No one ever made a decision because of a
+          number. They need a story.” — Daniel Kahneman</p>
+        <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
+          src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium" />
+        <p class="text-black text-sm py-1 my-0.5">10:05 AM · Dec 19, 2020</p>
+        <div class="border-gray-200 dark:border-gray-600 border border-b-0 my-1"></div>
+        <div class="text-black flex mt-3">
+          <div class="flex items-center mr-6">
+
+            <span class="ml-3 text-sm">615</span>
+          </div>
+          <div class="flex items-center text-sm mr-6">
+            <span class="ml-3">93 people are Tweeting about this</span>
+          </div>
+        </div>
+      </div>
+    </div>
+ -->
+
+
+  <!-- component -->
+  <!-- This is an example component -->
+
+  <div class='flex max-w-xl my-10 bg-white shadow-md rounded-lg overflow-hidden mx-auto'>
+    <div class='flex items-center w-full'>
+      <div class='w-full'>
+        <div class="flex flex-row mt-2 px-2 py-3 mx-3">
+          <div class="w-auto h-auto rounded-full border-2 border-pink-500">
+            <img class='w-12 h-12 object-cover rounded-full shadow cursor-pointer' alt='User avatar'
+              src='./assets/styles/images/usuario1.jpg'>
+          </div>
+          <div class="flex flex-col mb-2 ml-4 mt-1">
+            <div class='text-gray-600 text-sm font-semibold'>Sara García</div>
+            <div class='flex w-full mt-1'>
+              <div class='text-blue-700 font-base text-xs mr-1 cursor-pointer'>
+                Valencia
+              </div>
+              <div class='text-gray-400 font-thin text-xs'>
+                • 30 seconds ago
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-b border-gray-100"></div>
+        <div class='text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2'><img class="rounded"
+            src="./assets/styles/images/nidoarbol.jpg"></div>
+        <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>Ayuda para identificar este pájaro</div>
+        <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>Encontré este nido en el árbol de mi casa,
+          ¿Alguien sabe que tipo de ave es?</div>
+        <div class="flex justify-start mb-4 border-t border-gray-100">
+          <div class="flex w-full mt-1 pt-2 pl-5">
+            <span
+              class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+              </svg>
+            </span>
+            <div class="text-sm">Inicia sesión para <br> guardar tus favoritos</div>
+          </div>
+          <div class="flex justify-end w-full mt-1 pt-2 pr-5">
+            <span
+              class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+            </span>
+            <span
+              class="transition ease-out duration-300 hover:bg-blue-500 bg-blue-600 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div class="flex w-full border-t border-gray-100">
+          <div class="mt-3 mx-5 flex flex-row items-center">
+            <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="🎳-Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Square_Timeline" transform="translate(-312.000000, -746.000000)">
+                  <g id="Post-1" transform="translate(280.000000, 227.000000)">
+                    <g id="Post-Action" transform="translate(0.000000, 495.000000)">
+                      <g transform="translate(30.000000, 21.000000)" id="Comment">
+                        <g>
+                          <g id="ic_comment-Component/icon/ic_comment">
+                            <g id="Comments">
+                              <polygon id="Path" points="0 0 24 0 24 25 0 25"></polygon>
+                              <g id="iconspace_Chat-3_25px" transform="translate(2.000000, 3.000000)" fill="#92929D">
+                                <path
+                                  d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
+                                  id="Path"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <div class="ml-1 text-black font-thin text-ms"> 5</div>
+            <div class="ml-1 text-black font-thin text-ms">Comentarios</div>
+
+
+
+
+          </div>
+
+          <div class="mt-3 mx-5 w-full flex justify-end">
+
+            <div class='flex text-gray-700 font-normal text-sm rounded-md mb-2 mr-4 items-center'>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-red-500 transition ease-out duration-300 hover:bg-red-300  text-center rounded-full text-gray-100 cursor-pointer"
+                viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd" />
+              </svg>
+              <div class="ml-1 text-black font-thin text-ms"> 120 </div>
+              <div class="ml-1 text-black font-thin text-ms"> Likes</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
+          <img class='w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
+            src='./assets/styles/images/usuario4.jpg'>
+          <span class="absolute inset-y-0 right-0 flex items-center pr-6">
+            <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
+              <svg class="w-6 h-6 transition  ease-out duration-300 hover:text-blue-500 text-gray-400"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+
+            </button>
+          </span>
+          <input type="search"
+            class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
+            style="border-radius: 25px" placeholder="Post a comment..." autocomplete="off">
+
+        </div>
+        <div>
+          <img class='flex-nowrap w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
+            src='./assets/styles/images/usuario4.jpg'>
+          <div
+            class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <!-- left side / user last comments -->
 
   <!-- component -->
-  <main class="h-full w-full bg-gray-50 flex items-start justify-start">
+  <!-- <section class="h-full w-full bg-gray-50 flex items-start justify-start">
+
     <div class="border max-w-screen-md bg-white mt-6 rounded-2xl p-4">
       <div class="flex items-center	justify-between">
         <div class="gap-3.5	flex items-center ">
-          <img
-            src="./assets/styles/images/usuario1.jpg"
-            class="object-cover bg-yellow-500 rounded-full w-10 h-10" />
+          <img src="./assets/styles/images/usuario1.jpg" class="object-cover bg-yellow-500 rounded-full w-10 h-10" />
           <div class="flex flex-col">
             <b class="mb-2 capitalize">Laura García</b>
             <time datetime="06-08-21" class="text-gray-400 text-xs">06 August at 09.15 PM
@@ -282,14 +537,14 @@
           </svg>
         </div>
       </div>
-      <div class="whitespace-pre-wrap mt-7">Encontré este nido en el árbol de mi casa, ¿Alguien sabe que tipo de ave es?</div>
+      <div class="whitespace-pre-wrap mt-7">Encontré este nido en el árbol de mi casa, ¿Alguien sabe que tipo de ave es?
+      </div>
       <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap	">
+        <img src="./assets/styles/images/nidoarbol.jpg" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto"
+          alt="photo">
         <img
-          src="./assets/styles/images/nidoarbol.jpg"
-          class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
-        <!-- <img
           src="https://images.unsplash.com/photo-1614914135224-925593607248?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-          class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo"> -->
+          class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
       </div>
       <div class=" h-16 border-b  flex items-center justify-around	">
         <div class="flex items-center	gap-3	">
@@ -388,18 +643,38 @@
         </div>
       </div>
       <div class="flex items-center justify-between mt-4">
-        <img src="./assets/styles/images/usuario4.jpg"
-          class="bg-yellow-500 rounded-full w-10 h-10 object-cover border">
+        <img src="./assets/styles/images/usuario4.jpg" class="bg-yellow-500 rounded-full w-10 h-10 object-cover border">
         <div class="flex items-center justify-between bg-gray-50 h-11 w-11/12 border rounded-2xl overflow-hidden px-4 ">
-          <input type="text" class="h-full w-full bg-gray-50 outline-none " placeholder="Write your comment..." name="comment">
+          <input type="text" class="h-full w-full bg-gray-50 outline-none " placeholder="Write your comment..."
+            name="comment">
         </div>
       </div>
     </div>
-  </main>
+  </section> -->
+
+
+  <!-- birds image gallery grid -->
 
 
 
 
+  <section class="pt-8 px-4">
+    <div class="flex flex-wrap -mx-4">
+      <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/bird-kingfisher.jpg"
+          alt=""></div>
+      <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/gorrion.jpg" alt="">
+      </div>
+      <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/greenfinch.png" alt="">
+      </div>
+      <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/lorikeet.jpg" alt="">
+      </div>
+      <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/swan.jpg" alt="">
+      </div>
+      <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/spring-bird.jpg"
+          alt=""></div>
+    </div>
+  </section>
+  <script type="module" defer src="./carousel.js"></script>
 </body>
 
 </html>
