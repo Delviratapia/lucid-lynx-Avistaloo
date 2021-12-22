@@ -52,12 +52,11 @@
 
   <!-- component -->
   <!-- Display Container (not part of component) START -->
-  <div class="carousel-container m-10 sm:px-24 lg:px-48 bg-white">
+  <div class="carousel-container m-10 sm:px-24 lg:px-48">
 
     <!-- Carousel Body -->
 
-    <div class="slides relative rounded-lg block md:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box"
-      style="min-height: 19rem;">
+    <div class="slides relative rounded-lg block ms:flex items-center bg-gray-100 shadow-md shadow-xl carousel-box h-full ">
 
       <!-- slider 1 -->
 
@@ -110,9 +109,9 @@
 
         <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
           <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
-            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
-              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
-              en todos los continentes a excepción de la Antártida.</p>
+            <p class="text-gray-600"> Los <span class="text-gray-900">picaflores -o colibríes</span> son
+              las únicas aves que pueden volar hacia atrás (igual que los helicópteros, ya que los aviones y otras naves
+              no pueden hacerlo).</p>
             <a class="flex items-baseline mt-3" href="">
               <span><strong>Aprende mas sobre ellos</strong></span>
               <span class="text-xs ml-1">&#x279c;</span>
@@ -143,9 +142,8 @@
 
         <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
           <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
-            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
-              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
-              en todos los continentes a excepción de la Antártida.</p>
+            <p class="text-gray-600"> Las <span class="text-gray-900">plumas </span>de los pájaros pesan más que su
+              esqueleto.</p>
             <a class="flex items-baseline mt-3" href="">
               <span><strong>Aprende mas sobre ellos</strong></span>
               <span class="text-xs ml-1">&#x279c;</span>
@@ -176,9 +174,8 @@
 
         <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
           <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
-            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
-              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
-              en todos los continentes a excepción de la Antártida.</p>
+            <p class="text-gray-600">El huevo más pequeño del mundo de pájaro es de el <span
+                class="text-gray-900">colibrí abeja </span>, mide poco menos de 1.25 x 0.6 cm y pesa solo 0.02 oz.</p>
             <a class="flex items-baseline mt-3" href="">
               <span><strong>Aprende mas sobre ellos</strong></span>
               <span class="text-xs ml-1">&#x279c;</span>
@@ -209,9 +206,9 @@
 
         <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg carousel-container-text">
           <div class="p-12 md:pr-24 md:pl-16 md:py-12 carousel-text">
-            <p class="text-gray-600"> Los <span class="text-gray-900">búhos </span> son unas hermosas aves incapaces de
-              girar lo ojos, en su lugar mueven la cabeza por completo para ver lo que hay detrás de ellos, pueden vivir
-              en todos los continentes a excepción de la Antártida.</p>
+            <p class="text-gray-600"> El <span class="text-gray-900">loro gris</span>es el pájaro más locuaz del mundo
+              ya que puede alcanzar a decir más de 800 palabras, y la mayoría de especies de loros solo pueden decir 50.
+            </p>
             <a class="flex items-baseline mt-3" href="">
               <span><strong>Aprende mas sobre ellos</strong></span>
               <span class="text-xs ml-1">&#x279c;</span>
@@ -245,196 +242,271 @@
 
 
     <div class="flex items-center pt-5 justify-center preview-carousel">
-      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full "
-          src="./assets/styles/images/owl-4104670_1280.jpg" alt="" style="max-height: 60px;"><a
-          href="#carousel-1"></a></button>
-      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full"
-          src="./assets/styles/images/colibri.jpg" alt="" style="max-height: 60px;"></button>
+
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100 preview-tab" data-tab="card-1"><img
+          class="w-full " src="./assets/styles/images/owl-4104670_1280.jpg" alt="" style="max-height: 60px;"></button>
 
 
-      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full"
-          src="./assets/styles/images/bird.jpg" alt="" style="max-height: 60px;"></button>
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100 preview-tab" data-tab="card-2"><img
+          class="w-full" src="./assets/styles/images/colibri.jpg" alt="" style="max-height: 60px;"></button>
 
 
-      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full"
-          src="./assets/styles/images/huevosColibriAbeja.jpg" alt="" style="max-height: 60px;"></button>
-      <button class="px-2 opacity-100 hover:opacity-100 focus:opacity-100"><img class="w-full"
-          src="./assets/styles/images/african-gray-parrot.jpg" alt="" style="max-height: 60px;"></button>
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100 preview-tab" data-tab="card-3"><img
+          class="w-full" src="./assets/styles/images/bird.jpg" alt="" style="max-height: 60px;"></button>
+
+
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100 preview-tab" data-tab="card-4"><img
+          class="w-full" src="./assets/styles/images/huevosColibriAbeja.jpg" alt="" style="max-height: 60px;"></button>
+
+      <button class="px-2 opacity-100 hover:opacity-100 focus:opacity-100 preview-tab" data-tab="card-5"><img
+          class="w-full" src="./assets/styles/images/african-gray-parrot.jpg" alt="" style="max-height: 60px;"></button>
 
 
     </div>
 
 
   </div>
-  <!-- Display Container (not part of component) END -->
+  <!-- Display Container END -->
 
 
-
-  <div class="">
-
+  <!-- landing preview -->
+  <center>
+  <div class="bg-white p-4 rounded-xl shadow-md shadow-primary mx-4 mb-5 text-center w-[80%]">
+    <p>Recuerda</p>
   </div>
+</center>
 
 
-  <!-- Right side twitter -->
 
-  <div class="flex justify-end items-end flex-col mx-auto">
-    <div class="">
-      <blockquote class="twitter-tweet">
-        <p lang="es" dir="ltr">&quot;Observando aves en invierno&quot; <a
-            href="https://t.co/d8HsrIhz8Y">https://t.co/d8HsrIhz8Y</a> un documental casero de 15 minutos que
-          esperemos
-          os lleven un poco de naturaleza allá donde estéis. <a
-            href="https://t.co/q2dOk20S3c">pic.twitter.com/q2dOk20S3c</a></p>&mdash; Spainbirds Nature Tours
-        (@SPAINBIRDS_) <a href="https://twitter.com/SPAINBIRDS_/status/1350882329737236488?ref_src=twsrc%5Etfw">January
-          17, 2021</a>
-      </blockquote>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <blockquote class="twitter-tweet">
-        <p lang="es" dir="ltr"><a
-            href="https://twitter.com/hashtag/camachuelocomun?src=hash&amp;ref_src=twsrc%5Etfw">#camachuelocomun</a>
-          <a href="https://twitter.com/hashtag/paseriforme?src=hash&amp;ref_src=twsrc%5Etfw">#paseriforme</a><br>Uno
-          de
-          los pájaros más bonitos que se pueden ver en mi aldea de a Veiguiña, ourense <a
-            href="https://t.co/LbiQNBaFVg">pic.twitter.com/LbiQNBaFVg</a></p>&mdash; Delfín Gonzalez (@delfingofe) <a
-          href="https://twitter.com/delfingofe/status/1471916011951738891?ref_src=twsrc%5Etfw">December 17, 2021</a>
-      </blockquote>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <blockquote class="twitter-tweet">
-        <p lang="es" dir="ltr">TODAS EN SUS PUESTOS.. <br>Cada año vuelven antes, desde primeros de diciembre, la foto
-          es de hoy 16.12.21. Malpartida de Cáceres, Los Barruecos, a 15 km de <a
-            href="https://twitter.com/hashtag/C%C3%A1ceres?src=hash&amp;ref_src=twsrc%5Etfw">#Cáceres</a> <br>📷Miguel
-          Ángel Paniagua <a href="https://t.co/EVzVKRnNuT">pic.twitter.com/EVzVKRnNuT</a></p>&mdash; Amigos das
-        Cegoñas
-        (@AmigosCegonas) <a
-          href="https://twitter.com/AmigosCegonas/status/1471514763553300480?ref_src=twsrc%5Etfw">December 16,
-          2021</a>
-      </blockquote>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <!-- <section class="pt-8 px-4">
+    <div class="flex -mx-4 gap-10 justify-around sm-flex-col">
+      <div class="md:w-72 px-4 mb-8 bg-white rounded-2xl shadow-md shadow-primary animated-img-container1"><img class="rounded my-4 animated-img" src="./assets/styles/images/global-learning.png"
+          alt="">
+        <p>Expande tus conocimientos con nuestra plataforma y explora sobre los diferentes tipos de aves, ¡También
+          puedes escuchar sus sonidos!</p>
+      </div>
+
+      <div class="md:w-72 px-4 mb-8 bg-white rounded-2xl shadow-md shadow-primary animated-img-container2"><img class="rounded my-8" src="./assets/styles/images/registered.png" alt="">
+        <p>¡Registra tus avistamientos con nosotros y comparte con los demás!</p>
+      </div>
+
+      <div class="md:w-72 px-4 mb-8 bg-white rounded-2xl shadow-md shadow-primary animated-img-container3"><img class="rounded my-8" src="./assets/styles/images/explore.png" alt="">
+        <p>¡Localiza aves cerca de ti! ¿Te vas de viaje? !Pues coje tu mochila y localizalas allá!</p>
+      </div>
+
     </div>
-  </div>
+  </section> -->
 
 
 
 
-  <!-- component -->
-  <!-- <div class="flex flex-col bg-red-600 container-twitter">
-    <p>Twitter</p>
+  <div class="flex text-center flex-col items-center gap-4 p-10 sm:gap-0 sm:items-stretch sm:flex-row sm:justify-around">
 
-    <div class="flex bg-gray-50 object-contain container-twitter">
-      <div class="bg-white  border-gray-200 border-primary p-4 rounded-xl border max-w-xl">
-        <div class="flex justify-between">
-          <div class="flex items-center">
-            <img class="h-11 w-11 rounded-full" src="./assets/styles/images/colibri.jpg" />
-            <div class="ml-1.5 text-sm leading-tight">
-              <span class="text-blacktext-black font-bold block ">Visualize Value</span>
-              <span class="text-blactext-black-400 font-normal block">@visualizevalue</span>
-            </div>
-          </div>
-          <svg class="text-black h-6 w-auto inline-block fill-current" viewBox="0 0 24 24">
-            <g>
-              <path
-                d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
-              </path>
-            </g>
-          </svg>
-        </div>
-        <p class="text-black block text-sm leading-snug mt-3">“No one ever made a decision because of a
-          number. They need a story.” — Daniel Kahneman</p>
-        <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
-          src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium" />
-        <p class="text-black text-sm py-1 my-0.5">10:05 AM · Dec 19, 2020</p>
-        <div class="border-gray-200 dark:border-gray-600 border border-b-0 my-1"></div>
-        <div class="text-black flex mt-3">
-          <div class="flex items-center mr-6">
+    <div class="shadow-md bg-white rounded-2xl shadow-primary w-full sm:w-72 flex flex-col justify-center py-4">
+      <img class="h-48 mx-auto" src="./assets/styles/images/global-learning.png" alt="" />
+      <div class="px-4">
+        <h1 class="mt-3 text-gray-800 text-2xl font-bold my-2">¡Aprende!</h1>
+        <p class="text-gray-700 mb-2">Explora sobre los diferentes tipos de aves, ¡Escucha sus sonidos!</p>
+        <div class="flex justify-between mt-4">
 
-            <span class="ml-3 text-sm">615</span>
-          </div>
-          <div class="flex items-center text-sm mr-6">
-            <span class="ml-3">93 people are Tweeting about this</span>
-          </div>
         </div>
       </div>
     </div>
- -->
+
+    <div class="shadow-md bg-white rounded-2xl shadow-primary w-full sm:w-72 flex flex-col justify-center py-4">
+      <img class="h-48 mx-auto" src="./assets/styles/images/registered.png" alt="" />
+      <div class="px-4 ">
+        <h1 class="mt-3 text-gray-800 text-2xl font-bold my-2">Comparte</h1>
+        <p class="text-gray-700 mb-2">¡Registra tus avistamientos con nosotros y comparte con los demás!</p>
+        <div class="flex justify-between mt-4">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow-md bg-white rounded-2xl shadow-primary w-full sm:w-72 flex flex-col justify-center py-4">
+      <img class="h-48 mx-auto" src="./assets/styles/images/explore.png" alt="" />
+      <div class="px-4">
+        <h1 class="mt-3 text-gray-800 text-2xl font-bold my-2">Localiza cerca de tí</h1>
+        <p class="text-gray-700 mb-2">¿Te vas de viaje? ¡Pues coje tu mochila y localizalas allá!</p>
+        <div class="flex justify-between mt-4">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
-  <!-- component -->
-  <!-- This is an example component -->
 
-  <div class='flex max-w-xl my-10 bg-white shadow-md rounded-lg overflow-hidden mx-auto'>
-    <div class='flex items-center w-full'>
-      <div class='w-full'>
-        <div class="flex flex-row mt-2 px-2 py-3 mx-3">
-          <div class="w-auto h-auto rounded-full border-2 border-pink-500">
-            <img class='w-12 h-12 object-cover rounded-full shadow cursor-pointer' alt='User avatar'
-              src='./assets/styles/images/usuario1.jpg'>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- twitter -->
+
+
+  <div class="bg-#eee p-10 flex flex-col gap-4 pb-0 sm:gap-0 sm:flex-row sm:justify-start w-full">
+
+    <div class="bg-white p-4 rounded-xl shadow-md shadow-xl border max-w-xl w-full sm:w-[45%] order-2 sm:order-1">
+      <div class="flex justify-between">
+        <div class="flex items-center">
+          <img class="h-11 w-11 rounded-full" src="./assets/styles/images/logo.png" />
+          <div class="ml-1.5 text-sm leading-tight">
+            <span class="text-black font-bold block ">Avistaloo</span>
+            <span class="text-gray-500 font-normal block">@AvistalooES</span>
           </div>
-          <div class="flex flex-col mb-2 ml-4 mt-1">
-            <div class='text-gray-600 text-sm font-semibold'>Sara García</div>
-            <div class='flex w-full mt-1'>
-              <div class='text-blue-700 font-base text-xs mr-1 cursor-pointer'>
-                Valencia
-              </div>
-              <div class='text-gray-400 font-thin text-xs'>
-                • 30 seconds ago
+          <div class="flex justify-end items-end">
+            <svg class="text-blue-400 h-6 w-auto fill-current" viewBox="0 0 24 24">
+              <g>
+                <path class="flex justify-center items-center"
+                  d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
+                </path>
+              </g>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+      <p class="text-black block text-xl leading-snug mt-3">¿Conocen al "Christmas Robin" también llamado Robin
+        europeo? Las hembras suelen emigrar a España en invierno ¿Has visto una? ¡Compártelo con nosotros!
+      </p>
+
+      <img class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
+        src="./assets/styles/images/robin-snow.jpg" />
+      <p class="text-gray-500 text-base py-1 my-0.5">10:05 AM · Dec 15, 2021</p>
+      <div class="border-gray-200 border-gray-600 border border-b-0 my-1"></div>
+      <div class="text-gray-500 text-gray-400 flex mt-3">
+        <div class="flex items-center mr-6">
+          <svg class="fill-current h-5 w-auto" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
+              </path>
+            </g>
+          </svg>
+          <span class="ml-3">615</span>
+        </div>
+        <div class="flex items-center mr-6">
+          <svg class="fill-current h-5 w-auto" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z">
+              </path>
+            </g>
+          </svg>
+          <span class="ml-3">13 people are Tweeting about this</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flex sm:gap-4 sm:self-center sm:ml-20 order-1 sm:order-2">
+
+      <div class="shadow-md bg-white rounded-2xl shadow-primary">
+        <div class="px-4">
+          <h1 class="mt-3 text-gray-800 text-2xl font-bold my-2">Expande tus
+            conocimientos</h1>
+          <p class="text-gray-700 mb-2">Usa nuestra plataforma y explora sobre los diferentes tipos de aves, ¡También
+            puedes escuchar sus sonidos!</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- comments section -->
+
+  <div class="flex justify-around flex-col p-10 pt-0 sm:gap-10 sm:flex-row">
+
+    <!-- comment 1 -->
+
+    <div class='flex max-w-xl mt-10 bg-white shadow-md shadow-xl rounded-lg overflow-hidden mx-auto'>
+      <div class='flex items-center w-full'>
+        <div class='w-full'>
+          <div class="flex flex-row mt-2 px-2 py-3 mx-3">
+            <div class="w-auto h-auto rounded-full border-2 border-pink-500">
+              <img class='w-12 h-12 object-cover rounded-full shadow cursor-pointer' alt='User avatar'
+                src='./assets/styles/images/usuario1.jpg'>
+            </div>
+            <div class="flex flex-col mb-2 ml-4 mt-1">
+              <div class='text-gray-600 text-sm font-semibold'>Sara García</div>
+              <div class='flex w-full mt-1'>
+                <div class='text-blue-700 font-base text-xs mr-1 cursor-pointer'>
+                  Valencia
+                </div>
+                <div class='text-gray-400 font-thin text-xs'>
+                  • 10 minutes ago
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="border-b border-gray-100"></div>
-        <div class='text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2'><img class="rounded"
-            src="./assets/styles/images/nidoarbol.jpg"></div>
-        <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>Ayuda para identificar este pájaro</div>
-        <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>Encontré este nido en el árbol de mi casa,
-          ¿Alguien sabe que tipo de ave es?</div>
-        <div class="flex justify-start mb-4 border-t border-gray-100">
-          <div class="flex w-full mt-1 pt-2 pl-5">
-            <span
-              class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-              </svg>
-            </span>
-            <div class="text-sm">Inicia sesión para <br> guardar tus favoritos</div>
+          <div class="border-b border-gray-100"></div>
+          <div class='text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2'><img class="rounded"
+              src="./assets/styles/images/nidoarbol.jpg"></div>
+          <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>Ayuda para identificar este pájaro</div>
+          <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>Encontré este nido en el árbol de mi casa,
+            ¿Alguien sabe que tipo de ave es?</div>
+          <div class="flex justify-start mb-4 border-t border-gray-100">
+            <div class="flex w-full mt-1 pt-2 pl-5">
+              <span
+                class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </span>
+              <div class="text-sm">Inicia sesión para <br> guardar tus favoritos</div>
+            </div>
+            <div class="flex justify-end w-full mt-1 pt-2 pr-5">
+              <span
+                class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+              </span>
+              <span
+                class="transition ease-out duration-300 hover:bg-blue-500 bg-blue-600 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div class="flex justify-end w-full mt-1 pt-2 pr-5">
-            <span
-              class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-              </svg>
-            </span>
-            <span
-              class="transition ease-out duration-300 hover:bg-blue-500 bg-blue-600 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div class="flex w-full border-t border-gray-100">
-          <div class="mt-3 mx-5 flex flex-row items-center">
-            <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g id="🎳-Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Square_Timeline" transform="translate(-312.000000, -746.000000)">
-                  <g id="Post-1" transform="translate(280.000000, 227.000000)">
-                    <g id="Post-Action" transform="translate(0.000000, 495.000000)">
-                      <g transform="translate(30.000000, 21.000000)" id="Comment">
-                        <g>
-                          <g id="ic_comment-Component/icon/ic_comment">
-                            <g id="Comments">
-                              <polygon id="Path" points="0 0 24 0 24 25 0 25"></polygon>
-                              <g id="iconspace_Chat-3_25px" transform="translate(2.000000, 3.000000)" fill="#92929D">
-                                <path
-                                  d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
-                                  id="Path"></path>
+          <div class="flex w-full border-t border-gray-100">
+            <div class="mt-3 mx-5 flex flex-row items-center">
+              <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="🎳-Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Square_Timeline" transform="translate(-312.000000, -746.000000)">
+                    <g id="Post-1" transform="translate(280.000000, 227.000000)">
+                      <g id="Post-Action" transform="translate(0.000000, 495.000000)">
+                        <g transform="translate(30.000000, 21.000000)" id="Comment">
+                          <g>
+                            <g id="ic_comment-Component/icon/ic_comment">
+                              <g id="Comments">
+                                <polygon id="Path" points="0 0 24 0 24 25 0 25"></polygon>
+                                <g id="iconspace_Chat-3_25px" transform="translate(2.000000, 3.000000)" fill="#92929D">
+                                  <path
+                                    d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
+                                    id="Path"></path>
+                                </g>
                               </g>
                             </g>
                           </g>
@@ -443,71 +515,328 @@
                     </g>
                   </g>
                 </g>
-              </g>
-            </svg>
-            <div class="ml-1 text-black font-thin text-ms"> 5</div>
-            <div class="ml-1 text-black font-thin text-ms">Comentarios</div>
-
-
-
-
-          </div>
-
-          <div class="mt-3 mx-5 w-full flex justify-end">
-
-            <div class='flex text-gray-700 font-normal text-sm rounded-md mb-2 mr-4 items-center'>
-              <svg xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-red-500 transition ease-out duration-300 hover:bg-red-300  text-center rounded-full text-gray-100 cursor-pointer"
-                viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                  clip-rule="evenodd" />
               </svg>
-              <div class="ml-1 text-black font-thin text-ms"> 120 </div>
-              <div class="ml-1 text-black font-thin text-ms"> Likes</div>
+              <div class="ml-1 text-black font-thin text-ms"> 5</div>
+              <div class="ml-1 text-black font-thin text-ms">Comentarios</div>
+
+
+
+
+            </div>
+
+            <div class="mt-3 mx-5 w-full flex justify-end">
+
+              <div class='flex text-gray-700 font-normal text-sm rounded-md mb-2 mr-4 items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-red-500 transition ease-out duration-300 hover:bg-red-300  text-center rounded-full text-gray-100 cursor-pointer"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd" />
+                </svg>
+                <div class="ml-1 text-black font-thin text-ms"> 120 </div>
+                <div class="ml-1 text-black font-thin text-ms"> Likes</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
-          <img class='w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
-            src='./assets/styles/images/usuario4.jpg'>
-          <span class="absolute inset-y-0 right-0 flex items-center pr-6">
-            <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
-              <svg class="w-6 h-6 transition  ease-out duration-300 hover:text-blue-500 text-gray-400"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-
-            </button>
-          </span>
-          <input type="search"
-            class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
-            style="border-radius: 25px" placeholder="Post a comment..." autocomplete="off">
-
-        </div>
-        <div>
-          <img class='flex-nowrap w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
-            src='./assets/styles/images/usuario4.jpg'>
           <div
-            class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue">
+            class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
+            <img class='w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
+              src='./assets/styles/images/usuario4.jpg'>
+            <span class="absolute inset-y-0 right-0 flex items-center pr-6">
+              <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
+                <svg class="w-6 h-6 transition  ease-out duration-300 hover:text-blue-500 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+              </button>
+            </span>
+            <input type="search"
+              class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
+              style="border-radius: 25px" placeholder="Post a comment..." autocomplete="off">
+
           </div>
         </div>
 
       </div>
 
     </div>
+
+
+
+    <!-- comment 2 -->
+
+
+    <div class='flex max-w-xl mt-10 bg-white shadow-md  shadow-xl rounded-lg overflow-hidden mx-auto'>
+      <div class='flex items-center w-full'>
+        <div class='w-full'>
+          <div class="flex flex-row mt-2 px-2 py-3 mx-3">
+            <div class="w-auto h-auto rounded-full border-2 border-pink-500">
+              <img class='w-12 h-12 object-cover rounded-full shadow cursor-pointer' alt='User avatar'
+                src='./assets/styles/images/usuario3.jpg'>
+            </div>
+            <div class="flex flex-col mb-2 ml-4 mt-1">
+              <div class='text-gray-600 text-sm font-semibold'>Laura Torremolinos</div>
+              <div class='flex w-full mt-1'>
+                <div class='text-blue-700 font-base text-xs mr-1 cursor-pointer'>
+                  Vallecas
+                </div>
+                <div class='text-gray-400 font-thin text-xs'>
+                  • Hace un 1 día
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b border-gray-100"></div>
+          <div class='text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2'><img class="rounded"
+              src="./assets/styles/images/bird 2.jpg"></div>
+          <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>Hola a todos</div>
+          <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>Iba de excursión y vimos a este pájaro, ¿Les
+            suena?</div>
+          <div class="flex justify-start mb-4 border-t border-gray-100">
+            <div class="flex w-full mt-1 pt-2 pl-5">
+              <span
+                class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </span>
+              <div class="text-sm">Inicia sesión para <br> guardar tus favoritos</div>
+            </div>
+            <div class="flex justify-end w-full mt-1 pt-2 pr-5">
+              <span
+                class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+              </span>
+              <span
+                class="transition ease-out duration-300 hover:bg-blue-500 bg-blue-600 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex w-full border-t border-gray-100">
+            <div class="mt-3 mx-5 flex flex-row items-center">
+              <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="🎳-Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Square_Timeline" transform="translate(-312.000000, -746.000000)">
+                    <g id="Post-1" transform="translate(280.000000, 227.000000)">
+                      <g id="Post-Action" transform="translate(0.000000, 495.000000)">
+                        <g transform="translate(30.000000, 21.000000)" id="Comment">
+                          <g>
+                            <g id="ic_comment-Component/icon/ic_comment">
+                              <g id="Comments">
+                                <polygon id="Path" points="0 0 24 0 24 25 0 25"></polygon>
+                                <g id="iconspace_Chat-3_25px" transform="translate(2.000000, 3.000000)" fill="#92929D">
+                                  <path
+                                    d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
+                                    id="Path"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <div class="ml-1 text-black font-thin text-ms"> 5</div>
+              <div class="ml-1 text-black font-thin text-ms">Comentarios</div>
+
+            </div>
+
+            <div class="mt-3 mx-5 w-full flex justify-end">
+
+              <div class='flex text-gray-700 font-normal text-sm rounded-md mb-2 mr-4 items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-red-500 transition ease-out duration-300 hover:bg-red-300  text-center rounded-full text-gray-100 cursor-pointer"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd" />
+                </svg>
+                <div class="ml-1 text-black font-thin text-ms"> 50 </div>
+                <div class="ml-1 text-black font-thin text-ms"> Likes</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
+            <img class='w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
+              src='./assets/styles/images/usuario4.jpg'>
+            <span class="absolute inset-y-0 right-0 flex items-center pr-6">
+              <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
+                <svg class="w-6 h-6 transition  ease-out duration-300 hover:text-blue-500 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+              </button>
+            </span>
+            <input type="search"
+              class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
+              style="border-radius: 25px" placeholder="Post a comment..." autocomplete="off">
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- comment 3 -->
+
+
+
+    <div class='flex max-w-xl mt-10 bg-white shadow-md  shadow-xl rounded-lg overflow-hidden mx-auto'>
+      <div class='flex items-center w-full'>
+        <div class='w-full'>
+          <div class="flex flex-row mt-2 px-2 py-3 mx-3">
+            <div class="w-auto h-auto rounded-full border-2 border-pink-500">
+              <img class='w-12 h-12 object-cover rounded-full shadow cursor-pointer' alt='User avatar'
+                src='./assets/styles/images/usuario2.jpg'>
+            </div>
+            <div class="flex flex-col mb-2 ml-4 mt-1">
+              <div class='text-gray-600 text-sm font-semibold'>Christian Winschenhaussen</div>
+              <div class='flex w-full mt-1'>
+                <div class='text-blue-700 font-base text-xs mr-1 cursor-pointer'>
+                  Valencia
+                </div>
+                <div class='text-gray-400 font-thin text-xs'>
+                  • Hace 30 minutos
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b border-gray-100"></div>
+          <div class='text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2'><img class="rounded"
+              src="./assets/styles/images/bird 3.jpg"></div>
+          <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>No saben que encontrar</div>
+          <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>Hola amigos de avistaloo, fui buscando plata y
+            encontre oro, miren que ejemplar mas bonito</div>
+          <div class="flex justify-start mb-4 border-t border-gray-100">
+            <div class="flex w-full mt-1 pt-2 pl-5">
+              <span
+                class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </span>
+              <div class="text-sm">Inicia sesión para <br> guardar tus favoritos</div>
+            </div>
+            <div class="flex justify-end w-full mt-1 pt-2 pr-5">
+              <span
+                class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+              </span>
+              <span
+                class="transition ease-out duration-300 hover:bg-blue-500 bg-blue-600 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex w-full border-t border-gray-100">
+            <div class="mt-3 mx-5 flex flex-row items-center">
+              <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="🎳-Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Square_Timeline" transform="translate(-312.000000, -746.000000)">
+                    <g id="Post-1" transform="translate(280.000000, 227.000000)">
+                      <g id="Post-Action" transform="translate(0.000000, 495.000000)">
+                        <g transform="translate(30.000000, 21.000000)" id="Comment">
+                          <g>
+                            <g id="ic_comment-Component/icon/ic_comment">
+                              <g id="Comments">
+                                <polygon id="Path" points="0 0 24 0 24 25 0 25"></polygon>
+                                <g id="iconspace_Chat-3_25px" transform="translate(2.000000, 3.000000)" fill="#92929D">
+                                  <path
+                                    d="M10.5139395,15.2840977 L6.06545155,18.6848361 C5.05870104,19.4544672 3.61004168,18.735539 3.60795568,17.4701239 L3.60413773,15.1540669 C1.53288019,14.6559967 0,12.7858138 0,10.5640427 L0,4.72005508 C0,2.11409332 2.10603901,0 4.70588235,0 L15.2941176,0 C17.893961,0 20,2.11409332 20,4.72005508 L20,10.5640427 C20,13.1700044 17.893961,15.2840977 15.2941176,15.2840977 L10.5139395,15.2840977 Z M5.60638935,16.5183044 L9.56815664,13.4896497 C9.74255213,13.3563295 9.955971,13.2840977 10.1754888,13.2840977 L15.2941176,13.2840977 C16.7876789,13.2840977 18,12.0671403 18,10.5640427 L18,4.72005508 C18,3.21695746 16.7876789,2 15.2941176,2 L4.70588235,2 C3.21232108,2 2,3.21695746 2,4.72005508 L2,10.5640427 C2,12.0388485 3.1690612,13.2429664 4.6301335,13.28306 C5.17089106,13.297899 5.60180952,13.7400748 5.60270128,14.2810352 L5.60638935,16.5183044 Z"
+                                    id="Path"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <div class="ml-1 text-black font-thin text-ms"> 20</div>
+              <div class="ml-1 text-black font-thin text-ms">Comentarios</div>
+
+
+
+
+            </div>
+
+            <div class="mt-3 mx-5 w-full flex justify-end">
+
+              <div class='flex text-gray-700 font-normal text-sm rounded-md mb-2 mr-4 items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-red-500 transition ease-out duration-300 hover:bg-red-300  text-center rounded-full text-gray-100 cursor-pointer"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd" />
+                </svg>
+                <div class="ml-1 text-black font-thin text-ms"> 90 </div>
+                <div class="ml-1 text-black font-thin text-ms"> Likes</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
+            <img class='w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
+              src='./assets/styles/images/usuario4.jpg'>
+            <span class="absolute inset-y-0 right-0 flex items-center pr-6">
+              <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
+                <svg class="w-6 h-6 transition  ease-out duration-300 hover:text-blue-500 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+              </button>
+            </span>
+            <input type="search"
+              class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-white focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
+              style="border-radius: 25px" placeholder="Post a comment..." autocomplete="off">
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
   </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -656,8 +985,11 @@
   <!-- birds image gallery grid -->
 
 
-
-
+  <center>
+    <div class="bg-white p-4 rounded-xl shadow-md shadow-primary mx-4 mb-5 text-center w-[80%]">
+      <p>Visita nuestra galeria</p>
+    </div>
+  </center>
   <section class="pt-8 px-4">
     <div class="flex flex-wrap -mx-4">
       <div class="md:w-1/3 px-4 mb-8"><img class="rounded shadow-md" src="./assets/styles/images/bird-kingfisher.jpg"
@@ -675,6 +1007,8 @@
     </div>
   </section>
   <script type="module" defer src="./carousel.js"></script>
+  <script type="" defer src="readmorebtn.js"></script>
+  <script type="" defer src="hoverButton.js"></script>
 </body>
 
 </html>

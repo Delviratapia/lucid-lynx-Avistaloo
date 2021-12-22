@@ -68,6 +68,12 @@
    }
 }
 
+
+body{
+   background-color: #eee;
+}
+
+
 .carousel-container {
    /* overflow: hidden; */
 }
@@ -84,7 +90,7 @@
   position: relative;
   transform: scale(1);
   transform-origin: center center;
-  transition: transform .5s;
+  /* transition: transform .5s; */
   width: 100%;
 order: 2;
 }
@@ -120,8 +126,6 @@ order: 2;
    opacity: .5;
    
 }
-
-
 
 .container-twitter{
    align-content: flex-end;
@@ -199,3 +203,41 @@ order: 2;
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
    color: #428bca;
 } */
+
+.hiddenElementTweets{
+   display:none
+}
+
+.hiddenElementComments{
+   display:none
+}
+
+/* .card-active {
+   transition: 1s;
+} */
+
+.card-active {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+   height: 100%;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* @keyframes right-to-left {
+ transform {
+
+   } */
+/* } */
+/* header icons */
+
