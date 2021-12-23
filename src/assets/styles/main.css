@@ -7,12 +7,13 @@
 .navbar {
 
    & .name-logo {
-      font-size:2rem;
-   font-weighty:600;
-   color:#335963;
+      font-size: 2rem;
+      font-weighty: 600;
+      color: #335963;
    }
+
    & .searchbar-container {
-      padding-left:25px;
+      padding-left: 25px;
 
       & .searchbar-input {
          margin-top: 9%;
@@ -34,11 +35,13 @@
       }
 
    }
+
    & .nav-menu {
-      padding-left:20px;
+      padding-left: 20px;
+
       & li {
-         font-size:1.2rem;
-         color:#335963;
+         font-size: 1.2rem;
+         color: #335963;
       }
    }
 
@@ -51,17 +54,20 @@
          padding-left: 1em;
          padding-right: 1em;
          padding-top: calc(0.5em - 1px);
-         border-radius:5px;
+         border-radius: 5px;
       }
+
       & .background-solid {
-         background-color:#335963;
-         color:#FFF;
+         background-color: #335963;
+         color: #FFF;
       }
    }
+
    & .menu-mobile {
-      font-size:2rem;
+      font-size: 2rem;
    }
 }
+
 /* WIKI PAGE: SERGIO */
 
 .search-box {
@@ -307,5 +313,174 @@
    }
 }
 
+body{
+   background-color: #eee;
+}
 
+.carousel-container {
+   /* overflow: hidden; */
+}
+
+.slides {
+   display: flex;
+   justify-content: flex-start;
+   overflow: hidden;
+}
+
+.card {
+  flex-shrink: 0;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  transform-origin: center center;
+  /* transition: transform .5s; */
+  width: 100%;
+order: 2;
+}
+
+.card-active {
+   order: 1;
+}
+/* 
+.carousel-btn-left,.carousel-btn-right {
+   --button-distance: calc(100% - 18px)
+}
+
+.carousel-btn-left {
+   transform: translateX(var(--button-distance));
+}
+.carousel-btn-right {
+   transform: translateX(calc(var(--button-distance) * -1));
+} */
+
+/* Home Carousel */
+
+.carousel-box{
+   box-shadow: 5px 5px 25px #888;
+   color:#335963;
+}
+
+.carousel-container {
+   --transiton-duration: 350ms;
+   --story-count: 5;
+  
+}
+.preview-carousel button {
+   opacity: .5;
+   
+}
+
+.container-twitter{
+   align-content: flex-end;
+   justify-content: end;
+}
+
+
+
+/* carousel */
+
+/* 
+.carousel {
+   position: relative;
+   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+   margin-top: 26px;
+}
+
+.carousel-inner {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+   position: static;
+   opacity: 100;
+}
+
+.carousel-item {
+   position: absolute;
+   opacity: 0;
+   -webkit-transition: opacity 0.6s ease-out;
+   transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+   display: block;
+   height: auto;
+   max-width: 100%;
+}
+
+.carousel-control {
+
+
+.carousel-control.prev {
+   left: 2%;
+}
+
+.carousel-control.next {
+   right: 2%;
+}
+
+.carousel-control:hover {
+   background: rgba(0, 0, 0, 0.8);
+   color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+   display: block;
+}
+
+.carousel-indicators {
+
+
+.carousel-indicators li {
+   display: inline-block;
+   margin: 0 5px;
+}
+
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+   color: #428bca;
+} */
+
+.hiddenElementTweets{
+   display:none
+}
+
+.hiddenElementComments{
+   display:none
+}
+
+/* .card-active {
+   transition: 1s;
+} */
+
+.card-active {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+   height: 100%;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* @keyframes right-to-left {
+ transform {
+
+   } */
+/* } */
+/* header icons */
 
