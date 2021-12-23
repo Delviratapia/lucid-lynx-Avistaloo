@@ -9,7 +9,10 @@
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.37.2",
+<<<<<<< HEAD
     "autoprefixer": "^10.4.0",
+=======
+>>>>>>> 44f83db030ed9a3c9da4bbf007cc9a7aa6b21667
     "eslint": "7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
