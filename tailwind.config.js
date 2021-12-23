@@ -9,7 +9,10 @@ module.exports = {
       boxShadow: {
         '4xl': '0 0 20px rgba(51, 89, 99, 0.5)',
       }
+        primary: '#335963',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 };
