@@ -1,0 +1,88 @@
+[
+  {
+    "birds": [
+      {
+     "id": 1,
+     "category": "Gorriones",
+     "name": "Gorrión de garganta negra",
+     "images": [
+       {
+         "image1": "/assets/styles/images/birds/sparrow/garganta-negra-1.jpg",
+         "noimage": "/assets/styles/images/birds/no-image.jpg"
+       }
+     ],
+     "description": "El gorrión de garganta negra es una especie encontrada en los desiertos del oeste de Estados Unidos y México. Es gris con la garganta negra, con franjas blancas en el rostro. Las puntas de las plumas de su cola también son blancas. Son aves terrestres que se alimentan de insectos y semillas.",
+     "location": "EEUU",
+     "ejemplares": "4009"
+      },
+      {
+       "id": 2,
+       "category": "Gorriones",
+       "name": "Gorrión de corona blanca",
+       "images": [
+         {
+           "image1": "/assets/styles/images/birds/sparrow/gorrion-corona-blanca.jpg",
+           "noimage": "/assets/styles/images/birds/no-image.jpg"
+         }
+       ],
+       "description": "El gorrión de corona blanca es un gorrión grande con un pico pequeño y una cola larga. Su cuerpo es de un gris pálido con franjas blancas y negras en su cabeza. El gorrión de corona blanca se encuentra todo a través de los Estados Unidos en los meses de invierno y todo el año en áreas específicas del noroeste de Estados Unidos. Este gorrión elige áreas abiertas con arbustos como su hábitat y puede ser encontrado en jardines, patios y campos con hierbas. Se alimentan de semillas, fruta, granos como el trigo y la cebada y una variedad de insectos.",
+       "location": "EEUU",
+       "ejemplares": "19981"
+     },
+     {
+       "id": 3,
+       "category": "Gorriones",
+       "name": "Gorrión de corona dorada",
+       "images": [
+         {
+           "image1": "/assets/styles/images/birds/sparrow/gorrion-corona-dorada.jpg",
+           "noimage": "/assets/styles/images/birds/no-image.jpg"
+         }
+       ],
+       "description": "El gorrión de corona dorada es un pájaro grande de la familia de los gorriones con una espalda marrón con franjas negras. Su pecho y rostro es gris, con una corona amarilla de bordes negros en su cabeza. Los gorriones de corona dorada hacen su casa todo a lo largo de la costa del Pacífico, como también en Alaska y Canadá. Se alimentan de bayas, semillas, insectos y flores.",
+       "location": "ALASKA",
+       "ejemplares": "111442"
+     },
+     {
+       "id": 4,
+       "category": "Gorriones",
+       "name": "Gorrión de Chipping",
+       "images": [
+         {
+           "image1": "/assets/styles/images/birds/sparrow/gorrion-chipping.jpg",
+           "noimage": "/assets/styles/images/birds/no-image.jpg"
+         }
+       ],
+       "description": "El gorrión de Chipping es un pájaro delgado con una larga cola y un pico de tamaño medio. Es marrón con una capa colorada en su cabeza. Estos gorriones son muy comunes en Estados Unidos. Sus hábitats son áreas con mucha madera y bosques espesos. Son pájaros terrestres que se alimentan de semillas, pastos y hierbas. También incluyen pequeñas frutas e insectos en sus dietas durante la temporada de apareamiento de verano.",
+       "location": "ALASKA",
+       "ejemplares": "111442"
+     },
+     {
+       "id": 5,
+       "category": "Gorriones",
+       "name": "Gorrión de pantano",
+       "images": [
+         {
+           "noimage": "/assets/styles/images/birds/no-image.jpg"
+         }
+       ],
+       "description": "Los gorriones de pantano pueden encontrarse en sus hábitats de tierras húmedas, como los pantanos, las praderas y marismas de agua dulce y en todo Estados Unidos. Se alimentan de semillas, frutos e invertebrados acuáticos. El gorrión de pantano tiene un pecho gris, la garganta blanca y el vientre y alas rojizas.",
+       "location": "EEUU",
+       "ejemplares": "44421"
+     },
+     {
+       "id": 6,
+       "category": "Gorriones",
+       "name": "Gorrión cantor",
+       "images": [
+         {
+           "noimage": "/assets/styles/images/birds/no-image.jpg"
+         }
+       ],
+       "description": "Los gorriones cantores son una especie de gorrión fuertes que son de color marrón con una mancha marrón grande, central en el pecho. Generalmente, se encuentran en los Estados Unidos y Canadá. Ellos hacen su hábitat en una variedad de áreas, incluyendo patios, desiertos, pantanos, bordes de bosque y campos de maleza. Se alimentan principalmente de semillas y frutos, pero complementan su dieta durante los meses de verano con los invertebrados, como orugas, libélulas y escarabajos",
+       "location": "EEUU Y CANADA",
+       "ejemplares": "332156"
+     }
+    ]
+  }
+ ]
