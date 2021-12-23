@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avistaloo</title>
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <script type="module" src="./landing.js"></script>
+</head>
+<body class="bg-color-domi">
+
+  <nav class="navbar flex items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+      
+    <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
+      <a class="navbar-item transition duration-500 hover:scale-125" href="#">
+        <img width="80px" src="/assets/styles/images/logo.png" alt="">
+      </a>
+      <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+    </div>
+    
+    <div class="block lg:hidden">
+      <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <title>Menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
+    
+  <div id="nav-content" class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
+    <hr class="block lg:hidden mb-4">
+     <div class="text-sm lg:flex-grow">
+        <a href="Home" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</a>
+        <a href="#Que-es" class="block text-xl mt-4 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Qué es?</a>
+        <a href="#Caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</a>
+     </div>
+     <div class="flex flex-col lg:flex-row items-center justify-center block pb-1">
+        <a href="#" class="show-modal block w-32 my-4 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</a>
+          <!--Modal Login-->
+        <div class="modal hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
+          <!-- modal -->
+          <div class="bg-white shadow-md border border-primary-color rounded-lg w-96 p-5 sm:p-7 lg:p-9">
+            <form class="space-y-6" action="#">
+              <!-- modal header -->
+              <div class="border-b py-2 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-primary-color">Iniciar sesión</h3>
+                <button class="text-primary-color close-modal">&cross;</button>
+              </div>
+              <!-- modal body -->
+              <div>
+                <label for="email" class="text-sm font-bold text-primary-color">Email</label>
+                <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" placeholder="usuario@gmail.com" required="">
+              </div>
+              <div>
+                <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" required="">
+              </div>
+              <div class="flex items-start">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input id="remember" aria-describedby="remember" type="checkbox" class=" dark:border-gray-600 focus:ring-primary-color ring-offset-primary-color">
+                                </div>
+                    <div class="text-sm ml-3">
+                      <label for="remember" class="font-bold text-primary-color">Recuerdame</label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Iniciar sesión</button>
+                <div class="text-sm font-bold text-primary-color">
+                  ¿No registrado? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Crear cuenta</a>
+                </div>
+              </form>
+          </div>
+        </div>
+
+        <a href="#" class="show-modal-register block w-32 my-4 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
+          <!--Modal Register-->
+        <div class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
+          <!-- modal -->
+          <div class="bg-white shadow-md border border-gray-200 rounded-lg w-96 p-5 sm:p-7 lg:p-9  dark:border-primary-color">
+            <form class="space-y-6" action="#">
+              <!-- modal header -->
+              <div class="border-b py-2 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-primary-color">Registrarse</h3>
+                <button class="text-primary-color close-modal-register">&cross;</button>
+              </div>
+              <!-- modal body -->
+              <div>
+                <label for="name" class="text-sm font-bold text-primary-color">Nombre</label>
+                <input type="name" name="name" id="name" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su nombre" required="">
+              </div>
+              <div>
+                <label for="user" class="text-sm font-bold text-primary-color">Usuario</label>
+                <input type="user" name="user" id="user" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su usuario" required="">
+              </div>
+              <div>
+                <label for="email" class="text-sm font-bold text-primary-color">Email</label>
+                <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su email" required="">
+              </div>
+              <div>
+                <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="Ingrese una contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
+              </div>
+              <div>
+                <label for="confirm-password" class="text-sm font-bold text-primary-color block mb-2">Confirmar contraseña</label>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirme su contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
+              </div>
+              <div class="flex items-start">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="remember"
+                      aria-describedby="remember"
+                      type="checkbox"
+                      class="focus:ring-primary-color ring-offset-primary-color"
+                    />
+                  </div>
+                  <div class="text-sm">
+                    <label for="remember" class="font-bold text-primary-color"
+                      >Estoy de acuerdo con los
+                      <a
+                        href="#"
+                        class="text-blue-700 hover:underline dark:text-blue-500"
+                        >términos y condiciones</a
+                      ></label
+                    >
+                  </div>
+                </div>
+              </div>
+                <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Registrarse</button>
+                <div class="text-sm font-bold text-primary-color">
+                  ¿Tienes una cuenta? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar sesión</a>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+  </nav>
+
+  <header>
+    <div class="headerLanding py-20 bg-no-repeat bg-fixed" style="background-image: url('/assets/styles/images/background-header.png')">
+        <div class="headerContent container m-auto text-center px-6 opacity-100">
+          <h1 class="text-4xl mb-12 font-bold mb-12 text-white">¡BIENVENIDO OBSERVADOR!</h1>
+          <h3 class="text-2xl mb-8 text-white">Te presentamos Avistaloo</h3>
+          <h3 class="text-2xl mb-20 text-white">La web donde podrás subir tus avistamientos y compartirlos con la comunidad</h3>
+          <button class="show-modal-unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">UNIRSE AHORA</button>
+          <!--Modal Unirse-->
+          <div class="modal-unirse hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
+                <!-- modal -->
+                <div class="bg-white shadow-md border border-gray-200 rounded-lg w-96 p-5 sm:p-7 lg:p-9  dark:border-primary-color">
+                  <form class="space-y-6" action="#">
+                    <!-- modal header -->
+                    <div class="border-b py-2 flex justify-between items-center">
+                      <h3 class="font-bold text-lg text-primary-color">Registrarse</h3>
+                      <button class="text-primary-color close-modal-unirse">&cross;</button>
+                    </div>
+                    <!-- modal body -->
+                    <div>
+                      <label for="name" class="text-sm font-bold text-primary-color">Nombre</label>
+                      <input type="name" name="name" id="name" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su nombre" required="">
+                    </div>
+                    <div>
+                      <label for="user" class="text-sm font-bold text-primary-color">Usuario</label>
+                      <input type="user" name="user" id="user" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su usuario" required="">
+                    </div>
+                    <div>
+                      <label for="email" class="text-sm font-bold text-primary-color">Email</label>
+                      <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su email" required="">
+                    </div>
+                    <div>
+                      <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
+                      <input type="password" name="password" id="password" placeholder="Ingrese una contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
+                    </div>
+                    <div>
+                      <label for="confirm-password" class="text-sm font-bold text-primary-color block mb-2">Confirmar contraseña</label>
+                      <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirme su contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
+                    </div>
+                      <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Registrarse</button>
+                      <div class="text-sm font-bold text-primary-color">
+                        ¿Tienes una cuenta? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar sesión</a>
+                      </div>
+                    </form>
+                </div>
+          </div>
+
+        </div>
+      </div>
+  </header>
+
+  <section class="container mx-auto px-6 py-10 text-primary-color text-center">
+    <h2 id="Que-es" class="text-4xl font-bold text-center mb-12">¿Qué es Avistaloo?</h2>
+    <p class="text-2xl mb-24">Avistaloo es la app ideal para avistar cualquier tipo de ave que esté por tu zona, compartir tus avistamientos, disfrutar de nuestra wiki y comentar los avistamientos de otros usuarios y mucho más.</p>
+    <h2 id="Caracteristicas" class="text-4xl font-bold text-center mb-10">Características</h2>
+    <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-2/6 px-8">
+            <img class="lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="https://cdn-icons-png.flaticon.com/512/2196/2196168.png" alt="avista-aves">
+          </div>
+          <div class="w-full md:w-4/6 px-2">
+            <h4 class="text-3xl font-bold mb-3">
+              Avista aves
+            </h4>
+            <p class="text-2xl mb-8">
+              Identifica las aves que estén en tu zona, sácales una foto y súbelas para que los demás puedan ver tus avistamientos y poder investigar por su cuenta. ¡Sal y avístalos a todos!
+            </p>
+          </div>
+    </div>
+    <div class="flex items-center flex-wrap mb-10">
+          <div class="w-full md:w-4/6 px-4">
+            <h4 class="text-3xl font-bold mb-3">
+              Explora la comunidad
+            </h4>
+            <p class="text-2xl mb-8">
+              Busca, encuentra y comenta los avistamientos de los demás. Ellos también podrán encontrar tu perfil y comentar tus avistamientos. Suena bien, ¿no?
+            </p>
+          </div>
+          <div class="w-full md:w-2/6 px-4">
+            <img class="lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="https://cdn-icons.flaticon.com/png/512/3285/premium/3285018.png?token=exp=1639857178~hmac=eb9d95ec853c97ee836e881cce8daa50" alt="explora-comunidad">
+          </div>
+    </div>
+    <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-2/6 px-8">
+            <img class="lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="https://cdn-icons-png.flaticon.com/512/4003/4003646.png" alt="localiza-aves">
+          </div>
+          <div class="w-full md:w-4/6 px-2">
+            <h4 class="text-3xl font-bold mb-3">
+              Localiza aves cerca de ti
+            </h4>
+            <p class="text-2xl mb-8">
+              Imagina irte de senderismo y querer ver las aves que hay por la zona... ¡Con Avistaloo es posible! Gracias a la geolocalización, podrás ver los avistamientos de otras personas que estén cerca de ti.
+            </p>
+          </div>
+    </div>
+    <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-4/6 px-4">
+            <h4 class="text-3xl font-bold mb-3">
+              Explora la wiki
+            </h4>
+            <p class="text-2xl mb-8">
+              Tenemos a tus disposición una fantástica wiki en la que podrás ver cada ave, raza, color, tipo de plumaje, zonas donde habita... y lo mejor: puedes escuchar el tipo de sonido que emiten.
+            </p>
+          </div>
+          <div class="w-full md:w-2/6 px-4">
+            <img class="lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="https://cdn-icons.flaticon.com/png/512/3696/premium/3696879.png?token=exp=1639857430~hmac=2ef57a27962ece0c05549f9ce6d601e6" alt="explora-wiki">
+          </div>
+    </div>
+    <div class="flex items-center flex-wrap mb-20">
+          <div class="w-full md:w-2/6 px-6 py-6">
+            <img class="lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="https://cdn-icons.flaticon.com/png/512/1149/premium/1149050.png?token=exp=1640008947~hmac=67a727dbd0783ed04fe9d6e02ebc3c93" alt="avistamientos-semana">
+          </div>
+          <div class="w-full md:w-4/6 px-2">
+            <h4 class="text-3xl font-bold mb-3">
+              “3087 avistamientos esta semana por nuestros usuarios”
+            </h4>
+            <p class="text-2xl mb-8">
+              Únete a nuestra comunidad y descubre los animales más importantes de nuestra península. Contacta con otros aficionados y sube tus avistamientos a nuestra red.
+            </p>
+            <div>
+              <a href="https://www.apple.com/es/app-store/">
+                <button>
+                  <img src="./assets/styles/images/app_store.png">
+                </button>
+              </a>
+              <a href="https://play.google.com/store?hl=es&gl=US">
+                <button>
+                  <img width="200px" height="60px" src="https://seeklogo.com/images/G/get-it-on-google-play-badge-logo-8CDE582776-seeklogo.com.png">
+                </button>
+              </a>
+            </div>
+          </div>
+    </div>
+  </section>
+
+  <footer
+      class="
+        flex flex-row
+        justify-around
+        items-center
+        navxs:flex-col
+        navsm:flex-col
+        gap-y-6 gap-x-6
+        py-2
+        bg-[#335963]
+      "
+    >
+      <div class="flex flex-row gap-x-3 mt-4 md:mt-0">
+        <!-- Añadir los enlaces de las RRSS -->
+        <a href="https://www.facebook.com/profile.php?id=100075282414569"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/fcbk.png"
+            alt="Logo de Facebook"
+        /></a>
+        <a href="https://www.pinterest.com/"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/pntrst.png"
+            alt="Logo de Pinterest"
+        /></a>
+        <a href="https://www.instagram.com/avistaloo/"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/instg.png"
+            alt="Logo de Instagram"
+        /></a>
+        <a href="https://twitter.com/avistaloo"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/twtr.png"
+            alt="Logo de Twitter"
+        /></a>
+      </div>
+      <div class="flex flex-col items-center flex-nowrap mt-4">
+        <img
+          id="footer-logo"
+          src="./assets/styles/images/logo.png"
+          alt="Logo de Avistaloo"
+        />
+        <p class="text-white text-sm mb-10">© 2021 Avistaloo</p>
+      </div>
+      <div class="flex flex-col items-center text-white font-medium mb-4 md:mb-0">
+        <!-- Añadir los enlaces del footer -->
+        <a href="./aboutus.html" class="">¿Quiénes somos?</a>
+        <a href="./privacy.html" class="">Política de privacidad</a>
+        <a href="#" class="show-modal-contact hover:text-white">Contáctanos</a>
+        <!--Modal Contact-->
+        <div
+          class="
+            modal-contact
+            hidden
+            h-screen
+            w-full
+            fixed
+            left-0
+            top-0
+            flex
+            justify-center
+            items-center
+            bg-black bg-opacity-70
+          "
+        >
+          <!-- modal -->
+          <div
+            class="
+              bg-white
+              shadow-md
+              border border-primary-color
+              rounded-lg
+              w-96
+              p-5
+              sm:p-7
+              lg:p-9
+            "
+          >
+            <form class="space-y-6" action="#">
+              <!-- modal header -->
+              <div class="border-b py-2 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-primary-color">
+                  Contáctanos
+                </h3>
+                <button class="text-primary-color close-modal-contact">
+                  &cross;
+                </button>
+              </div>
+              <!-- modal body -->
+              <div>
+                <label
+                  for="name-contact"
+                  class="text-sm font-bold text-primary-color"
+                  >Nombre</label
+                >
+                <input
+                  type="name"
+                  name="name-contact"
+                  id="name-contact"
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  placeholder="Ingrese su nombre"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="email-contact"
+                  class="text-sm font-bold text-primary-color"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email-contact"
+                  id="email-contact"
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  placeholder="usuario@gmail.com"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="asunto-contact"
+                  class="text-sm font-bold text-primary-color"
+                  >Asunto</label
+                >
+                <input
+                  type="name"
+                  name="asunto-contact"
+                  id="asunto-contact"
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  placeholder=""
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="text-sm font-bold text-primary-color"
+                  >Mensaje</label
+                >
+                <textarea
+                  rows="5"
+                  name="message"
+                  id="message"
+                  placeholder="Escribe aquí tu mensaje..."
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  required=""
+                ></textarea>
+              </div>
+              <div class="flex items-start">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="remember"
+                      aria-describedby="remember"
+                      type="checkbox"
+                      class="focus:ring-primary-color ring-offset-primary-color"
+                    />
+                  </div>
+                  <div class="text-sm ml-3">
+                    <label for="remember" class="font-bold text-primary-color"
+                      >Estoy de acuerdo con los
+                      <a
+                        href="#"
+                        class="text-blue-700 hover:underline dark:text-blue-500"
+                        >términos y condiciones</a
+                      ></label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="flex">
+                <button
+                  type="submit"
+                  class="
+                    w-1/2
+                    mx-1
+                    px-4
+                    py-2
+                    hover:text-primary-color hover:bg-white hover:border
+                    border-primary-color
+                    text-white
+                    border border-primary-color
+                    bg-primary-color
+                    rounded
+                  "
+                >
+                  Enviar
+                </button>
+                <button
+                  type="submit"
+                  class="
+                    w-1/2
+                    px-4
+                    py-2
+                    hover:text-white hover:bg-red-400 hover:border
+                    border-red-600
+                    text-white
+                    border border-red-600
+                    bg-red-600
+                    rounded
+                    close-modal-contact
+                  "
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+<script type="module" src="landing.js"></script>
+
+</body>
+</html>
