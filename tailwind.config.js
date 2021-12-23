@@ -5,6 +5,8 @@ module.exports = {
       colors:{
         'primary-color': '#335963',
         'color-domi': '#EEE',
+        primary: '#335963',
+        'avistaloo': '#335963',
       },
       screens: {
         navxs: { min: "0px", max: "336px" },
@@ -17,7 +19,10 @@ module.exports = {
       },
       backgroundImage:{
         'header-background': "url('/src/assets/styles/images/background-header.jpg')",
-      }
+      },
+      boxShadow: {
+        '4xl': '0 0 20px rgba(51, 89, 99, 0.5)',
+      },
     },
   },
   plugins: [],
