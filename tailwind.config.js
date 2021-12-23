@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
@@ -5,6 +6,11 @@ module.exports = {
       colors:{
         'primary-color': '#335963',
         'color-domi': '#EEE',
+        'avistaloo': '#335963',
+        primary: '#335963',
+      },
+      boxShadow: {
+        '4xl': '0 0 20px rgba(51, 89, 99, 0.5)',
       },
       screens: {
         navxs: { min: "0px", max: "336px" },
@@ -20,5 +26,6 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 };

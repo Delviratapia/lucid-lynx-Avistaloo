@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avistaloo</title>
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <section class="container mx-auto p-5">
+      <div class="top-page flex items-center gap-10">
+        <!-- <div class="menu-bars">
+          <nav role="navigation">
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <a href="#"><li>Home</li></a>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Info</li></a>
+                <a href="#"><li>Contact</li></a>
+                <a href=""><li>Show me more</li></a
+                >
+              </ul>
+            </div>
+          </nav>
+        </div> -->
+        <div class="search-box grow">
+          <form onsubmit="event.preventDefault();" role="search">
+            <input
+              id="search"
+              type="search"
+              placeholder="Buscar"
+              autofocus
+              required
+            />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="container mx-auto p-5">
+      <div class="text-center mb-10 text-3xl">
+        <h2>Categoría: Gorriones</h2>
+      </div>
+      <div class="cards grid grid-cols-1 md:grid-cols-3 gap-10">
+      </div>
+    </section>
+    <section class="button-navigation container mx-auto p-5">
+      <div class="block sm:flex justify-between">
+        <div class="total-birds px-4 py-2 text-gray-700 bg-gray-200 rounded-md m-4">
+          Pajaros encontrados: 6/276
+        </div>
+        <div class="flex items-center space-x-1 justify-center m-4">
+          <a
+            href="#"
+            class="
+              flex
+              items-center
+              px-4
+              py-2
+              text-gray-500
+              bg-gray-300
+              rounded-md
+            "
+            >Anterior</a
+          >
+          <a
+            href="#"
+            class="
+              px-4
+              py-2
+              text-gray-700
+              bg-gray-200
+              rounded-md
+              hover:bg-blue-400 hover:text-white
+            "
+            >1</a
+          >
+          <a
+            href="#"
+            class="
+              px-4
+              py-2
+              text-gray-700
+              bg-gray-200
+              rounded-md
+              hover:bg-blue-400 hover:text-white
+            "
+            >2</a
+          >
+          <a
+            href="#"
+            class="
+              px-4
+              py-2
+              text-gray-700
+              bg-gray-200
+              rounded-md
+              hover:bg-blue-400 hover:text-white
+            "
+            >3</a
+          >
+          <a
+            href="#"
+            class="
+              px-4
+              py-2
+              font-bold
+              text-gray-500
+              bg-gray-300
+              rounded-md
+              hover:bg-blue-400 hover:text-white
+            "
+            >Siguiente</a
+          >
+        </div>
+      </div>
+    </section>
+    <div class="modal">
+      <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+		style="background: rgba(0,0,0,.7);">
+		<div
+			class="border border-teal-500 shadow-lg modal-container bg-white w-11/12  mx-auto rounded shadow-lg z-50 overflow-y-auto">
+			<div class="modal-content text-left">
+				<!--Title-->
+				<div class="flex justify-between items-center py-3 px-6 bg-slate-200 mb-5 sticky top-0">
+					<p class="text-2xl font-bold name-animal">Gorrión</p>
+					<div class="modal-close cursor-pointer z-50">
+						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+							viewBox="0 0 18 18">
+							<path
+								d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+							</path>
+						</svg>
+					</div>
+				</div>
+				<!--Body-->
+            <div class="body-card px-6">
+				<div class="flex gap-5 flex-col lg:flex-row">
+               <div class="image-card">
+                  <img class="m-auto image-animal" width="500" src="https://okdiario.com/img/2020/02/24/-como-saber-si-un-pajaro-es-macho-o-hembra_-655x368.jpg" alt="">
+               </div>
+               <div class="box-details">
+                  <div class="description description-animal">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A officiis reprehenderit voluptas, nulla odio excepturi adipisci quod doloremque maxime nostrum cum quia sapiente ipsam. Voluptatem perspiciatis ipsa nihil cupiditate nemo!</p>
+                  </div>
+                  <div class="details mt-5">
+                     <p><span class="font-bold">Localización: </span><span class="location-animal">Ebro</span></p>
+                     <p><span class="font-bold">Ejemplares descubiertos: </span><span class="ejemplares-animal">876,198</span></p>
+                  </div>
+               </div>
+				</div>
+            <div class="map-location w-full mt-5">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48320.39666380446!2d-73.965441!3d40.805449!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63c75af2d65%3A0xf45542f6cb090cc9!2s2880%20Broadway%2C%20New%20York%2C%20NY%2010025!5e0!3m2!1ses!2sus!4v1639676876735!5m2!1ses!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+         </div>
+				<!--Footer-->
+				<div class="flex justify-end m-6">
+					<button
+						class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">Salir</button>
+				</div>
+			</div>
+	    	</div>
+    	</div>
+  </div>
+  </body>
+  <script src="/js/wiki.js"></script>
+</html>

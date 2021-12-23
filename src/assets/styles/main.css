@@ -41,12 +41,13 @@
    background: white;
 
    & .name-logo {
-      font-size:2rem;
-   font-weighty:600;
-   color:#335963;
+      font-size: 2rem;
+      font-weighty: 600;
+      color: #335963;
    }
+
    & .searchbar-container {
-      padding-left:25px;
+      padding-left: 25px;
 
       & .searchbar-input {
          margin-top: 9%;
@@ -68,11 +69,13 @@
       }
 
    }
+
    & .nav-menu {
-      padding-left:20px;
+      padding-left: 20px;
+
       & li {
-         font-size:1.2rem;
-         color:#335963;
+         font-size: 1.2rem;
+         color: #335963;
       }
    }
 
@@ -85,14 +88,433 @@
          padding-left: 1em;
          padding-right: 1em;
          padding-top: calc(0.5em - 1px);
-         border-radius:5px;
+         border-radius: 5px;
       }
+
       & .background-solid {
-         background-color:#335963;
-         color:#FFF;
+         background-color: #335963;
+         color: #FFF;
       }
    }
+
    & .menu-mobile {
-      font-size:2rem;
+      font-size: 2rem;
    }
 }
+
+/* WIKI PAGE: SERGIO */
+
+.search-box {
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 2px;
+   border-radius:10px;
+   & form {
+      position: relative;
+      background: #FFF;
+      border-radius: 0.7rem;
+    }
+    & input, button {
+      height: 75px;
+      border: 0;
+      font-size: 1.8rem;
+    }
+    & input[type="search"] {
+      outline: 0;
+      width: 100%;
+      padding: 0 1.6rem;
+      border-radius: 10px;
+      transition: all 0.3s;
+      transition-property: width;
+      position: relative;
+    }
+    & button {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5rem;
+      font-weight: bold;
+      background: #FFF;
+      border-radius: 0 .7rem .7rem 0;
+      transition:all 0.2s;
+    }
+    & button:hover {
+       background-color:#335963;
+       border:1px solid #335963
+    }
+    & button i {
+       color:#335963;
+    }
+    & button:hover i {
+       color:#FFF;
+    }
+    & input:not(:placeholder-shown) {
+      border-radius: .7rem 0 0 .7rem;
+      width: calc(100% - 5rem);
+      + button {
+        display: block;
+      }
+    }
+    & label {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
+}
+/* MENU HAMBURGUER CSS */
+.menu-bars {
+   & #menuToggle {
+   display: block;
+   position: relative;
+   z-index: 1;
+
+   -webkit-user-select: none;
+   user-select: none;
+   }
+
+   & #menuToggle a {
+   text-decoration: none;
+   color: #FFF;
+
+   transition: color 0.3s ease;
+   }
+
+   & #menuToggle a:hover {
+   color: tomato;
+   }
+
+   & #menuToggle input {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+
+   cursor: pointer;
+
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+
+   -webkit-touch-callout: none;
+   }
+
+   & #menuToggle span {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+
+   background: #335963;
+   border-radius: 3px;
+
+   z-index: 1;
+
+   transform-origin: 4px 0px;
+
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+   }
+
+   & #menuToggle span:first-child {
+   transform-origin: 0% 0%;
+   }
+
+   & #menuToggle span:nth-last-child(2) {
+   transform-origin: 0% 100%;
+   }
+
+   & #menuToggle input:checked ~ span {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #FFF;
+   }
+
+   & #menuToggle input:checked ~ span:nth-last-child(3) {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+   }
+
+   & #menuToggle input:checked ~ span:nth-last-child(2) {
+   transform: rotate(-45deg) translate(0, -1px);
+   }
+
+   & #menu {
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+   position: fixed;
+   left:0;
+   width: 300px;
+   height:100vw;
+   margin: -100px 0 0 0;
+   padding: 25px;
+   padding-top: 100px;
+
+   background: #335963;
+   -webkit-font-smoothing: antialiased;
+   transform: translate(-100%, 0);
+   transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+   }
+
+   #menu li {
+   padding: 10px 0;
+   font-size: 22px;
+   }
+
+   #menuToggle input:checked ~ ul {
+   transform: none;
+   }
+}
+/* MODAL WIKI CSS */
+
+.animated {
+   -webkit-animation-duration: 1s;
+   animation-duration: 1s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+}
+
+.animated.faster {
+   -webkit-animation-duration: 500ms;
+   animation-duration: 500ms;
+}
+
+.fadeIn {
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
+}
+
+.fadeOut {
+   -webkit-animation-name: fadeOut;
+   animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fadeOut {
+   from {
+      opacity: 1;
+   }
+
+   to {
+      opacity: 0;
+   }
+}
+
+.cards {
+   & .card-clickable {
+      transition: all 0.2s;
+      color:#335963;
+      cursor:pointer;
+   }
+   & .card-clickable:hover {
+      transform:scale(1.02);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   }
+   & img {
+      height: 300px;
+      object-fit:cover;
+   }
+}
+
+.modal-content {
+   max-height: calc(95vh);
+   overflow-y: auto;
+   & .box-details {
+      border-left:2px solid;
+      padding-left:15px;
+      width:70%;
+   }
+}
+@media(max-width:992px) {
+   .modal-content {
+      & .box-details {
+         border-left:0;
+         padding-left:0;
+      }
+   }
+}
+
+body{
+   background-color: #eee;
+}
+
+.carousel-container {
+   /* overflow: hidden; */
+}
+
+.slides {
+   display: flex;
+   justify-content: flex-start;
+   overflow: hidden;
+}
+
+.card {
+  flex-shrink: 0;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  transform-origin: center center;
+  /* transition: transform .5s; */
+  width: 100%;
+order: 2;
+}
+
+.card-active {
+   order: 1;
+}
+/* 
+.carousel-btn-left,.carousel-btn-right {
+   --button-distance: calc(100% - 18px)
+}
+
+.carousel-btn-left {
+   transform: translateX(var(--button-distance));
+}
+.carousel-btn-right {
+   transform: translateX(calc(var(--button-distance) * -1));
+} */
+
+/* Home Carousel */
+
+.carousel-box{
+   box-shadow: 5px 5px 25px #888;
+   color:#335963;
+}
+
+.carousel-container {
+   --transiton-duration: 350ms;
+   --story-count: 5;
+  
+}
+.preview-carousel button {
+   opacity: .5;
+   
+}
+
+.container-twitter{
+   align-content: flex-end;
+   justify-content: end;
+}
+
+
+
+/* carousel */
+
+/* 
+.carousel {
+   position: relative;
+   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+   margin-top: 26px;
+}
+
+.carousel-inner {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+   position: static;
+   opacity: 100;
+}
+
+.carousel-item {
+   position: absolute;
+   opacity: 0;
+   -webkit-transition: opacity 0.6s ease-out;
+   transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+   display: block;
+   height: auto;
+   max-width: 100%;
+}
+
+.carousel-control {
+
+
+.carousel-control.prev {
+   left: 2%;
+}
+
+.carousel-control.next {
+   right: 2%;
+}
+
+.carousel-control:hover {
+   background: rgba(0, 0, 0, 0.8);
+   color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+   display: block;
+}
+
+.carousel-indicators {
+
+
+.carousel-indicators li {
+   display: inline-block;
+   margin: 0 5px;
+}
+
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+   color: #428bca;
+} */
+
+.hiddenElementTweets{
+   display:none
+}
+
+.hiddenElementComments{
+   display:none
+}
+
+/* .card-active {
+   transition: 1s;
+} */
+
+.card-active {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+   height: 100%;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* @keyframes right-to-left {
+ transform {
+
+   } */
+/* } */
+/* header icons */
+

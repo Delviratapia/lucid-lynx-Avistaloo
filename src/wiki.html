@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avistaloo</title>
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="module" src="./index.js"></script>
+</head>
+<body>
+   <section class="container mx-auto p-5">
+      <div class="top-page flex items-center gap-10">
+         <!-- <div class="menu-bars">
+            <nav role="navigation">
+               <div id="menuToggle">
+                 <input type="checkbox" />
+                 <span></span>
+                 <span></span>
+                 <span></span>
+                 <ul id="menu">
+                   <a href="#"><li>Home</li></a>
+                   <a href="#"><li>About</li></a>
+                   <a href="#"><li>Info</li></a>
+                   <a href="#"><li>Contact</li></a>
+                   <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+                 </ul>
+               </div>
+             </nav>
+         </div> -->
+         <div class="search-box grow">
+            <form onsubmit="event.preventDefault();" role="search">
+               <input id="search" type="search" placeholder="Buscar" autofocus required />
+               <button type="submit"><i class="fas fa-search"></i></button>
+             </form>
+         </div>
+      </div>
+   </section>
+   <section class="container mx-auto p-5">
+      <div class="text-center mb-10 text-3xl">
+         <h2>Todos los pajaros</h2>
+      </div>
+      <div class="cards grid grid-cols-1 md:grid-cols-3 gap-10">
+         <a class="card-clickable" href="#">
+         <div class="card-text rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Huismus%2C_man.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4 text-center">
+              <div class="font-bold text-xl mb-2">Gorrión común</div>
+            </div>
+          </div>
+         </a>
+         <a class="card-clickable" href="#">
+         <div class="card-text rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Huismus%2C_man.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4 text-center">
+               <div class="font-bold text-xl mb-2">Gorrión moruno</div>
+            </div>
+            </div>
+         </a>
+         <a class="card-clickable" href="#">
+         <div class="card-text rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Huismus%2C_man.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4 text-center">
+              <div class="font-bold text-xl mb-2">Gorrión molinero</div>
+            </div>
+          </div>
+         </a>
+         <a class="card-clickable" href="#">
+         <div class="card-text rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Huismus%2C_man.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4 text-center">
+              <div class="font-bold text-xl mb-2">Gorrión chillón</div>
+            </div>
+          </div>
+         </a>
+         <a class="card-clickable" href="#">
+         <div class="card-text rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Huismus%2C_man.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4 text-center">
+              <div class="font-bold text-xl mb-2">Gorrión alpino</div>
+            </div>
+          </div>
+         </a>
+         <a class="card-clickable" href="#">
+         <div class="card-text rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Huismus%2C_man.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4 text-center">
+              <div class="font-bold text-xl mb-2">Gorrión común</div>
+            </div>
+          </div>
+         </a>
+      </div>
+   </section>
+   <section class="button-navigation container mx-auto p-5">
+      <div class="block sm:flex justify-between">
+         <div class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md m-4">Pajaros encontrados: 6/276</div>
+         <div class="flex items-center space-x-1 justify-center m-4">
+            <a href="#" class="flex items-center px-4 py-2 text-gray-500 bg-gray-300 rounded-md">Anterior</a>
+            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">1</a>
+            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">2</a>
+            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-blue-400 hover:text-white">3</a>
+            <a href="#" class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-blue-400 hover:text-white">Siguiente</a>
+        </div>
+      </div>
+   </section>
+</body>
+<script>
+</script>
+</html>
