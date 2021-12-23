@@ -10,12 +10,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <script type="module" src="./landing.js"></script>
 </head>
-<body>
+<body class="bg-color-domi">
 
-  <nav class="navbar flex items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3">
+  <nav class="navbar flex items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
       
     <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
-      <a class="navbar-item" href="#">
+      <a class="navbar-item transition duration-500 hover:scale-125" href="#">
         <img width="80px" src="/assets/styles/images/logo.png" alt="">
       </a>
       <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
@@ -30,13 +30,15 @@
       </button>
     </div>
     
-  <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
-    <div class="text-sm lg:flex-grow">
-        <a href="Home" class="block text-xl mt-1 lg:inline-block lg:mt-0 text-primary-color mr-4">Home</a>
-        <a href="#Que-es" class="block text-xl mt-4 lg:inline-block lg:mt-0 text-primary-color mr-4">¿Qué es?</a>
-        <a href="#Caracteristicas" class="block text-xl mt-4 lg:inline-block lg:mt-0 text-primary-color mr-4">Características</a>
+  <div id="nav-content" class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
+    <hr class="block lg:hidden mb-4">
+     <div class="text-sm lg:flex-grow">
+        <a href="Home" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</a>
+        <a href="#Que-es" class="block text-xl mt-4 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Qué es?</a>
+        <a href="#Caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</a>
      </div>
-        <a href="#" class="show-modal block md:flex w-full md:w-auto px-4 py-2 mb-0.5 text-right mr-1 bg-white border border-primary-color text-primary-color hover:bg-primary-color hover:text-white md:rounded">Iniciar Sesión</a>
+     <div class="flex flex-col lg:flex-row items-center justify-center block pb-1">
+        <a href="#" class="show-modal block w-32 my-4 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</a>
           <!--Modal Login-->
         <div class="modal hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
           <!-- modal -->
@@ -74,7 +76,7 @@
           </div>
         </div>
 
-        <a href="#" class="show-modal-register block md:flex w-full md:w-auto px-4 py-2 mb-0.5 text-right bg-primary-color border border-primary-color text-white hover:bg-white hover:border border-primary-color hover:text-primary-color text-white md:rounded">Registrarse</a>
+        <a href="#" class="show-modal-register block w-32 my-4 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
           <!--Modal Register-->
         <div class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
           <!-- modal -->
@@ -106,6 +108,28 @@
                 <label for="confirm-password" class="text-sm font-bold text-primary-color block mb-2">Confirmar contraseña</label>
                 <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirme su contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
               </div>
+              <div class="flex items-start">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="remember"
+                      aria-describedby="remember"
+                      type="checkbox"
+                      class="focus:ring-primary-color ring-offset-primary-color"
+                    />
+                  </div>
+                  <div class="text-sm">
+                    <label for="remember" class="font-bold text-primary-color"
+                      >Estoy de acuerdo con los
+                      <a
+                        href="#"
+                        class="text-blue-700 hover:underline dark:text-blue-500"
+                        >términos y condiciones</a
+                      ></label
+                    >
+                  </div>
+                </div>
+              </div>
                 <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Registrarse</button>
                 <div class="text-sm font-bold text-primary-color">
                   ¿Tienes una cuenta? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar sesión</a>
@@ -113,7 +137,7 @@
               </form>
           </div>
         </div>
-
+      </div>
   </div>
     
   </nav>
@@ -124,7 +148,7 @@
           <h1 class="text-4xl mb-12 font-bold mb-12 text-white">¡BIENVENIDO OBSERVADOR!</h1>
           <h3 class="text-2xl mb-8 text-white">Te presentamos Avistaloo</h3>
           <h3 class="text-2xl mb-20 text-white">La web donde podrás subir tus avistamientos y compartirlos con la comunidad</h3>
-          <button class=" show-modal-unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">UNIRSE AHORA</button>
+          <button class="show-modal-unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">UNIRSE AHORA</button>
           <!--Modal Unirse-->
           <div class="modal-unirse hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
                 <!-- modal -->
@@ -251,96 +275,256 @@
     </div>
   </section>
 
-  <footer class="bg-primary-color mt-12">
-        <div class="max-w-screen-lg py-10 pt-10 px-4 sm:px-6 text-white sm:flex justify-between mx-auto">
-            <div class="p-5 sm:w-4/8">
-              <div class="text-sm uppercase pb-3 text-white font-bold">Redes Sociales</div>
-              <div class="flex flex-wrap justify-center gap-2">
-                <a href="https://twitter.com/avistaloo">
-                  <button class="bg-primary-color border border-white p-2 font-semibold text-white hover:bg-white hover:border border-primary-color hover:text-primary-color  inline-flex items-center space-x-2 rounded">
-                    <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
-                  </button>
-                </a>
-                <a href="https://www.pinterest.com/">
-                  <button class="bg-primary-color border border-white p-2 font-semibold text-white hover:bg-white hover:border border-primary-color hover:text-primary-color  inline-flex items-center space-x-2 rounded">
-                    <svg class="w-5 h-5 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" /></svg>
-                  </button>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100075282414569">
-                  <button class="bg-primary-color border border-white p-2 font-semibold text-white hover:bg-white hover:border border-primary-color hover:text-primary-color  inline-flex items-center space-x-2 rounded">
-                    <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
-                  </button>
-                </a>
-                <a href="https://www.instagram.com/avistaloo/">
-                  <button class="bg-primary-color border border-white p-2 font-semibold text-white hover:bg-white hover:border border-primary-color hover:text-primary-color  inline-flex items-center space-x-2 rounded">
-                    <svg class="w-5 h-5 fill-current" role="img" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" /></svg>
-                  </button>
-                </a>  
+  <footer
+      class="
+        flex flex-row
+        justify-around
+        items-center
+        navxs:flex-col
+        navsm:flex-col
+        gap-y-6 gap-x-6
+        py-2
+        bg-[#335963]
+      "
+    >
+      <div class="flex flex-row gap-x-3 mt-4 md:mt-0">
+        <!-- Añadir los enlaces de las RRSS -->
+        <a href="https://www.facebook.com/profile.php?id=100075282414569"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/fcbk.png"
+            alt="Logo de Facebook"
+        /></a>
+        <a href="https://www.pinterest.com/"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/pntrst.png"
+            alt="Logo de Pinterest"
+        /></a>
+        <a href="https://www.instagram.com/avistaloo/"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/instg.png"
+            alt="Logo de Instagram"
+        /></a>
+        <a href="https://twitter.com/avistaloo"
+          ><img
+            class="rrss"
+            src="./assets/styles/images/twtr.png"
+            alt="Logo de Twitter"
+        /></a>
+      </div>
+      <div class="flex flex-col items-center flex-nowrap mt-4">
+        <img
+          id="footer-logo"
+          src="./assets/styles/images/logo.png"
+          alt="Logo de Avistaloo"
+        />
+        <p class="text-white text-sm mb-10">© 2021 Avistaloo</p>
+      </div>
+      <div class="flex flex-col items-center text-white font-medium mb-4 md:mb-0">
+        <!-- Añadir los enlaces del footer -->
+        <a href="./aboutus.html" class="">¿Quiénes somos?</a>
+        <a href="./privacy.html" class="">Política de privacidad</a>
+        <a href="#" class="show-modal-contact hover:text-white">Contáctanos</a>
+        <!--Modal Contact-->
+        <div
+          class="
+            modal-contact
+            hidden
+            h-screen
+            w-full
+            fixed
+            left-0
+            top-0
+            flex
+            justify-center
+            items-center
+            bg-black bg-opacity-70
+          "
+        >
+          <!-- modal -->
+          <div
+            class="
+              bg-white
+              shadow-md
+              border border-primary-color
+              rounded-lg
+              w-96
+              p-5
+              sm:p-7
+              lg:p-9
+            "
+          >
+            <form class="space-y-6" action="#">
+              <!-- modal header -->
+              <div class="border-b py-2 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-primary-color">
+                  Contáctanos
+                </h3>
+                <button class="text-primary-color close-modal-contact">
+                  &cross;
+                </button>
               </div>
-            </div>
-            <div class="p-5 sm:w-4/8 text-center">
-              <img class="object-center w-28 h-28 inline" src="/assets/styles/images/logo.png" alt="">
-              <p class="text-white text-sm mb-10">© 2021 Avistaloo</p>
-            </div>
-           <div class="p-5 sm:w-2/8">
-              <div class="text-sm uppercase text-white font-bold">Ayuda</div>
-              <ul>
-                <li class="my-2">
-                  <a class="hover:text-white" href="./aboutus.html">¿Quiénes somos?</a>
-                </li>
-                <li class="my-2">
-                  <a class="hover:text-white" href="./privacy.html">Política de privacidad</a>
-                </li>
-                <li class="my-2">
-                  <a href="#" class="show-modal-contact hover:text-white">Contáctanos</a>
-                  <!--Modal Contact-->
-                  <div class="modal-contact hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70">
-                    <!-- modal -->
-                    <div class="bg-white shadow-md border border-primary-color rounded-lg w-96 p-5 sm:p-7 lg:p-9">
-                      <form class="space-y-6" action="#">
-                        <!-- modal header -->
-                        <div class="border-b py-2 flex justify-between items-center">
-                          <h3 class="font-bold text-lg text-primary-color">Contáctanos</h3>
-                          <button class="text-primary-color close-modal-contact">&cross;</button>
-                        </div>
-                        <!-- modal body -->
-                        <div>
-                          <label for="name-contact" class="text-sm font-bold text-primary-color">Nombre</label>
-                          <input type="name" name="name-contact" id="name-contact" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" placeholder="Ingrese su nombre" required="">
-                        </div>
-                        <div>
-                          <label for="email-contact" class="text-sm font-bold text-primary-color">Email</label>
-                          <input type="email" name="email-contact" id="email-contact" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" placeholder="usuario@gmail.com" required="">
-                        </div>
-                        <div>
-                          <label for="asunto-contact" class="text-sm font-bold text-primary-color">Asunto</label>
-                          <input type="name" name="asunto-contact" id="asunto-contact" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" placeholder="" required="">
-                        </div>
-                        <div>
-                          <label for="message" class="text-sm font-bold text-primary-color">Mensaje</label>
-                          <textarea rows="5" name="message" id="message" placeholder="Escribe aquí tu mensaje..." class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" required=""></textarea>
-                        </div>
-                        <div class="flex items-start">
-                          <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                              <input id="remember" aria-describedby="remember" type="checkbox" class=" focus:ring-primary-color ring-offset-primary-color">
-                                          </div>
-                              <div class="text-sm ml-3">
-                                <label for="remember" class="font-bold text-primary-color">Estoy de acuerdo con los <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">términos y condiciones</a></label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex">
-                            <button type="submit" class="w-1/2  mx-1 px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Enviar</button>
-                            <button type="submit" class="w-1/2  px-4 py-2 hover:text-white hover:bg-red-400 hover:border border-red-600 text-white border border-red-600 bg-red-600 rounded close-modal-contact">Cancelar</button>
-                          </div>  
-                        </form>
-                    </div>
+              <!-- modal body -->
+              <div>
+                <label
+                  for="name-contact"
+                  class="text-sm font-bold text-primary-color"
+                  >Nombre</label
+                >
+                <input
+                  type="name"
+                  name="name-contact"
+                  id="name-contact"
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  placeholder="Ingrese su nombre"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="email-contact"
+                  class="text-sm font-bold text-primary-color"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email-contact"
+                  id="email-contact"
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  placeholder="usuario@gmail.com"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="asunto-contact"
+                  class="text-sm font-bold text-primary-color"
+                  >Asunto</label
+                >
+                <input
+                  type="name"
+                  name="asunto-contact"
+                  id="asunto-contact"
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  placeholder=""
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="text-sm font-bold text-primary-color"
+                  >Mensaje</label
+                >
+                <textarea
+                  rows="5"
+                  name="message"
+                  id="message"
+                  placeholder="Escribe aquí tu mensaje..."
+                  class="
+                    bg-white
+                    border border-primary-color
+                    text-primary-color
+                    sm:text-sm
+                    rounded-lg
+                    block
+                    w-full
+                    p-2.5
+                  "
+                  required=""
+                ></textarea>
+              </div>
+              <div class="flex items-start">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="remember"
+                      aria-describedby="remember"
+                      type="checkbox"
+                      class="focus:ring-primary-color ring-offset-primary-color"
+                    />
                   </div>
-                </li>
-              </ul>
-           </div>
+                  <div class="text-sm ml-3">
+                    <label for="remember" class="font-bold text-primary-color"
+                      >Estoy de acuerdo con los
+                      <a
+                        href="#"
+                        class="text-blue-700 hover:underline dark:text-blue-500"
+                        >términos y condiciones</a
+                      ></label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="flex">
+                <button
+                  type="submit"
+                  class="
+                    w-1/2
+                    mx-1
+                    px-4
+                    py-2
+                    hover:text-primary-color hover:bg-white hover:border
+                    border-primary-color
+                    text-white
+                    border border-primary-color
+                    bg-primary-color
+                    rounded
+                  "
+                >
+                  Enviar
+                </button>
+                <button
+                  type="submit"
+                  class="
+                    w-1/2
+                    px-4
+                    py-2
+                    hover:text-white hover:bg-red-400 hover:border
+                    border-red-600
+                    text-white
+                    border border-red-600
+                    bg-red-600
+                    rounded
+                    close-modal-contact
+                  "
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
   </footer>
 
 <script type="module" src="landing.js"></script>
