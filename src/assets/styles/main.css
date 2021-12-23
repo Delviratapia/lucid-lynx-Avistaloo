@@ -3,8 +3,26 @@
 @tailwind utilities;
 
 /* Landing Page */
+.headerLanding{
+   height: 730px;
+}
+
+.headerContent{
+   margin-top:70px;
+}
+
+.logoFooter{
+   width: 100px;
+}
+
+/* Home */
 
 .navbar {
+
+   position: fixed;
+   width: 100%;
+   border-bottom: 1px solid #335963;
+   background: white;
 
    & .name-logo {
       font-size:2rem;
