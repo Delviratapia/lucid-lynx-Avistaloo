@@ -1,14 +1,13 @@
-const path = require("path");
-const mode = process.env.NODE_ENV === "production" ? "production" : "development";
-const base = mode === "production" ? "/" + path.basename(process.cwd()) + "/" : "/";
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-module.exports = {
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
   root: "src",
-  base,
-  mode,
   publicDir: "../public",
   build: {
     outDir: "../dist",
     assetsDir: "./"
   }
-};
+})
