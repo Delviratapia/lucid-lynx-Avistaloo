@@ -1,198 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avistaloo</title>
-    <link rel="stylesheet" href="/assets/styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
 
-    <nav class="navbar flex items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
-      
-      <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
-        <a class="navbar-item transition duration-500 hover:scale-125" href="./index.html">
-          <img width="80px" src="/assets/styles/images/logo.png" alt="">
-        </a>
-        <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-      </div>
-      
-      <div class="block lg:hidden">
-        <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avistaloo</title>
+  <link rel="stylesheet" href="/assets/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar flex items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+
+    <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
+      <a class="navbar-item transition duration-500 hover:scale-125" href="./index.html">
+        <img width="80px" src="/assets/styles/images/logo.png" alt="">
+      </a>
+      <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+    </div>
+
+    <div class="block lg:hidden">
+      <button id="nav-toggle"
+        class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-          </svg>
-        </button>
-      </div>
-      
-    <div id="nav-content" class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="nav-content"
+      class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
       <hr class="block lg:hidden mb-4">
-       <div class="text-sm lg:flex-grow">
-          <a href="Home" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</a>
-          <a href="#Que-es" class="block text-xl mt-4 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Avistamientos</a>
-          <a href="#Caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
-       </div>
-       <div class="flex flex-col lg:flex-row items-center justify-center block pb-1">
-          <a href="#" class="show-modal block w-32 my-4 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</a>
-            <!--Modal Login-->
-          <div class="modal hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
-            <!-- modal -->
-            <div class="bg-white shadow-md border border-primary-color rounded-lg w-96 p-5 sm:p-7 lg:p-9">
-              <form class="space-y-6" action="#">
-                <!-- modal header -->
-                <div class="border-b py-2 flex justify-between items-center">
-                  <h3 class="font-bold text-lg text-primary-color">Iniciar sesión</h3>
-                  <button class="text-primary-color close-modal">&cross;</button>
-                </div>
-                <!-- modal body -->
-                <div>
-                  <label for="email" class="text-sm font-bold text-primary-color">Email</label>
-                  <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" placeholder="usuario@gmail.com" required="">
-                </div>
-                <div>
-                  <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
-                  <input type="password" name="password" id="password" placeholder="••••••••" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" required="">
-                </div>
+      <div class="text-sm lg:flex-grow">
+        <a href="Home"
+          class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</a>
+        <a href="#Que-es"
+          class="block text-xl mt-4 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Avistamientos</a>
+        <a href="#Caracteristicas"
+          class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center justify-center block pb-1">
+        <a href="#"
+          class="show-modal block w-32 my-4 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar
+          Sesión</a>
+        <!--Modal Login-->
+        <div
+          class="modal hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
+          <!-- modal -->
+          <div class="bg-white shadow-md border border-primary-color rounded-lg w-96 p-5 sm:p-7 lg:p-9">
+            <form class="space-y-6" action="#">
+              <!-- modal header -->
+              <div class="border-b py-2 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-primary-color">Iniciar sesión</h3>
+                <button class="text-primary-color close-modal">&cross;</button>
+              </div>
+              <!-- modal body -->
+              <div>
+                <label for="email" class="text-sm font-bold text-primary-color">Email</label>
+                <input type="email" name="email" id="email"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5"
+                  placeholder="usuario@gmail.com" required="">
+              </div>
+              <div>
+                <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="••••••••"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5"
+                  required="">
+              </div>
+              <div class="flex items-start">
                 <div class="flex items-start">
-                  <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                      <input id="remember" aria-describedby="remember" type="checkbox" class=" dark:border-gray-600 focus:ring-primary-color ring-offset-primary-color">
-                                  </div>
-                      <div class="text-sm ml-3">
-                        <label for="remember" class="font-bold text-primary-color">Recuerdame</label>
-                      </div>
-                    </div>
+                  <div class="flex items-center h-5">
+                    <input id="remember" aria-describedby="remember" type="checkbox"
+                      class=" dark:border-gray-600 focus:ring-primary-color ring-offset-primary-color">
                   </div>
-                  <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Iniciar sesión</button>
-                  <div class="text-sm font-bold text-primary-color">
-                    ¿No registrado? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Crear cuenta</a>
-                  </div>
-                </form>
-            </div>
-          </div>
-  
-          <a href="#" class="show-modal-register block w-32 my-4 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
-            <!--Modal Register-->
-          <div class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
-            <!-- modal -->
-            <div class="bg-white shadow-md border border-gray-200 rounded-lg w-96 p-5 sm:p-7 lg:p-9  dark:border-primary-color">
-              <form class="space-y-6" action="#">
-                <!-- modal header -->
-                <div class="border-b py-2 flex justify-between items-center">
-                  <h3 class="font-bold text-lg text-primary-color">Registrarse</h3>
-                  <button class="text-primary-color close-modal-register">&cross;</button>
-                </div>
-                <!-- modal body -->
-                <div>
-                  <label for="name" class="text-sm font-bold text-primary-color">Nombre</label>
-                  <input type="name" name="name" id="name" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su nombre" required="">
-                </div>
-                <div>
-                  <label for="user" class="text-sm font-bold text-primary-color">Usuario</label>
-                  <input type="user" name="user" id="user" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su usuario" required="">
-                </div>
-                <div>
-                  <label for="email" class="text-sm font-bold text-primary-color">Email</label>
-                  <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su email" required="">
-                </div>
-                <div>
-                  <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
-                  <input type="password" name="password" id="password" placeholder="Ingrese una contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
-                </div>
-                <div>
-                  <label for="confirm-password" class="text-sm font-bold text-primary-color block mb-2">Confirmar contraseña</label>
-                  <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirme su contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
-                </div>
-                <div class="flex items-start">
-                  <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                      <input
-                        id="remember"
-                        aria-describedby="remember"
-                        type="checkbox"
-                        class="focus:ring-primary-color ring-offset-primary-color"
-                      />
-                    </div>
-                    <div class="text-sm">
-                      <label for="remember" class="font-bold text-primary-color"
-                        >Estoy de acuerdo con los
-                        <a
-                          href="#"
-                          class="text-blue-700 hover:underline dark:text-blue-500"
-                          >términos y condiciones</a
-                        ></label
-                      >
-                    </div>
+                  <div class="text-sm ml-3">
+                    <label for="remember" class="font-bold text-primary-color">Recuerdame</label>
                   </div>
                 </div>
-                  <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Registrarse</button>
-                  <div class="text-sm font-bold text-primary-color">
-                    ¿Tienes una cuenta? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar sesión</a>
-                  </div>
-                </form>
-            </div>
+              </div>
+              <button type="submit"
+                class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Iniciar
+                sesión</button>
+              <div class="text-sm font-bold text-primary-color">
+                ¿No registrado? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Crear cuenta</a>
+              </div>
+            </form>
           </div>
         </div>
-    </div>
-      
-    </nav>
 
-    <section class="container mx-auto p-5">
-      <div class="top-page flex items-center gap-10">
-        <div class="menu-bars">
-          <nav role="navigation">
-            <div id="menuToggle">
-              <input type="checkbox" />
-              <span></span>
-              <span></span>
-              <span></span>
-              <ul id="menu">
-                <a href="#"><li>Gorriones</li></a>
-                <!-- <a href="#"><li>About</li></a>
+        <a href="#"
+          class="show-modal-register block w-32 my-4 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
+        <!--Modal Register-->
+        <div
+          class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
+          <!-- modal -->
+          <div
+            class="bg-white shadow-md border border-gray-200 rounded-lg w-96 p-5 sm:p-7 lg:p-9  dark:border-primary-color">
+            <form class="space-y-6" action="#">
+              <!-- modal header -->
+              <div class="border-b py-2 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-primary-color">Registrarse</h3>
+                <button class="text-primary-color close-modal-register">&cross;</button>
+              </div>
+              <!-- modal body -->
+              <div>
+                <label for="name" class="text-sm font-bold text-primary-color">Nombre</label>
+                <input type="name" name="name" id="name"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  "
+                  placeholder="Ingrese su nombre" required="">
+              </div>
+              <div>
+                <label for="user" class="text-sm font-bold text-primary-color">Usuario</label>
+                <input type="user" name="user" id="user"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  "
+                  placeholder="Ingrese su usuario" required="">
+              </div>
+              <div>
+                <label for="email" class="text-sm font-bold text-primary-color">Email</label>
+                <input type="email" name="email" id="email"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  "
+                  placeholder="Ingrese su email" required="">
+              </div>
+              <div>
+                <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="Ingrese una contraseña"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  "
+                  required="">
+              </div>
+              <div>
+                <label for="confirm-password" class="text-sm font-bold text-primary-color block mb-2">Confirmar
+                  contraseña</label>
+                <input type="password" name="confirm-password" id="confirm-password"
+                  placeholder="Confirme su contraseña"
+                  class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  "
+                  required="">
+              </div>
+              <div class="flex items-start">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input id="remember" aria-describedby="remember" type="checkbox"
+                      class="focus:ring-primary-color ring-offset-primary-color" />
+                  </div>
+                  <div class="text-sm">
+                    <label for="remember" class="font-bold text-primary-color">Estoy de acuerdo con los
+                      <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">términos y
+                        condiciones</a></label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit"
+                class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Registrarse</button>
+              <div class="text-sm font-bold text-primary-color">
+                ¿Tienes una cuenta? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar
+                  sesión</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+  <section class="container mx-auto p-5">
+    <div class="top-page flex items-center gap-10">
+      <div class="menu-bars">
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="#">
+                <li>Gorriones</li>
+              </a>
+              <!-- <a href="#"><li>About</li></a>
                 <a href="#"><li>Info</li></a>
                 <a href="#"><li>Contact</li></a>
                 <a href="https://erikterwan.com/" target="_blank"
                   ><li>Show me more</li></a
                 > -->
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <div class="search-box grow">
-          <form onsubmit="event.preventDefault();" role="search">
-            <input
-              id="search"
-              type="search"
-              placeholder="Buscar"
-              autofocus
-              required
-            />
-            <button type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </section>
-    <section class="container mx-auto p-5">
-      <div class="text-center mb-10 text-3xl">
-        <h2>Categoría: Gorriones</h2>
+      <div class="search-box grow">
+        <form onsubmit="event.preventDefault();" role="search">
+          <input id="search" type="search" placeholder="Buscar" autofocus required />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
       </div>
-      <div class="cards grid grid-cols-1 md:grid-cols-3 gap-10">
+    </div>
+  </section>
+  <section class="container mx-auto p-5">
+    <div class="text-center mb-10 text-3xl">
+      <!-- <h2>Categoría: Gorriones</h2> -->
+    </div>
+    <div class="cards grid grid-cols-1 md:grid-cols-3 gap-10">
+    </div>
+  </section>
+  <section class="button-navigation container mx-auto p-5">
+    <div class="block sm:flex justify-between">
+      <div class="total-birds px-4 py-2 text-gray-700 bg-gray-200 rounded-md m-4">
+        Pajaros encontrados: 6/276
       </div>
-    </section>
-    <section class="button-navigation container mx-auto p-5">
-      <div class="block sm:flex justify-between">
-        <div class="total-birds px-4 py-2 text-gray-700 bg-gray-200 rounded-md m-4">
-          Pajaros encontrados: 6/276
-        </div>
-        <div class="flex items-center space-x-1 justify-center m-4">
-          <!-- <a
+      <div class="flex items-center space-x-1 justify-center m-4">
+        <!-- <a
             href="#"
             class="
               flex
@@ -205,19 +223,15 @@
             "
             >Anterior</a
           > -->
-          <a
-            href="#"
-            class="
+        <a href="#" class="
               px-4
               py-2
               text-gray-700
               bg-gray-200
               rounded-md
               hover:bg-blue-400 hover:text-white
-            "
-            >1</a
-          >
-         <!--  <a
+            ">1</a>
+        <!--  <a
             href="#"
             class="
               px-4
@@ -230,59 +244,64 @@
             "
             >Siguiente</a
           > -->
-        </div>
       </div>
-    </section>
-    <div class="modal">
-      <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
-		style="background: rgba(0,0,0,.7);">
-		<div
-			class="border border-teal-500 shadow-lg modal-container bg-white w-11/12  mx-auto rounded shadow-lg z-50 overflow-y-auto">
-			<div class="modal-content text-left">
-				<!--Title-->
-				<div class="flex justify-between items-center py-3 px-6 bg-slate-200 mb-5 sticky top-0">
-					<p class="text-2xl font-bold name-animal">Gorrión</p>
-					<div class="modal-close cursor-pointer z-50">
-						<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-							viewBox="0 0 18 18">
-							<path
-								d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-							</path>
-						</svg>
-					</div>
-				</div>
-				<!--Body-->
-            <div class="body-card px-6">
-				<div class="flex gap-5 flex-col lg:flex-row">
-               <div class="image-card">
-                  <img class="m-auto image-animal" width="500" src="https://okdiario.com/img/2020/02/24/-como-saber-si-un-pajaro-es-macho-o-hembra_-655x368.jpg" alt="">
-               </div>
-               <div class="box-details">
-                  <div class="description description-animal">
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A officiis reprehenderit voluptas, nulla odio excepturi adipisci quod doloremque maxime nostrum cum quia sapiente ipsam. Voluptatem perspiciatis ipsa nihil cupiditate nemo!</p>
-                  </div>
-                  <div class="details mt-5">
-                     <p><span class="font-bold">Localización: </span><span class="location-animal">Ebro</span></p>
-                     <p><span class="font-bold">Ejemplares descubiertos: </span><span class="ejemplares-animal">876,198</span></p>
-                  </div>
-               </div>
-				</div>
+    </div>
+  </section>
+  <div class="modal">
+    <div
+      class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+      style="background: rgba(0,0,0,.7);">
+      <div
+        class="border border-teal-500 shadow-lg modal-container bg-white w-11/12  mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <div class="modal-content text-left">
+          <!--Title-->
+          <div class="flex justify-between items-center py-3 px-6 bg-slate-200 mb-5 sticky top-0">
+            <p class="text-2xl font-bold name-animal">Gorrión</p>
+            <div class="modal-close cursor-pointer z-50">
+              <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 18 18">
+                <path
+                  d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <!--Body-->
+          <div class="body-card px-6">
+            <div class="flex gap-5 flex-col lg:flex-row">
+              <div class="image-card">
+                <img class="m-auto image-animal" width="500"
+                  src="https://okdiario.com/img/2020/02/24/-como-saber-si-un-pajaro-es-macho-o-hembra_-655x368.jpg"
+                  alt="">
+              </div>
+              <div class="box-details">
+                <div class="description description-animal">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A officiis reprehenderit voluptas, nulla
+                    odio excepturi adipisci quod doloremque maxime nostrum cum quia sapiente ipsam. Voluptatem
+                    perspiciatis ipsa nihil cupiditate nemo!</p>
+                </div>
+                <div class="details mt-5">
+                  <p><span class="font-bold">Localización: </span><span class="location-animal">Ebro</span></p>
+                  <p><span class="font-bold">Ejemplares descubiertos: </span><span
+                      class="ejemplares-animal">876,198</span></p>
+                </div>
+              </div>
+            </div>
             <!-- <div class="map-location w-full mt-5">
                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48320.39666380446!2d-73.965441!3d40.805449!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63c75af2d65%3A0xf45542f6cb090cc9!2s2880%20Broadway%2C%20New%20York%2C%20NY%2010025!5e0!3m2!1ses!2sus!4v1639676876735!5m2!1ses!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div> -->
-         </div>
-				<!--Footer-->
-				<div class="flex justify-end m-6">
-					<button
-						class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">Salir</button>
-				</div>
-			</div>
-	    	</div>
-    	</div>
+          </div>
+          <!--Footer-->
+          <div class="flex justify-end m-6">
+            <button
+              class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">Salir</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <footer
-      class="
+  <footer class="
         flex flex-row
         justify-around
         items-center
@@ -291,51 +310,29 @@
         gap-y-6 gap-x-6
         py-2
         bg-[#335963]
-      "
-    >
-      <div class="flex flex-row gap-x-3 mt-4 md:mt-0">
-        <!-- Añadir los enlaces de las RRSS -->
-        <a href="https://www.facebook.com/profile.php?id=100075282414569"
-          ><img
-            class="rrss"
-            src="./assets/styles/images/fcbk.png"
-            alt="Logo de Facebook"
-        /></a>
-        <a href="https://www.pinterest.com/"
-          ><img
-            class="rrss"
-            src="./assets/styles/images/pntrst.png"
-            alt="Logo de Pinterest"
-        /></a>
-        <a href="https://www.instagram.com/avistaloo/"
-          ><img
-            class="rrss"
-            src="./assets/styles/images/instg.png"
-            alt="Logo de Instagram"
-        /></a>
-        <a href="https://twitter.com/avistaloo"
-          ><img
-            class="rrss"
-            src="./assets/styles/images/twtr.png"
-            alt="Logo de Twitter"
-        /></a>
-      </div>
-      <div class="flex flex-col items-center flex-nowrap mt-4">
-        <img
-          id="footer-logo"
-          src="./assets/styles/images/logo.png"
-          alt="Logo de Avistaloo"
-        />
-        <p class="text-white text-sm mb-10">© 2021 Avistaloo</p>
-      </div>
-      <div class="flex flex-col items-center text-white font-medium mb-4 md:mb-0">
-        <!-- Añadir los enlaces del footer -->
-        <a href="./aboutus.html" class="">¿Quiénes somos?</a>
-        <a href="./privacy.html" class="">Política de privacidad</a>
-        <a href="#" class="show-modal-contact hover:text-white">Contáctanos</a>
-        <!--Modal Contact-->
-        <div
-          class="
+      ">
+    <div class="flex flex-row gap-x-3 mt-4 md:mt-0">
+      <!-- Añadir los enlaces de las RRSS -->
+      <a href="https://www.facebook.com/profile.php?id=100075282414569"><img class="rrss"
+          src="./assets/styles/images/fcbk.png" alt="Logo de Facebook" /></a>
+      <a href="https://www.pinterest.com/"><img class="rrss" src="./assets/styles/images/pntrst.png"
+          alt="Logo de Pinterest" /></a>
+      <a href="https://www.instagram.com/avistaloo/"><img class="rrss" src="./assets/styles/images/instg.png"
+          alt="Logo de Instagram" /></a>
+      <a href="https://twitter.com/avistaloo"><img class="rrss" src="./assets/styles/images/twtr.png"
+          alt="Logo de Twitter" /></a>
+    </div>
+    <div class="flex flex-col items-center flex-nowrap mt-4">
+      <img id="footer-logo" src="./assets/styles/images/logo.png" alt="Logo de Avistaloo" />
+      <p class="text-white text-sm mb-10">© 2021 Avistaloo</p>
+    </div>
+    <div class="flex flex-col items-center text-white font-medium mb-4 md:mb-0">
+      <!-- Añadir los enlaces del footer -->
+      <a href="./aboutus.html" class="">¿Quiénes somos?</a>
+      <a href="./privacy.html" class="">Política de privacidad</a>
+      <a href="#" class="show-modal-contact hover:text-white">Contáctanos</a>
+      <!--Modal Contact-->
+      <div class="
             modal-contact
             hidden
             h-screen
@@ -347,11 +344,9 @@
             justify-center
             items-center
             bg-black bg-opacity-70
-          "
-        >
-          <!-- modal -->
-          <div
-            class="
+          ">
+        <!-- modal -->
+        <div class="
               bg-white
               shadow-md
               border border-primary-color
@@ -360,30 +355,21 @@
               p-5
               sm:p-7
               lg:p-9
-            "
-          >
-            <form class="space-y-6" action="#">
-              <!-- modal header -->
-              <div class="border-b py-2 flex justify-between items-center">
-                <h3 class="font-bold text-lg text-primary-color">
-                  Contáctanos
-                </h3>
-                <button class="text-primary-color close-modal-contact">
-                  &cross;
-                </button>
-              </div>
-              <!-- modal body -->
-              <div>
-                <label
-                  for="name-contact"
-                  class="text-sm font-bold text-primary-color"
-                  >Nombre</label
-                >
-                <input
-                  type="name"
-                  name="name-contact"
-                  id="name-contact"
-                  class="
+            ">
+          <form class="space-y-6" action="#">
+            <!-- modal header -->
+            <div class="border-b py-2 flex justify-between items-center">
+              <h3 class="font-bold text-lg text-primary-color">
+                Contáctanos
+              </h3>
+              <button class="text-primary-color close-modal-contact">
+                &cross;
+              </button>
+            </div>
+            <!-- modal body -->
+            <div>
+              <label for="name-contact" class="text-sm font-bold text-primary-color">Nombre</label>
+              <input type="name" name="name-contact" id="name-contact" class="
                     bg-white
                     border border-primary-color
                     text-primary-color
@@ -392,22 +378,11 @@
                     block
                     w-full
                     p-2.5
-                  "
-                  placeholder="Ingrese su nombre"
-                  required=""
-                />
-              </div>
-              <div>
-                <label
-                  for="email-contact"
-                  class="text-sm font-bold text-primary-color"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  name="email-contact"
-                  id="email-contact"
-                  class="
+                  " placeholder="Ingrese su nombre" required="" />
+            </div>
+            <div>
+              <label for="email-contact" class="text-sm font-bold text-primary-color">Email</label>
+              <input type="email" name="email-contact" id="email-contact" class="
                     bg-white
                     border border-primary-color
                     text-primary-color
@@ -416,22 +391,11 @@
                     block
                     w-full
                     p-2.5
-                  "
-                  placeholder="usuario@gmail.com"
-                  required=""
-                />
-              </div>
-              <div>
-                <label
-                  for="asunto-contact"
-                  class="text-sm font-bold text-primary-color"
-                  >Asunto</label
-                >
-                <input
-                  type="name"
-                  name="asunto-contact"
-                  id="asunto-contact"
-                  class="
+                  " placeholder="usuario@gmail.com" required="" />
+            </div>
+            <div>
+              <label for="asunto-contact" class="text-sm font-bold text-primary-color">Asunto</label>
+              <input type="name" name="asunto-contact" id="asunto-contact" class="
                     bg-white
                     border border-primary-color
                     text-primary-color
@@ -440,23 +404,11 @@
                     block
                     w-full
                     p-2.5
-                  "
-                  placeholder=""
-                  required=""
-                />
-              </div>
-              <div>
-                <label
-                  for="message"
-                  class="text-sm font-bold text-primary-color"
-                  >Mensaje</label
-                >
-                <textarea
-                  rows="5"
-                  name="message"
-                  id="message"
-                  placeholder="Escribe aquí tu mensaje..."
-                  class="
+                  " placeholder="" required="" />
+            </div>
+            <div>
+              <label for="message" class="text-sm font-bold text-primary-color">Mensaje</label>
+              <textarea rows="5" name="message" id="message" placeholder="Escribe aquí tu mensaje..." class="
                     bg-white
                     border border-primary-color
                     text-primary-color
@@ -465,36 +417,23 @@
                     block
                     w-full
                     p-2.5
-                  "
-                  required=""
-                ></textarea>
-              </div>
+                  " required=""></textarea>
+            </div>
+            <div class="flex items-start">
               <div class="flex items-start">
-                <div class="flex items-start">
-                  <div class="flex items-center h-5">
-                    <input
-                      id="remember"
-                      aria-describedby="remember"
-                      type="checkbox"
-                      class="focus:ring-primary-color ring-offset-primary-color"
-                    />
-                  </div>
-                  <div class="text-sm ml-3">
-                    <label for="remember" class="font-bold text-primary-color"
-                      >Estoy de acuerdo con los
-                      <a
-                        href="#"
-                        class="text-blue-700 hover:underline dark:text-blue-500"
-                        >términos y condiciones</a
-                      ></label
-                    >
-                  </div>
+                <div class="flex items-center h-5">
+                  <input id="remember" aria-describedby="remember" type="checkbox"
+                    class="focus:ring-primary-color ring-offset-primary-color" />
+                </div>
+                <div class="text-sm ml-3">
+                  <label for="remember" class="font-bold text-primary-color">Estoy de acuerdo con los
+                    <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">términos y
+                      condiciones</a></label>
                 </div>
               </div>
-              <div class="flex">
-                <button
-                  type="submit"
-                  class="
+            </div>
+            <div class="flex">
+              <button type="submit" class="
                     w-1/2
                     mx-1
                     px-4
@@ -505,13 +444,10 @@
                     border border-primary-color
                     bg-primary-color
                     rounded
-                  "
-                >
-                  Enviar
-                </button>
-                <button
-                  type="submit"
-                  class="
+                  ">
+                Enviar
+              </button>
+              <button type="submit" class="
                     w-1/2
                     px-4
                     py-2
@@ -522,16 +458,17 @@
                     bg-red-600
                     rounded
                     close-modal-contact
-                  "
-                >
-                  Cancelar
-                </button>
-              </div>
-            </form>
-          </div>
+                  ">
+                Cancelar
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+    </div>
   </footer>
-  </body>
-  <script src="/js/wiki.js"></script>
+</body>
+<script src="/js/wiki.js"></script>
+<script src="/js/search.js"></script>
+
 </html>
