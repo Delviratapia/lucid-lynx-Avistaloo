@@ -1,0 +1,21 @@
+{
+  "name": "test-app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.4",
+    "vue-router": "^4.0.12",
+    "vue-meta": "^3.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.4",
+    "autoprefixer": "^10.4.1",
+    "postcss": "^8.4.5",
+    "sass": "^1.45.2",
+    "tailwindcss": "^3.0.11",
+    "vite": "^1.0.0-rc.13"
+  }
+}
