@@ -1,3 +1,12 @@
+import { nextPage, prevPage } from '../pagination.js';
+import { qs } from '../utils.js';
+
+let pagination = {
+  cur_page: 1,
+  records_per_page: 30,
+  birds_seen: 0
+}
+let struct_data = []
 let displayBirds = (data) => {
 
   // PETICION PARA GORRIONES
@@ -29,11 +38,7 @@ let displayBirds = (data) => {
   }
 
   // SHOW TOTAL BIRDS
-  const totalBirds = [];
-  for (let index = 0; index < data[0].birds.length; index++) {
-    totalBirds.push(index);
-  }
-  document.querySelector(".total-birds").textContent = `${clickedCard.length} / ${totalBirds.length}`;
+  document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 
 }
@@ -77,7 +82,7 @@ function dataAnimals(name, imageFirst) {
   <img
     class="w-full"
     src="${imageFirst}"
-    alt="Sunset in the mountains"
+    alt="${name}"
   />
   <div class="px-6 py-4 text-center">
     <div class="font-bold text-xl mb-2">${name}</div>
@@ -115,11 +120,13 @@ let fillBirdsFamilies = () => {
   })
 }
 
-let per_page = 30
-let page = 1 
+// let per_page = 30
+// let page = 1 
+
+
 let structureBirdData = (birds_family) => {
   return new Promise((resolve, reject) => {
-    fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&per_page=${per_page}&page=${page}`, requestOptions)
+    fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`, requestOptions)
       .then(response => {
         if (!response.ok) {
           reject(new Error("Error getting the birds species"))
@@ -127,6 +134,7 @@ let structureBirdData = (birds_family) => {
         return response.json()
       })
       .then(data => {
+        pagination.total_results = data.total_results
         let results = data.results
         let struct_data = [{
           "birds": []
@@ -156,11 +164,17 @@ let structureBirdData = (birds_family) => {
   })
 }
 
-let struct_data = []
 async function getBirdsFromAPI() {
   const birds_family = await fillBirdsFamilies()
   struct_data = await structureBirdData(birds_family)
+  pagination = {
+    ...pagination,
+    birds_in_this_call: struct_data[0]["birds"].length
+  }
+  if(pagination["birds_seen"] == 0)
+    pagination["birds_seen"] += pagination["birds_in_this_call"]
   displayBirds(struct_data)
+ 
 }
 
 async function searchBirds(text) {
@@ -176,6 +190,23 @@ async function searchBirds(text) {
 }
 
 getBirdsFromAPI()
+// document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
+
+pagination = {
+  ...pagination,
+  show_fn: getBirdsFromAPI,
+}
 
 let searchInput = document.querySelector("#search");
 searchInput.addEventListener("keyup", ()=> searchBirds(searchInput.value))
+
+qs("#btn-next").addEventListener("click", ()=> {
+  pagination["birds_seen"] += pagination["birds_in_this_call"]
+  nextPage(pagination)
+})
+
+qs("#btn-prev").addEventListener("click", ()=> {
+  pagination["birds_seen"] -= pagination["birds_in_this_call"]
+  prevPage(pagination)
+})
+
