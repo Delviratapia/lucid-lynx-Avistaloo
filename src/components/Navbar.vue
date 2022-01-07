@@ -26,7 +26,8 @@
         <a href="/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
      </div>
      <div class="flex flex-col lg:flex-row items-center justify-center block">
-        <a href="#" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</a>
+        <router-link to="/login" v-if="!usuarioAutenticado" href="#" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</router-link>
+        <a style="cursor:pointer" v-if="usuarioAutenticado" @click="logout" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Cerrar Sesión</a>
           <!--Modal Login-->
         <div class="modal hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
           <!-- modal -->
@@ -64,7 +65,7 @@
           </div>
         </div>
 
-        <a href="#" class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
+        <a v-if="!usuarioAutenticado" href="#" class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
           <!--Modal Register-->
         <div class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
           <!-- modal -->
@@ -131,7 +132,15 @@
   </nav>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import store from '../store.js'
 export default {
+  computed: {
+    ...mapGetters(['usuarioAutenticado'])
+  },
+  methods: {
+    ...mapActions(['logout'])
+  }
   /*
   mounted() {
     /*MENU MOBILE
