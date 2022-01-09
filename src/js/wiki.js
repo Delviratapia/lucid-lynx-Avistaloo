@@ -1,5 +1,7 @@
+import { info } from 'autoprefixer';
 import { nextPage, prevPage } from '../pagination.js';
 import { qs } from '../utils.js';
+import { birdSummary } from "./birdsSummary.js";
 
 let pagination = {
   cur_page: 1,
@@ -11,6 +13,9 @@ let displayBirds = (data) => {
 
   // PETICION PARA GORRIONES
   const clickedCard = document.getElementsByClassName("card-clickable");
+  let parentNames = document.querySelector(".otherNames-animal")
+  // parentNames.style.textAlign = "center"
+  let ul = document.createElement("ul")  
   for (let i = 0; i < data[0].birds.length; i++) {
     const cards = document.querySelector(".cards");
     if (data[0].birds[i].images[0].image1 !== undefined) {
@@ -21,32 +26,85 @@ let displayBirds = (data) => {
 
 
     // SHOW SPARROWS AND INFO MODAL
+   
+    // parentNames.appendChild(ul)
+
     for (let i = 0; i < clickedCard.length; i++) {
       clickedCard[i].addEventListener("click", () => {
         openModal();
+
+
+        // mifuncioncita va aqui
+
+        birdSummary(data[0].birds[i].specie);
+
+
         document.querySelector(".name-animal").textContent = data[0].birds[i].name;
         if (data[0].birds[i].images[0].image1 === undefined) {
           document.querySelector(".image-animal").src = data[0].birds[i].images[0].noimage;
         } else {
           document.querySelector(".image-animal").src = data[0].birds[i].images[0].image1;
         }
-        document.querySelector(".description-animal").textContent = data[0].birds[i].description;
-        document.querySelector(".location-animal").textContent = data[0].birds[i].location;
+        // document.querySelector(".description-animal").textContent = data[0].birds[i].description;
         document.querySelector(".ejemplares-animal").textContent = data[0].birds[i].ejemplares;
+        document.querySelector(".location-animal").textContent = data[0].birds[i].location;
+        document.querySelector(".extinct-animal").textContent = data[0].birds[i].extinct;
+        document.querySelector(".family-animal").textContent = data[0].birds[i].category;
+    
+        // console.log(data[0].birds[i].otherNames)
+        // for(let name of data[0].birds[i].otherNames) {
+        //   let li = document.createElement("li")
+        //   li.textContent = name
+        //   li.style.display = "inline" 
+        //   li.innerHTML += "<br>"
+        //   ul.appendChild(li)
+        // } 
+  
+        // document.querySelector(".birds-list").textContent = data[0].birds[i].category;
       });
     }
-  }
+    
+    
 
-  // SHOW TOTAL BIRDS
+  }
+  console.log(ul)
+  parentNames.appendChild(ul)
+  //  SHOW TOTAL BIRDS
   document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 
 }
 
+
+
 let resetBirds = () => {
   const cards = document.querySelector(".cards");
   cards.innerHTML = ""
 }
+
+
+let knowIfExtinct = (birdIsExtinct) => {
+  let bird_status = "";
+    if (birdIsExtinct){
+      bird_status = "Si";
+    }else {
+      bird_status = "no";
+    }
+  return bird_status;
+}
+
+
+
+// let getNames = (names) => {
+//   let otherLanguagesNames = [];
+//   for (let difName of names) {
+//     otherLanguagesNames.push(difName.name)
+    
+//   }
+//   return otherLanguagesNames;
+// }
+
+
 
 // MENU HAMBURGUER WIKI
 const modal = document.querySelector(".main-modal");
@@ -126,7 +184,9 @@ let fillBirdsFamilies = () => {
 
 let structureBirdData = (birds_family) => {
   return new Promise((resolve, reject) => {
-    fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`, requestOptions)
+    fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&all_names=true&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`, requestOptions)
+    // fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=family&rank_level=30&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}&all_names=true`, requestOptions)
+    // fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&rank=family&all_names=true&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`, requestOptions)
       .then(response => {
         if (!response.ok) {
           reject(new Error("Error getting the birds species"))
@@ -153,7 +213,12 @@ let structureBirdData = (birds_family) => {
             }],
             "description": bird.wikipedia_url,
             "location": bird.atlas_id,
-            "ejemplares": bird.observations_count
+            "ejemplares": bird.observations_count,
+            // "otherNames":getNames(bird.names),
+            "extinct":knowIfExtinct(bird.extinct),
+            "specie":bird.name,
+            "summary":bird.extract
+
           })
         }
         resolve(struct_data)
