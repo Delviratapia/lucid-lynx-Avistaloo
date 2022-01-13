@@ -10,7 +10,9 @@
 <script>
 import NavBar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import store from './store.js'
 import { useMeta } from 'vue-meta'
+import { mapActions } from 'vuex'
 export default {
   name: 'App',
   components: {
@@ -18,10 +20,17 @@ export default {
     Footer
   },
   setup () {
+    console.log(store.state.user)
     useMeta({
       title: '',
       htmlAttrs: { lang: 'es', amp: true }
     })
   },
+  methods:{
+      ...mapActions(['localStorageUserLogged'])
+    },
+    created(){
+      this.localStorageUserLogged()
+    }
 }
 </script>

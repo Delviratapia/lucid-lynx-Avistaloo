@@ -7,7 +7,7 @@
     <div class="shadow-md bg-white rounded-2xl shadow-primary w-full sm:w-72 flex flex-col justify-center py-4 transition duration-500 hover:scale-125">
       <img class="h-48 mx-auto" src="../assets/images/global-learning.png" alt="" />
       <div class="px-4">
-        <h1 class="mt-3 text-gray-800 text-2xl font-bold my-2">¡Aprende!</h1>
+        <h1 class="mt-3 text-gray-800 text-2xl font-bold my-2">¡Aprende!{{hola}}</h1>
         <p class="text-gray-700 mb-2">Explora sobre los diferentes tipos de aves, ¡Escucha sus sonidos!</p>
         <div class="flex justify-between mt-4">
 
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import store from '../store.js'
 import Carousel from '../components/Carousel.vue'
 import TwitterCard from '../components/TwitterCard.vue'
 import LastComments from '../components/LastComments.vue'
