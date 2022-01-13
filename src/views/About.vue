@@ -10,39 +10,39 @@
         <h2 class="text-xl font-bold" >Nuestro equipo</h2><br>
         <div class="my-5">
             <div class="grid grid-cols-1 lg:grid-cols-6 gap-4 mt-5 lg:grid-rows-2">
-                <div class="lg:col-start-1 lg:col-span-2 h-96 border border-avistaloo/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl ">
+                <div class="lg:col-start-1 lg:col-span-2 h-96 border border-primary/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl ">
                     <img class="h-40 rounded-full bg-teal-900/[0.2]" src="../assets/images/profile.png" alt="">
                     <h3 class="font-bold text-2xl">Dominique Elvira</h3>
                     <nav>
-                        <a class="text-avistaloo" target="_blank" href="https://www.linkedin.com/in/delviratapia/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="text-primary" target="_blank" href="https://www.linkedin.com/in/delviratapia/"><i class="fab fa-linkedin-in"></i></a>
                     </nav>
                 </div>
-                <div class="lg:col-start-3 lg:col-span-2 h-96 border border-avistaloo/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
+                <div class="lg:col-start-3 lg:col-span-2 h-96 border border-primary/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
                     <img class="h-40 rounded-full bg-teal-900/[0.2]" src="../assets/images/profile.png" alt="">
                     <h3 class="font-bold text-2xl">Carlos David Hernández</h3>
                     <nav>
-                        <a class="text-avistaloo" target="_blank" href="https://www.linkedin.com/in/carloshdezdasilva/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="text-primary" target="_blank" href="https://www.linkedin.com/in/carloshdezdasilva/"><i class="fab fa-linkedin-in"></i></a>
                     </nav>
                 </div>
-                <div class="lg:col-start-5 lg:col-span-2 h-96 border border-avistaloo/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
+                <div class="lg:col-start-5 lg:col-span-2 h-96 border border-primary/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
                     <img class="h-40 rounded-full bg-teal-900/[0.2]" src="../assets/images/profile.png" alt="">
                     <h3 class="font-bold text-2xl">Manuel Navarro</h3>
                     <nav>
-                        <a class="text-avistaloo" target="_blank" href="https://www.linkedin.com/in/manuel-navarro-higueras/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="text-primary" target="_blank" href="https://www.linkedin.com/in/manuel-navarro-higueras/"><i class="fab fa-linkedin-in"></i></a>
                     </nav>
                 </div>
-                <div class="lg:col-start-2 lg:col-span-2 h-96 border border-avistaloo/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
+                <div class="lg:col-start-2 lg:col-span-2 h-96 border border-primary/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
                     <img class="h-40 rounded-full bg-teal-900/[0.2]" src="../assets/images/profile.png" alt="">
                     <h3 class="font-bold text-2xl">Sergio Ruiz</h3>
                     <nav>
-                        <a class="text-avistaloo" target="_blank" href="https://www.linkedin.com/in/sergyrollerjs/?originalSubdomain=es"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="text-primary" target="_blank" href="https://www.linkedin.com/in/sergyrollerjs/?originalSubdomain=es"><i class="fab fa-linkedin-in"></i></a>
                     </nav>
                 </div>
-                <div class="lg:col-start-4 lg:col-span-2 h-96 border border-avistaloo/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
+                <div class="lg:col-start-4 lg:col-span-2 h-96 border border-primary/50 rounded-lg flex flex-col items-center justify-around p-10 hover:shadow-4xl  ">
                     <img class="h-40 rounded-full bg-teal-900/[0.2]" src="../assets/images/profile.png" alt="">
                     <h3 class="font-bold text-2xl">Marignacia Flores</h3>
                     <nav>
-                        <a class="text-avistaloo" target="_blank" href="https://www.linkedin.com/in/marignacia-flores-munoz/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="text-primary" target="_blank" href="https://www.linkedin.com/in/marignacia-flores-munoz/"><i class="fab fa-linkedin-in"></i></a>
                     </nav>
                 </div>
             </div>
