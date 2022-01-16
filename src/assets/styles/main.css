@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* Landing Page */
 .headerLanding{
    height: 730px;
@@ -95,6 +97,8 @@
    & .menu-mobile {
       font-size:2rem;
    }
+
+   
 }
 
 /* HOME Carousel*/
@@ -164,6 +168,68 @@
 
 .img-gallery:hover{
    opacity: 1;
+}
+
+
+.search-box-family {
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 2px;
+   border-radius:10px;
+   & form {
+      position: relative;
+      background: #FFF;
+      border-radius: 0.7rem;
+    }
+    & input, button {
+      height: 75px;
+      border: 0;
+      font-size: 1.8rem;
+    }
+    & input[type="search"] {
+      outline: 0;
+      width: 100%;
+      padding: 0 1.6rem;
+      border-radius: 10px;
+      transition: all 0.3s;
+      transition-property: width;
+      position: relative;
+    }
+    & button {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5rem;
+      font-weight: bold;
+      background: #FFF;
+      border-radius: 0 .7rem .7rem 0;
+      transition:all 0.2s;
+    }
+    & button:hover {
+       background-color:#335963;
+       border:1px solid #335963
+    }
+    & button i {
+       color:#335963;
+    }
+    & button:hover i {
+       color:#FFF;
+    }
+    & input:not(:placeholder-shown) {
+      border-radius: .7rem 0 0 .7rem;
+      width: calc(100% - 5rem);
+      + button {
+        display: block;
+      }
+    }
+    & label {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
 }
 
 /*SERGIOOOO */
