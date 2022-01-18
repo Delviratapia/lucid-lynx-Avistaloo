@@ -132,6 +132,17 @@
     </div>
   </section>
 </template>
+<script>
+import { useMeta } from 'vue-meta'
+
+export default ({
+   name: "LandingPage",
+   setup() {
+      useMeta({ title: 'Portal del Avistador' })
+   },
+})
+</script>
+
 <style scoped>
 /* Landing Page */
 .headerLanding{
