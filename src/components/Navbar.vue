@@ -21,9 +21,9 @@
     <hr class="block lg:hidden mb-4">
      <div class="text-sm lg:flex-grow">
        <router-link to="/" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
-       <router-link to="/sobre-nosotros" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Nosotros</router-link>
         <router-link to="/wiki" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
         <a href="/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
+        <router-link to="/locations" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Mapa</router-link>
      </div>
      <div class="flex flex-col lg:flex-row items-center justify-center block">
         <router-link to="/login" v-if="!usuarioAutenticado" href="#" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</router-link>
@@ -219,7 +219,7 @@ closeModalContact.forEach(close => {
     top:0;
    width: 100%;
    background: white;
-   z-index:999;
+   z-index:1005;
    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
    & .name-logo {
