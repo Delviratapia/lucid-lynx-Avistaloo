@@ -4,6 +4,7 @@ import About from "../views/About.vue"
 import Wiki from "../views/Wiki.vue"
 import Privacy from "../views/Privacy.vue"
 import LoginPage from "../views/LoginPage.vue"
+import RegisterPage from "../views/RegisterPage.vue"
 import store from "../store.js"
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { path: "/wiki", component: Wiki },
   { path: "/politica-de-privacidad", component: Privacy, meta: {rutaProtegida: true} },
   { path: "/login", component: LoginPage },
+  { path: "/registro", component: RegisterPage },
 ];
 
 const history = createWebHistory();
