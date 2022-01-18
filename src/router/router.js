@@ -6,9 +6,11 @@ import Privacy from "../views/Privacy.vue"
 import LoginPage from "../views/LoginPage.vue"
 import Locations from "../views/Locations.vue"
 import RegisterPage from "../views/RegisterPage.vue"
+import LandingPage from "../views/LandingPage.vue"
 import store from "../store.js"
 
 const routes = [
+  { path: "/", component: LandingPage},
   { path: "/app", component: Home, meta: {rutaProtegida: true} },
   { path: "/sobre-nosotros", component: About},
   { path: "/wiki", component: Wiki },
