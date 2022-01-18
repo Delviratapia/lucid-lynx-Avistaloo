@@ -64,8 +64,7 @@
               </form>
           </div>
         </div>
-
-        <a v-if="!usuarioAutenticado" href="#" class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</a>
+        <router-link to="/registro" v-if="!usuarioAutenticado" href="#" class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</router-link>
           <!--Modal Register-->
         <div class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
           <!-- modal -->

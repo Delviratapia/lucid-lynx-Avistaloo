@@ -6,9 +6,21 @@ createApp(App).use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    user: null
+    user: null,
+    error: {type: null, message: null}
   },
   mutations: {
+    setError(state, payload) {
+      if(payload === null) {
+        return state.error = {type: null, message: null}
+      }
+      if(payload === "EMAIL_NOT_FOUND" || payload === "INVALID_PASSWORD") {
+        return state.error = {type: 'email', message: 'Email o contraseña incorrecta. Revisa los datos.'}
+      }
+      if(payload === "MISSING_PASSWORD") {
+        return state.error = {type: 'email', message: 'Debes rellenar todos los campos'}
+      }
+    },
     setUser(state, payload) {
       state.user = payload
     }
@@ -32,14 +44,35 @@ const store = new Vuex.Store({
         const userDB = await res.json()
         console.log('USERDB', userDB)
         if(userDB.error) {
-          return console.log(userDB.error)
+          console.log(userDB.error)
+          return commit('setError', userDB.error.message)
         }
         commit('setUser', userDB)
+        commit('setError', null)
         router.push('/')
         localStorage.setItem('userLogged', JSON.stringify(userDB))
       } catch (error) {
         console.log(error)
 
+      }
+    },
+    async userRegister({commit}, user) {
+      try {
+        const res = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCTdbVErkjtJ-KPt0UynIE9dXbjWP1TLW4', {
+          method: 'POST',
+          body: JSON.stringify({
+            email: user.email,
+            password: user.password,
+            returnSecureToken: true
+          })
+        })
+        const userDB = await res.json()
+        if(userDB.error) {
+          return commit('setError', userDB.error.message)
+        }
+        console.log(userDB)
+      } catch (error) {
+        console.log(error)
       }
     },
     async localStorageUserLogged({commit, state}) {
