@@ -38,7 +38,7 @@
               <input
                 v-model.trim="pass1"
                 id="pass1"
-                type="pass1"
+                type="password"
                 name="pass1"
                 class="text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
                 placeholder="Contraseña"/>
@@ -113,6 +113,7 @@
 </template>
 <script>
 import { mapActions, mapState } from 'vuex'
+import router from "../router/router";
 export default {
   data() {
     return {
@@ -136,14 +137,23 @@ export default {
   methods: {
     ...mapActions(['userRegister']),
     submitFormRegister() {
-      if(this.email !== '') {
       this.userRegister({email: this.email, password: this.pass1})
+      if(this.email !== '' && this.pass1 !== "") {
       this.email = '';
       this.pass1 = '';
       this.pass2 = '';
+      this.$swal({
+        icon: 'success',
+        title: 'Registro realizado correctamente',
+        text: 'Accede ahora a la aplicación',
+        confirmButtonText: 'Acceder'})
+        .then((result) => {
+          if (result.isConfirmed) {
+            router.push('/')
+          }
+        });
     } else {
-      console.log("Debe rellenar todos los datos")
-    }
+      }
     }
   }
 

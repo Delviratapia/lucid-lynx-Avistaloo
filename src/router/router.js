@@ -9,12 +9,12 @@ import RegisterPage from "../views/RegisterPage.vue"
 import store from "../store.js"
 
 const routes = [
-  { path: "/", component: Home, meta: {rutaProtegida: true} },
-  { path: "/sobre-nosotros", component: About, meta: {rutaProtegida: true} },
+  { path: "/app", component: Home, meta: {rutaProtegida: true} },
+  { path: "/sobre-nosotros", component: About},
   { path: "/wiki", component: Wiki },
-  { path: "/politica-de-privacidad", component: Privacy, meta: {rutaProtegida: true} },
+  { path: "/politica-de-privacidad", component: Privacy },
   { path: "/login", component: LoginPage },
-  { path: "/locations", component: Locations },
+  { path: "/app/locations", component: Locations, meta: {rutaProtegida: true} },
   { path: "/registro", component: RegisterPage },
 ];
 

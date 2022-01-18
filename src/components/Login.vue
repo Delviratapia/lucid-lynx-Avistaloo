@@ -88,8 +88,8 @@ import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
-      email: "sergio.ruiz.teleco@gmail.com",
-      password: "123123",
+      email: "",
+      password: "",
     };
   },
   computed: {

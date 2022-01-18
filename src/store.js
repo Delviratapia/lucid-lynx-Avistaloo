@@ -7,14 +7,22 @@ createApp(App).use(Vuex)
 const store = new Vuex.Store({
   state: {
     user: null,
-    error: {type: null, message: null}
+    error: {type: null, message: null},
+    loading: "display-none"
   },
   mutations: {
+    setLoading (state, payload) {
+      if(payload === false) {
+        return state.loading = 'display-none'
+      } else {
+        return state.loading = 'display-block'
+      }
+    },
     setError(state, payload) {
       if(payload === null) {
         return state.error = {type: null, message: null}
       }
-      if(payload === "EMAIL_NOT_FOUND" || payload === "INVALID_PASSWORD") {
+      if(payload === "EMAIL_NOT_FOUND" || payload === "INVALID_PASSWORD" || payload === "INVALID_EMAIL") {
         return state.error = {type: 'email', message: 'Email o contraseña incorrecta. Revisa los datos.'}
       }
       if(payload === "MISSING_PASSWORD") {
@@ -33,6 +41,7 @@ const store = new Vuex.Store({
     },
     async ingresoUsuario ({commit}, usuario) {
       try {
+        this.state.loading = "display-flex"
         const res = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCTdbVErkjtJ-KPt0UynIE9dXbjWP1TLW4', {
           method: 'POST',
           body: JSON.stringify({
@@ -41,8 +50,11 @@ const store = new Vuex.Store({
             returnSecureToken: true
           })
         })
+        const loading = this.state.loading
+        commit('setLoading', loading)
         const userDB = await res.json()
         console.log('USERDB', userDB)
+        this.state.loading = "display-none"
         if(userDB.error) {
           console.log(userDB.error)
           return commit('setError', userDB.error.message)
@@ -58,6 +70,7 @@ const store = new Vuex.Store({
     },
     async userRegister({commit}, user) {
       try {
+        this.state.loading = "display-flex"
         const res = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCTdbVErkjtJ-KPt0UynIE9dXbjWP1TLW4', {
           method: 'POST',
           body: JSON.stringify({
@@ -67,6 +80,7 @@ const store = new Vuex.Store({
           })
         })
         const userDB = await res.json()
+        this.state.loading = "display-none"
         if(userDB.error) {
           return commit('setError', userDB.error.message)
         }

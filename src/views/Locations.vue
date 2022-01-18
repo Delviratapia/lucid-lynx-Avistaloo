@@ -25,16 +25,20 @@
                 <Map />
             </div>
         </div>
-        
+
     </div>
 </template>
 <script>
     import Map from '../components/Map.vue'
+    import { useMeta } from 'vue-meta'
     export default {
         name: "Mapa",
         components: {
             Map,
         },
+        setup () {
+    useMeta({ title: 'Mapa' })
+  }
         /*methods: {
             show(pos){
                console.log(pos.coords.longitude);
@@ -43,7 +47,7 @@
                 let a = navigator.geolocation.getCurrentPosition(show);
                console.log(a);
             },
-            
+
         },*/
     }
 </script>

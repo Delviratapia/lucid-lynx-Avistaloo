@@ -13,6 +13,7 @@
     "vue": "^3.0.4",
     "vue-meta": "^3.0.0-alpha.7",
     "vue-router": "^4.0.12",
+    "vue-sweetalert2": "^5.0.2",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
