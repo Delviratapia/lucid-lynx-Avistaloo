@@ -14,7 +14,7 @@
             </nav>
         </div>
         <!--Contenido-->
-        <div class="cont lg:inline-block p-5">
+        <div class="lg:inline-block p-5">
             <div class="w-100 flex justify-center lg:justify-end">
                 <div class=" textContent translate" >
                     <h1 class="text-3xl font-extrabold text-center">Política de Privacidad de <span class="text-primary">Avistaloo</span>.</h1><br><br>
