@@ -17,6 +17,11 @@ let pagination = {
   records_per_page: 30,
   birds_seen: 0
 }
+window.onload = function () {
+  document.querySelector("form").reset();
+}
+
+
 let struct_data = []
 let displayBirds = (data) => {
 
@@ -38,51 +43,61 @@ let displayBirds = (data) => {
 
     // parentNames.appendChild(ul)
 
+
+
+
+
+
     for (let i = 0; i < clickedCard.length; i++) {
       clickedCard[i].addEventListener("click", () => {
         openModal();
-
-
-        // mifuncioncita va aqui
-
-        birdSummary(data[0].birds[i].specie);
-
-
-        document.querySelector(".name-animal").textContent = data[0].birds[i].name;
-        if (data[0].birds[i].images[0].image1 === undefined) {
-          document.querySelector(".image-animal").src = data[0].birds[i].images[0].noimage;
-        } else {
-          document.querySelector(".image-animal").src = data[0].birds[i].images[0].image1;
-        }
-        // document.querySelector(".description-animal").textContent = data[0].birds[i].description;
-        document.querySelector(".ejemplares-animal").textContent = data[0].birds[i].ejemplares;
-        document.querySelector(".location-animal").textContent = data[0].birds[i].location;
-        document.querySelector(".extinct-animal").textContent = data[0].birds[i].extinct;
-        document.querySelector(".family-animal").textContent = data[0].birds[i].category;
-
-        // console.log(data[0].birds[i].otherNames)
-        // for(let name of data[0].birds[i].otherNames) {
-        //   let li = document.createElement("li")
-        //   li.textContent = name
-        //   li.style.display = "inline" 
-        //   li.innerHTML += "<br>"
-        //   ul.appendChild(li)
-        // } 
-
-        // document.querySelector(".birds-list").textContent = data[0].birds[i].category;
+        let modalBird = document.querySelector(".modal-bird")
+        modalBird.classList.remove('hidden')
       });
-    }
 
 
 
-  }
-  // console.log(ul)
-  // parentNames.appendChild(ul);
-  //  SHOW TOTAL BIRDS
-  document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
+      birdSummary(data[0].birds[i].specie);
+
+
+      document.querySelector(".name-animal").textContent = data[0].birds[i].name;
+      if (data[0].birds[i].images[0].image1 === undefined) {
+        document.querySelector(".image-animal").src = data[0].birds[i].images[0].noimage;
+      } else {
+        document.querySelector(".image-animal").src = data[0].birds[i].images[0].image1;
+      }
+      // document.querySelector(".description-animal").textContent = data[0].birds[i].description;
+      document.querySelector(".ejemplares-animal").textContent = data[0].birds[i].ejemplares;
+      document.querySelector(".location-animal").textContent = data[0].birds[i].location;
+      document.querySelector(".extinct-animal").textContent = data[0].birds[i].extinct;
+      document.querySelector(".family-animal").textContent = data[0].birds[i].category;
+      document.querySelector(".establishment-animal").textContent = data[0].birds[i].establishment;
+      document.querySelector(".sciName-animal").textContent = data[0].birds[i].scientificName;
+
+
+      // console.log(data[0].birds[i].otherNames)
+      // for(let name of data[0].birds[i].otherNames) {
+      //   let li = document.createElement("li")
+      //   li.textContent = name
+      //   li.style.display = "inline" 
+      //   li.innerHTML += "<br>"
+      //   ul.appendChild(li)
+      // } 
+
+      // document.querySelector(".birds-list").textContent = data[0].birds[i].category;
+    };
+}
+
 
 
 }
+// console.log(ul)
+// parentNames.appendChild(ul);
+//  SHOW TOTAL BIRDS
+document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
+
+
+
 
 
 
@@ -100,6 +115,17 @@ let knowIfExtinct = (birdIsExtinct) => {
     bird_status = "no";
   }
   return bird_status;
+}
+
+
+let knowIfNative = (birdIsNative) => {
+  let bird_establishment = "";
+  if (birdIsNative === "native") {
+    bird_establishment = "Nativo";
+  } else {
+    bird_establishment = "Introducido";
+  }
+  return bird_establishment;
 }
 
 
@@ -164,10 +190,14 @@ const requestOptions = {
   redirect: 'follow'
 };
 
-let fillBirdsFamilies = () => {
+let fillBirdsFamilies = (q = null) => {
+  let url = "https://api.inaturalist.org/v1/taxa?rank=order&locale=es&preferred_place_id=6774&taxon_id=3"
+  if (q != null) {
+    url = `https://api.inaturalist.org/v1/taxa?rank=order&q=${q}locale=es&preferred_place_id=6774&taxon_id=3`
+  }
   return new Promise((resolve, reject) => {
     let birds_family = {}
-    fetch("https://api.inaturalist.org/v1/taxa?rank=family&locale=es&preferred_place_id=6774&taxon_id=3", requestOptions)
+    fetch(url, requestOptions)
       .then(res => {
         if (!res.ok) {
           reject(new Error("Error getting the birds families"))
@@ -191,9 +221,15 @@ let fillBirdsFamilies = () => {
 // let page = 1 
 
 
-let structureBirdData = (birds_family) => {
+let structureBirdData = (birds_family, q = null) => {
+  let url = `https://api.inaturalist.org/v1/observations/species_counts?is_active=true&place_id=6774&iconic_taxa=Aves&rank=species&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`
+  // `https://api.inaturalist.org/v1/taxa?is_active=true&place_id=6774&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&all_names=true&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`
+  if (q != null) {
+    url = `https://api.inaturalist.org/v1/observations/species_counts?is_active=true&q=${q}&place_id=6774&iconic_taxa=Aves&rank=species&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`
+    // `https://api.inaturalist.org/v1/taxa?is_active=true&place_id=6774&q=${q}&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&all_names=true&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`
+  }
   return new Promise((resolve, reject) => {
-    fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&all_names=true&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`, requestOptions)
+    fetch(url, requestOptions)
       // fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=family&rank_level=30&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}&all_names=true`, requestOptions)
       // fetch(`https://api.inaturalist.org/v1/taxa?is_active=true&taxon_id=3&rank=species&rank_level=10&locale=es&preferred_place_id=6774&rank=family&all_names=true&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`, requestOptions)
       .then(response => {
@@ -209,25 +245,27 @@ let structureBirdData = (birds_family) => {
           "birds": []
         }]
 
+
         for (let bird of results) {
-          let birdFamilyId = bird.ancestor_ids[6]
-          let photo = bird.default_photo["medium_url"]
+          let birdFamilyId = bird.taxon.ancestor_ids[5]
+          let photo = bird.taxon.default_photo["medium_url"]
           struct_data[0]['birds'].push({
             "id": bird.id,
             "category": birds_family[birdFamilyId],
-            "name": bird.preferred_common_name,
+            "name": bird.taxon.preferred_common_name,
             "images": [{
               "image1": photo,
               "noimage": "/assets/styles/images/birds/no-image.jpg",
             }],
-            "description": bird.wikipedia_url,
+            "description": bird.taxon.wikipedia_url,
             "location": bird.atlas_id,
-            "ejemplares": bird.observations_count,
+            "ejemplares": bird.taxon.observations_count,
             // "otherNames":getNames(bird.names),
-            "extinct": knowIfExtinct(bird.extinct),
-            "specie": bird.name,
-            "summary": bird.extract
-
+            "extinct": knowIfExtinct(bird.taxon.extinct),
+            "specie": bird.taxon.name,
+            "summary": bird.extract,
+            "establishment": knowIfNative(bird.taxon.preferred_establishment_means),
+            "scientificName": bird.taxon.name
           })
         }
         resolve(struct_data)
@@ -238,16 +276,17 @@ let structureBirdData = (birds_family) => {
   })
 }
 
-async function getBirdsFromAPI() {
-  const birds_family = await fillBirdsFamilies()
-  struct_data = await structureBirdData(birds_family)
+async function getBirdsFromAPI(q = null) {
+  const birds_family = await fillBirdsFamilies(q)
+  struct_data = await structureBirdData(birds_family, q)
   pagination = {
     ...pagination,
     birds_in_this_call: struct_data[0]["birds"].length
   }
   if (pagination["birds_seen"] == 0)
     pagination["birds_seen"] += pagination["birds_in_this_call"]
-  displayBirds(struct_data)
+  // resetBirds()
+  // displayBirds(struct_data)
 
 }
 
@@ -257,41 +296,75 @@ async function searchBirds(text) {
   let search_struct = [{
     "birds": birds
   }]
-  resetBirds()
+
   displayBirds(search_struct)
 }
+
+// search all
+
+let btnSearch = document.querySelector(".birds-searchbtn")
+btnSearch.addEventListener("click", async () => {
+  let textInput = document.querySelector("#search")
+  let textwritten = textInput.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  pagination.args = textwritten
+  resetBirds()
+  await getBirdsFromAPI(textwritten)
+  console.log("search log")
+  console.log(pagination)
+  console.log(struct_data)
+  console.log("===============")
+  displayBirds(struct_data)
+
+
+})
+
+// let birdsOptions = document.querySelector(".options")
+
+// for (let option of birdOrder){
+//   let optionB = document.createElement("option")
+// }
+
+
+
+
 
 
 
 // searchbox family
-
-
 async function searchBirdsFamily(text) {
   let birds = struct_data[0]["birds"]
-  console.log(birds)
-  for (let birdsDebug of birds){
-    console.log(birdsDebug.category)
-  }
+  console.log("boku no birds: ", birds)
   birds = birds.filter((bird) => {
-   if (bird["category"]===undefined){
-     return false;
-   }
-   
-    return bird["category"].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(text.toLowerCase())
+    if (bird["category"] === undefined) {
+      return false;
+    }
+
+    return bird["category"].toLowerCase().includes(text)
   });
   // birds = birds.filter((bird)=> bird["name"].toLowerCase().includes(text.toLowerCase()));
-  console.log("hola")
-
   let search_struct = [{
     "birds": birds
   }]
+
   resetBirds()
   displayBirds(search_struct)
 }
+// document.querySelector(".birdsFamily-searchbtn").addEventListener("click", e => {
+//   let textInput = document.querySelector("#searchFamily")
+//   let textwritten = textInput.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+//   console.log(textwritten)
+//   searchBirdsFamily(textwritten)
+//   console.log(textwritten)
+// })
 
 
 
 getBirdsFromAPI()
+  .then(res => {
+    resetBirds()
+    displayBirds(struct_data)
+  })
+
 // document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 pagination = {
@@ -299,22 +372,25 @@ pagination = {
   show_fn: getBirdsFromAPI,
 }
 
-const searchInput = document.querySelector("#search");
-searchInput.addEventListener("keyup", () => searchBirds(searchInput.value))
+// const searchInput = document.querySelector("#search");
+// searchInput.addEventListener("keyup", () => searchBirds(searchInput.value))
+
+
+// const searchInputFamily = document.querySelector("#searchFamily");
+// searchInputFamily.addEventListener("keyup", () => searchBirdsFamily(searchInputFamily.value))
 
 
 
-const searchInputFamily = document.querySelector("#searchFamily");
-searchInputFamily.addEventListener("keyup", () => searchBirdsFamily(searchInputFamily.value))
-
-
-
-qs("#btn-next").addEventListener("click", () => {
+qs("#btn-next").addEventListener("click", async () => {
+  await nextPage(pagination)
   pagination["birds_seen"] += pagination["birds_in_this_call"]
-  nextPage(pagination)
+  displayBirds(struct_data)
+
 })
 
-qs("#btn-prev").addEventListener("click", () => {
+qs("#btn-prev").addEventListener("click", async () => {
   pagination["birds_seen"] -= pagination["birds_in_this_call"]
-  prevPage(pagination)
+  await prevPage(pagination)
+  displayBirds(struct_data)
+
 })

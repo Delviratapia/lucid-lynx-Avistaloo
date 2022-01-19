@@ -171,9 +171,15 @@
 }
 
 
-.search-box-family {
+.dropdown:focus-within .dropdown-menu {
+   opacity:1;
+   transform: translate(0) scale(1);
+   visibility: visible;
+ }
+
+.dropdown-menu {
    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 2px;
-   border-radius:10px;
+   border-radius:50px;
    & form {
       position: relative;
       background: #FFF;

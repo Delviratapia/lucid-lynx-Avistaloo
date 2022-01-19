@@ -1,30 +1,35 @@
-import { qs } from './utils.js'
-function prevPage(pagination)
-{
+import {
+    qs
+} from './utils.js'
+
+async function prevPage(pagination) {
     if (pagination["cur_page"] >= 1) {
         pagination["cur_page"]--;
-        changePage(pagination);
+        await changePage(pagination);
     }
 }
 
-function nextPage(pagination)
-{
-    
-       
+async function nextPage(pagination) {
+
+
     if (pagination["cur_page"] <= numPages(pagination)) {
         pagination["cur_page"]++;
-        changePage(pagination);
+        await changePage(pagination);
     }
 }
 
-function changePage(pagination)
-{ // sergio logic
+async function changePage(pagination) { // sergio logic
     let btn_next = qs("#btn-next");
     let btn_prev = qs("#btn-prev");
-    
+
     // Validate page
     qs(".cards").innerHTML = "";
-    pagination["show_fn"]()
+    if ("args" in pagination) {
+        await pagination["show_fn"](pagination.args)
+    } else {
+        await pagination["show_fn"]()
+
+    }
     qs("#page-span").innerHTML = pagination["cur_page"];
     document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
@@ -42,10 +47,12 @@ function changePage(pagination)
     }
 }
 
-function numPages(pagination)
-{
+function numPages(pagination) {
     return Math.ceil(pagination["total_results"] / pagination["records_per_page"]);
 }
 
 
-export { nextPage, prevPage };
+export {
+    nextPage,
+    prevPage
+};
