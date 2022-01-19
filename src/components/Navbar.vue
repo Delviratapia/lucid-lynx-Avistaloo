@@ -20,7 +20,8 @@
   <div id="nav-content" class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
     <hr class="block lg:hidden mb-4">
      <div class="text-sm lg:flex-grow">
-       <router-link to="/" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
+       <router-link to="/" v-if="!usuarioAutenticado" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
+       <router-link to="/app" v-if="usuarioAutenticado" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
         <router-link to="/wiki" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
         <router-link to="/sobre-nosotros" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Nosotros</router-link>
         <a href="/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
