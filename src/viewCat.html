@@ -166,8 +166,8 @@
 
   </nav>
 
-  <section class="container mx-auto p-5">
-    <div class="top-page flex items-center gap-10">
+  <section class="container mx-auto p-5 flex justify-center ">
+    <div class="top-page flex items-center flex-col gap-10 lg:w-3/6">
 
       <!-- hamburger menu  -->
 
@@ -187,9 +187,9 @@
           </div>
         </nav>
       </div> -->
-      <div class="search-box w-3/5">
+      <div class="search-box w-3/5 min-w-full">
         <form onsubmit="event.preventDefault();" role="search">
-          <input id="search" type="search" placeholder="Buscar ave" autofocus required />
+          <input id="search" class="text-center" type="search" placeholder="Buscar" autofocus required />
           <button type="submit"><i class="birds-searchbtn fas fa-search"></i></button>
         </form>
       </div>
@@ -197,7 +197,7 @@
       <!-- searchbar family -->
 
 
-      <div class="flex items-center justify-center p-12">
+      <div class="flex items-center justify-center lg:p-2 max-w-full">
         <div class=" relative inline-block text-left dropdown w-96">
           <span class="rounded-md shadow-sm"><button
               class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
@@ -374,7 +374,8 @@
                   <p><span class="font-bold">Situación: </span><span class="establishment-animal">lorem</span></p>
                   <p><span class="font-bold">Extinto: </span><span class="extinct-animal">lorem</span></p>
                   <p><span class="font-bold">Resumen: </span><span class="aboutBird"></span></p>
-                  <p><span class="font-bold">Localización: </span><span class="location-animal">lorem</span></p>
+                  <!-- localización -->
+                  <p><span class="font-bold"></span><span class="location-animal"></span></p>
                 </div>
               </div>
             </div>
