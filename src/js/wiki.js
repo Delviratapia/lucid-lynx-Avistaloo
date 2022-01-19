@@ -53,48 +53,50 @@ let displayBirds = (data) => {
         openModal();
         let modalBird = document.querySelector(".modal-bird")
         modalBird.classList.remove('hidden')
+
+
+
+
+        birdSummary(data[0].birds[i].specie);
+
+
+        document.querySelector(".name-animal").textContent = data[0].birds[i].name;
+        if (data[0].birds[i].images[0].image1 === undefined) {
+          document.querySelector(".image-animal").src = data[0].birds[i].images[0].noimage;
+        } else {
+          document.querySelector(".image-animal").src = data[0].birds[i].images[0].image1;
+        }
+        // document.querySelector(".description-animal").textContent = data[0].birds[i].description;
+        document.querySelector(".ejemplares-animal").textContent = data[0].birds[i].ejemplares;
+        document.querySelector(".location-animal").textContent = data[0].birds[i].location;
+        document.querySelector(".extinct-animal").textContent = data[0].birds[i].extinct;
+        document.querySelector(".family-animal").textContent = data[0].birds[i].category;
+        document.querySelector(".establishment-animal").textContent = data[0].birds[i].establishment;
+        document.querySelector(".sciName-animal").textContent = data[0].birds[i].scientificName;
+
+
+        // console.log(data[0].birds[i].otherNames)
+        // for(let name of data[0].birds[i].otherNames) {
+        //   let li = document.createElement("li")
+        //   li.textContent = name
+        //   li.style.display = "inline" 
+        //   li.innerHTML += "<br>"
+        //   ul.appendChild(li)
+        // } 
+
+        // document.querySelector(".birds-list").textContent = data[0].birds[i].category;
       });
-
-
-
-      birdSummary(data[0].birds[i].specie);
-
-
-      document.querySelector(".name-animal").textContent = data[0].birds[i].name;
-      if (data[0].birds[i].images[0].image1 === undefined) {
-        document.querySelector(".image-animal").src = data[0].birds[i].images[0].noimage;
-      } else {
-        document.querySelector(".image-animal").src = data[0].birds[i].images[0].image1;
-      }
-      // document.querySelector(".description-animal").textContent = data[0].birds[i].description;
-      document.querySelector(".ejemplares-animal").textContent = data[0].birds[i].ejemplares;
-      document.querySelector(".location-animal").textContent = data[0].birds[i].location;
-      document.querySelector(".extinct-animal").textContent = data[0].birds[i].extinct;
-      document.querySelector(".family-animal").textContent = data[0].birds[i].category;
-      document.querySelector(".establishment-animal").textContent = data[0].birds[i].establishment;
-      document.querySelector(".sciName-animal").textContent = data[0].birds[i].scientificName;
-
-
-      // console.log(data[0].birds[i].otherNames)
-      // for(let name of data[0].birds[i].otherNames) {
-      //   let li = document.createElement("li")
-      //   li.textContent = name
-      //   li.style.display = "inline" 
-      //   li.innerHTML += "<br>"
-      //   ul.appendChild(li)
-      // } 
-
-      // document.querySelector(".birds-list").textContent = data[0].birds[i].category;
     };
-}
+
+  }
 
 
+  document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 }
 // console.log(ul)
 // parentNames.appendChild(ul);
 //  SHOW TOTAL BIRDS
-document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 
 
@@ -309,11 +311,8 @@ btnSearch.addEventListener("click", async () => {
   pagination.args = textwritten
   resetBirds()
   await getBirdsFromAPI(textwritten)
-  console.log("search log")
-  console.log(pagination)
-  console.log(struct_data)
-  console.log("===============")
   displayBirds(struct_data)
+
 
 
 })
