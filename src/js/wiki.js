@@ -325,7 +325,18 @@ btnSearch.addEventListener("click", async () => {
   resetBirds()
   pagination["cur_page"]=1;
   pagination["birds_seen"]=0;
+  const loading = document.createElement("div")
+  loading.classList.add("lds-roller")
+  loading.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>"
+  loading.style.display = "block"
+  loading.style.margin = "0 auto"
+ 
+
+  // loading.style.margin = "0 auto"
+  document.querySelector(".wikiOptions").appendChild(loading);
   await getBirdsFromAPI(textwritten)
+  loading.style.display = "none"
+
   qs("#page-span").innerHTML = pagination["cur_page"];
   displayBirds(struct_data)
   
