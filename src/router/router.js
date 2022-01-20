@@ -7,9 +7,12 @@ import LoginPage from "../views/LoginPage.vue"
 import Locations from "../views/Locations.vue"
 import RegisterPage from "../views/RegisterPage.vue"
 import LandingPage from "../views/LandingPage.vue"
+import PathNotFound from "../views/PathNotFound.vue"
 import store from "../store.js"
 
 const routes = [
+  { path: '/404', name: 'NotFound', component: PathNotFound },
+  { path: '/:catchAll(.*)', redirect:'404' },
   { path: "/", component: LandingPage},
   { path: "/app", component: Home, meta: {rutaProtegida: true} },
   { path: "/sobre-nosotros", component: About},
