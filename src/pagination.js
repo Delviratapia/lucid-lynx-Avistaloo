@@ -18,7 +18,7 @@ async function nextPage(pagination) {
     }
 }
 
-async function changePage(pagination) { // sergio logic
+async function changePage(pagination) {
     let btn_next = qs("#btn-next");
     let btn_prev = qs("#btn-prev");
 

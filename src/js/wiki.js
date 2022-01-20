@@ -85,6 +85,19 @@ let displayBirds = (data) => {
         // } 
 
         // document.querySelector(".birds-list").textContent = data[0].birds[i].category;
+
+
+        // function displayDropdownOptions() {
+        //   for (let birdOption of birdDropdown) {
+        //     let option = document.createElement("option");
+        //     option.setAttribute(`${}`);
+        //     option.textContent = birdOption
+        //     option.style.display = "dropdown"
+        //     option.appendChild()
+        //   }
+        // }
+
+
       });
     };
 
@@ -310,8 +323,12 @@ btnSearch.addEventListener("click", async () => {
   let textwritten = textInput.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
   pagination.args = textwritten
   resetBirds()
+  pagination["cur_page"]=1;
+  pagination["birds_seen"]=0;
   await getBirdsFromAPI(textwritten)
+  qs("#page-span").innerHTML = pagination["cur_page"];
   displayBirds(struct_data)
+  
 
 
 
