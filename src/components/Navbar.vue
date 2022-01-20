@@ -1,133 +1,78 @@
 <template>
-  <nav class="navbar flex items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+  <!--navbar normal-->
+  <nav id="nav-normal" class="flex navbar items-center justify-between flex-wrap  lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
 
     <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
       <a class="navbar-item transition duration-500 hover:scale-125" href="/">
-        <img width="80px" src="../assets/images/logos/logo.png" alt="">
+        <img class="w-24" src="../assets/images/logos/logo.png" alt="">
       </a>
       <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
     </div>
 
     <div class="block lg:hidden">
-      <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
+      <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none" >
       <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <title>Menu</title>
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
         </svg>
       </button>
     </div>
-
-  <div id="nav-content" class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-center">
+    
+    <div id="nav-content" class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden py-6  md:text-center">
     <hr class="block lg:hidden mb-4">
      <div class="text-sm lg:flex-grow">
-       <router-link to="/" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
-        <router-link to="/wiki" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
-        <router-link to="/sobre-nosotros" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Nosotros</router-link>
-        <a href="/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
+       <router-link to="/app" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
+       <a v-if="!usuarioAutenticado" href="/#Que-es" class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Que es?</a>
+       <a v-if="!usuarioAutenticado" href="/#Caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</a>
+        <router-link to="/wiki" class=" text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
+        <a v-if="usuarioAutenticado" href="/app/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
         <router-link v-if="usuarioAutenticado" to="/app/locations" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Mapa</router-link>
      </div>
-     <div class="flex flex-col lg:flex-row items-center justify-center block">
+     <div class="flex flex-col lg:flex-row items-center justify-center">
         <router-link to="/login" v-if="!usuarioAutenticado" href="#" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</router-link>
         <a style="cursor:pointer" v-if="usuarioAutenticado" @click="logout" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Cerrar Sesión</a>
-          <!--Modal Login-->
-        <div class="modal hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
-          <!-- modal -->
-          <div class="bg-white shadow-md border border-primary-color rounded-lg w-96 p-5 sm:p-7 lg:p-9">
-            <form class="space-y-6" action="#">
-              <!-- modal header -->
-              <div class="border-b py-2 flex justify-between items-center">
-                <h3 class="font-bold text-lg text-primary-color">Iniciar sesión</h3>
-                <button class="text-primary-color close-modal">&cross;</button>
-              </div>
-              <!-- modal body -->
-              <div>
-                <label for="email" class="text-sm font-bold text-primary-color">Email</label>
-                <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" placeholder="usuario@gmail.com" required="">
-              </div>
-              <div>
-                <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5" required="">
-              </div>
-              <div class="flex items-start">
-                <div class="flex items-start">
-                  <div class="flex items-center h-5">
-                    <input id="remember" aria-describedby="remember" type="checkbox" class=" dark:border-gray-600 focus:ring-primary-color ring-offset-primary-color">
-                                </div>
-                    <div class="text-sm ml-3">
-                      <label for="remember" class="font-bold text-primary-color">Recuerdame</label>
-                    </div>
-                  </div>
-                </div>
-                <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Iniciar sesión</button>
-                <div class="text-sm font-bold text-primary-color">
-                  ¿No registrado? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Crear cuenta</a>
-                </div>
-              </form>
-          </div>
-        </div>
         <router-link to="/registro" v-if="!usuarioAutenticado" href="#" class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</router-link>
-          <!--Modal Register-->
-        <div class="modal-register hidden h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-70 modalsform">
-          <!-- modal -->
-          <div class="bg-white shadow-md border border-gray-200 rounded-lg w-96 p-5 sm:p-7 lg:p-9  dark:border-primary-color">
-            <form class="space-y-6" action="#">
-              <!-- modal header -->
-              <div class="border-b py-2 flex justify-between items-center">
-                <h3 class="font-bold text-lg text-primary-color">Registrarse</h3>
-                <button class="text-primary-color close-modal-register">&cross;</button>
-              </div>
-              <!-- modal body -->
-              <div>
-                <label for="name" class="text-sm font-bold text-primary-color">Nombre</label>
-                <input type="name" name="name" id="name" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su nombre" required="">
-              </div>
-              <div>
-                <label for="user" class="text-sm font-bold text-primary-color">Usuario</label>
-                <input type="user" name="user" id="user" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su usuario" required="">
-              </div>
-              <div>
-                <label for="email" class="text-sm font-bold text-primary-color">Email</label>
-                <input type="email" name="email" id="email" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " placeholder="Ingrese su email" required="">
-              </div>
-              <div>
-                <label for="password" class="text-sm font-bold text-primary-color block mb-2">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Ingrese una contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
-              </div>
-              <div>
-                <label for="confirm-password" class="text-sm font-bold text-primary-color block mb-2">Confirmar contraseña</label>
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirme su contraseña" class="bg-white border border-primary-color text-primary-color sm:text-sm rounded-lg block w-full p-2.5  " required="">
-              </div>
-              <div class="flex items-start">
-                <div class="flex items-start">
-                  <div class="flex items-center h-5">
-                    <input
-                      id="remember"
-                      aria-describedby="remember"
-                      type="checkbox"
-                      class="focus:ring-primary-color ring-offset-primary-color"
-                    />
-                  </div>
-                  <div class="text-sm">
-                    <label for="remember" class="font-bold text-primary-color"
-                      >Estoy de acuerdo con los
-                      <a
-                        href="#"
-                        class="text-blue-700 hover:underline dark:text-blue-500"
-                        >términos y condiciones</a
-                      ></label
-                    >
-                  </div>
-                </div>
-              </div>
-                <button type="submit" class="w-full  px-4 py-2 hover:text-primary-color hover:bg-white hover:border border-primary-color text-white border border-primary-color bg-primary-color rounded">Registrarse</button>
-                <div class="text-sm font-bold text-primary-color">
-                  ¿Tienes una cuenta? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar sesión</a>
-                </div>
-              </form>
-          </div>
-        </div>
       </div>
-  </div>
+    </div>
+
+  </nav>
+
+  <!--navbar mobile-->
+  <nav id="nav-mobile" class="navbar hidden flex-col items-center justify-between flex-wrap lg:hidden lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+    <div class="flex justify-between items-center w-full">
+      <div class=" items-center flex-shrink-0 text-dark md:text-right mr-6 flex">
+        <a class="navbar-item transition duration-500 hover:scale-125" href="/">
+          <img class="w-24" src="../assets/images/logos/logo.png" alt="">
+        </a>
+        <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+      </div>
+
+      <div class="block lg:hidden">
+        <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none" >
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="nav-content" class="w-full items-center justify-center lg:w-auto pt-6 md:text-center">
+    <hr class="block lg:hidden ">
+     <div class="text-sm lg:flex-grow flex flex-col justify-center h-80 mb-2">
+       <router-link to="/app" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
+       <a v-if="!usuarioAutenticado" href="/#Que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</a>
+       <a v-if="!usuarioAutenticado" href="/#Caracteristicas" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Características</a>
+        <router-link to="/wiki" class=" text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</router-link>
+        <a v-if="usuarioAutenticado" href="/app/#gallery" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Galería</a>
+        <router-link v-if="usuarioAutenticado" to="/app/locations" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Mapa</router-link>
+     </div>
+     <div class="flex flex-col items-center justify-center my-2">
+        <router-link to="/login" v-if="!usuarioAutenticado" href="#" class="show-modal block w-32 px-4 py-2 mb-2 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</router-link>
+        <a style="cursor:pointer" v-if="usuarioAutenticado" @click="logout" class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Cerrar Sesión</a>
+        <router-link to="/registro" v-if="!usuarioAutenticado" href="#" class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</router-link>
+      </div>
+    </div>
 
   </nav>
 </template>
@@ -135,11 +80,28 @@
 import { mapActions, mapGetters } from 'vuex'
 import store from '../store.js'
 export default {
+  data() {
+    return {
+      menuShow: false
+    }
+  },
   computed: {
     ...mapGetters(['usuarioAutenticado'])
   },
   methods: {
-    ...mapActions(['logout'])
+    ...mapActions(['logout']),
+    showMobileNavbar(){
+      let navMobile = document.getElementById('nav-mobile');
+      if(this.menuShow == false){
+        navMobile.classList.remove("hidden");
+        navMobile.classList.add("flex");
+        this.menuShow = true;
+      }else{
+        navMobile.classList.remove("flex");
+        navMobile.classList.add("hidden");
+        this.menuShow = false;
+      }
+    },
   }
   /*
   mounted() {

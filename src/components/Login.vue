@@ -1,7 +1,7 @@
 <template>
   <div class="login-container flex flex-col items-center justify-center bg-gray-100">
     <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
-      <a class="navbar-item transition duration-500 hover:scale-125" href="/">
+      <a class="navbar-item transition duration-500 hover:scale-125" href="/app">
         <img width="80" src="../assets/images/logos/logo.png" alt="" />
       </a>
       <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>

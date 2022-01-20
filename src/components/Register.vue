@@ -74,10 +74,10 @@
     </div>
     <div class="flex justify-center items-center mt-6">
       <p href="#" target="_blank" class="inline-flex items-center text-gray-700 font-medium text-xs text-center">
-        <span class="ml-2">¿No tienes cuenta?
+        <span class="ml-2">¿Ya tienes una cuenta?
           <router-link
-            to="/registro"
-            class="text-xs ml-2 text-blue-500 font-semibold">Regístrate ahora</router-link>
+            to="/login"
+            class="text-xs ml-2 text-blue-500 font-semibold">Inicia sesión</router-link>
         </span>
       </p>
     </div>
@@ -149,7 +149,7 @@ export default {
         confirmButtonText: 'Acceder'})
         .then((result) => {
           if (result.isConfirmed) {
-            router.push('/')
+            router.push('/app')
           }
         });
     } else {
