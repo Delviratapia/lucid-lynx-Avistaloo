@@ -66,7 +66,7 @@
             </p>
           </div>
           <div class="w-full md:w-2/6 px-4">
-            <img class="imgSection lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="https://cdn-icons.flaticon.com/png/512/3696/premium/3696879.png?token=exp=1642598370~hmac=3b518c7898ed3b528f2f2adf54341a88" alt="explora-wiki">
+            <img class="imgSection lg:w-80 lg:h-80 md:w-4/5 md:h-4/5 sm:w-3/5 sm:h-3/5" src="/src/assets/images/1178434.png" alt="explora-wiki">
           </div>
     </div>
     <div class="flex items-center flex-wrap mb-20">
