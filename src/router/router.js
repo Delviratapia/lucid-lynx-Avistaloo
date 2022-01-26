@@ -8,6 +8,7 @@ import Locations from "../views/Locations.vue";
 import RegisterPage from "../views/RegisterPage.vue";
 import LandingPage from "../views/LandingPage.vue";
 import PathNotFound from "../views/PathNotFound.vue";
+import MyAccount from "../views/MyAccount.vue";
 import store from "../store.js";
 
 const routes = [
@@ -82,6 +83,14 @@ const routes = [
     component: RegisterPage,
     meta: {
       scrollTop: 0,
+    },
+  },
+  {
+    path: "/mi-cuenta",
+    component: MyAccount,
+    meta: {
+      scrollTop: 0,
+      rutaProtegida: true,
     },
   },
 ];

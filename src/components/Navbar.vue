@@ -40,7 +40,6 @@
         </svg>
       </button>
     </div>
-
     <div
       id="nav-content"
       class="w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden py-6 md:text-center"
@@ -97,13 +96,6 @@
           class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
           >Iniciar Sesión</router-link
         >
-        <a
-          style="cursor: pointer"
-          v-if="usuarioAutenticado"
-          @click="logout"
-          class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
-          >Cerrar Sesión</a
-        >
         <router-link
           to="/registro"
           v-if="!usuarioAutenticado"
@@ -111,6 +103,9 @@
           class="show-modal-register block w-32 px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
           >Registrarse</router-link
         >
+        <div v-if="usuarioAutenticado" class="user-bubble">
+          <BubbleUser />
+        </div>
       </div>
     </div>
   </nav>
@@ -204,13 +199,6 @@
           class="show-modal block w-32 px-4 py-2 mb-2 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
           >Iniciar Sesión</router-link
         >
-        <a
-          style="cursor: pointer"
-          v-if="usuarioAutenticado"
-          @click="logout"
-          class="show-modal block w-32 px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
-          >Cerrar Sesión</a
-        >
         <router-link
           to="/registro"
           v-if="!usuarioAutenticado"
@@ -223,6 +211,7 @@
   </nav>
 </template>
 <script>
+import BubbleUser from "./BubbleUser.vue";
 import { mapActions, mapGetters } from "vuex";
 import store from "../store.js";
 export default {
@@ -249,75 +238,7 @@ export default {
       }
     },
   },
-  /*
-  mounted() {
-    /*MENU MOBILE
-
-document.getElementById('nav-toggle').onclick = function(){
-    document.getElementById("nav-content").classList.toggle("hidden");
-}
-
-/*LOGIN-REGISTER-CREATE
-
-const modal = document.querySelector('.modal');
-const showModal = document.querySelector('.show-modal');
-const closeModal = document.querySelectorAll('.close-modal');
-
-showModal.addEventListener('click', function (){
-    modal.classList.remove('hidden')
-});
-
-closeModal.forEach(close => {
-    close.addEventListener('click', function (){
-        modal.classList.add('hidden')
-    });
-});
-
-const modalRegister = document.querySelector('.modal-register');
-const showModalRegister = document.querySelector('.show-modal-register');
-const closeModalRegister = document.querySelectorAll('.close-modal-register');
-
-showModalRegister.addEventListener('click', function (){
-    modalRegister.classList.remove('hidden')
-});
-
-closeModalRegister.forEach(close => {
-    close.addEventListener('click', function (){
-        modalRegister.classList.add('hidden')
-    });
-});
-
-const modalUnirse = document.querySelector('.modal-unirse');
-const showModalUnirse = document.querySelector('.show-modal-unirse');
-const closeModalUnirse = document.querySelectorAll('.close-modal-unirse');
-
-showModalUnirse.addEventListener('click', function (){
-    modalUnirse.classList.remove('hidden')
-});
-
-closeModalUnirse.forEach(close => {
-    close.addEventListener('click', function (){
-        modalUnirse.classList.add('hidden')
-    });
-});
-
-/*MODAL CONTACT
-
-const modalContact = document.querySelector('.modal-contact');
-const showModalContact = document.querySelector('.show-modal-contact');
-const closeModalContact = document.querySelectorAll('.close-modal-contact');
-
-showModalContact.addEventListener('click', function (){
-    modalContact.classList.remove('hidden')
-});
-
-closeModalContact.forEach(close => {
-    close.addEventListener('click', function (){
-        modalContact.classList.add('hidden')
-    });
-});
-  },
-  */
+  components: { BubbleUser },
 };
 </script>
 <style lang="scss" scoped>
