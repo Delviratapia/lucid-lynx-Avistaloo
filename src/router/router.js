@@ -1,45 +1,119 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue"
-import Wiki from "../views/Wiki.vue"
-import Privacy from "../views/Privacy.vue"
-import LoginPage from "../views/LoginPage.vue"
-import Locations from "../views/Locations.vue"
-import RegisterPage from "../views/RegisterPage.vue"
-import LandingPage from "../views/LandingPage.vue"
-import PathNotFound from "../views/PathNotFound.vue"
-import store from "../store.js"
+import About from "../views/About.vue";
+import Wiki from "../views/Wiki.vue";
+import Privacy from "../views/Privacy.vue";
+import LoginPage from "../views/LoginPage.vue";
+import Locations from "../views/Locations.vue";
+import RegisterPage from "../views/RegisterPage.vue";
+import LandingPage from "../views/LandingPage.vue";
+import PathNotFound from "../views/PathNotFound.vue";
+import store from "../store.js";
 
 const routes = [
-  { path: '/404', name: 'NotFound', component: PathNotFound },
-  { path: '/:catchAll(.*)', redirect:'404' },
-  { path: "/", component: LandingPage},
-  { path: "/app", component: Home, meta: {rutaProtegida: true} },
-  { path: "/sobre-nosotros", component: About},
-  { path: "/wiki", component: Wiki },
-  { path: "/politica-de-privacidad", component: Privacy },
-  { path: "/login", component: LoginPage },
-  { path: "/app/locations", component: Locations, meta: {rutaProtegida: true} },
-  { path: "/registro", component: RegisterPage },
+  {
+    path: "/404",
+    name: "NotFound",
+    component: PathNotFound,
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "404",
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/",
+    component: LandingPage,
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/app",
+    component: Home,
+    meta: {
+      rutaProtegida: true,
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/sobre-nosotros",
+    component: About,
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/wiki",
+    component: Wiki,
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/politica-de-privacidad",
+    component: Privacy,
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/login",
+    component: LoginPage,
+    meta: {
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/app/locations",
+    component: Locations,
+    meta: {
+      rutaProtegida: true,
+      scrollTop: 0,
+    },
+  },
+  {
+    path: "/registro",
+    component: RegisterPage,
+    meta: {
+      scrollTop: 0,
+    },
+  },
 ];
+
+const scrollBehavior = (to, from, savedPosition) => {
+  return (
+    savedPosition || {
+      top: to.meta?.scrollTop || 0,
+      left: 0,
+    }
+  );
+};
 
 const history = createWebHistory();
 
 const router = createRouter({
   history,
   routes,
+  scrollBehavior,
 });
 
 router.beforeEach((to, from, next) => {
-  if(to.meta.rutaProtegida ) {
-    if(store.getters.usuarioAutenticado) {
-      next()
+  from.meta?.scrollTop && (from.meta.scrollTop = window.scrollY);
+  if (to.meta.rutaProtegida) {
+    if (store.getters.usuarioAutenticado) {
+      next();
     } else {
-      next('/login')
+      next("/login");
     }
   } else {
-    next()
+    next();
   }
-})
+});
 
 export default router;
