@@ -20,6 +20,7 @@ library.add(faEnvelope, faLock);
    // SWEET ALERT
    import VueSweetalert2 from 'vue-sweetalert2';
    import 'sweetalert2/dist/sweetalert2.min.css';
+   import 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'
 // CSS FILES
 import './index.css'
 import './assets/css/globals.css'

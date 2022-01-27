@@ -45,6 +45,21 @@ export default {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media(max-width:768px) {
+  .container {
+  max-width:100% !important;
+  padding:0px 20px;
+}
+
+}
+
 .display-flex {
   display:flex !important;
 }

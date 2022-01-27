@@ -1,5 +1,5 @@
 <template>
-<div class="flex justify-around flex-col p-10 pt-0 sm:gap-10 lg:flex-row">
+<div class="container-comments flex justify-around flex-col pt-0 sm:gap-10 lg:flex-row">
    <!-- comment 1 -->
 
     <div class='flex max-w-xl mt-10 bg-white shadow-md shadow-xl rounded-lg overflow-hidden mx-auto'>
@@ -406,3 +406,8 @@
     </div>
     </div>
 </template>
+<style scoped>
+.container-comments {
+  padding:40px 0px;
+}
+</style>

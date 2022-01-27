@@ -1,7 +1,7 @@
 <template>
   <ul class="header__navbar">
     <li class="header__item">
-      <a href="#" class="header__link">
+      <p href=" " class="header__link">
         <transition name="slide-fade">
           <!-- Header Navigation Menu Icons -->
           <button
@@ -11,7 +11,7 @@
             @click="show = false"
           >
             <svg viewBox="0 0 24 24" class="header--icon">
-              <title>Close</title>
+              <title>Cerrar</title>
               <path d="M0 0h24v24H0V0z" fill="none" />
               <path
                 fill="currentColor"
@@ -28,7 +28,7 @@
             </svg>
           </button>
         </transition>
-      </a>
+      </p>
       <!-- Dropdown Menu -->
       <transition name="dropdown">
         <div class="dropdown__menu" v-bind:class="{ active: show }" v-if="show">

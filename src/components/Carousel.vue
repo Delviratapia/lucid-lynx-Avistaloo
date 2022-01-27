@@ -1,8 +1,6 @@
 <template>
 <div class="carousel-container mt-10 sm:px-24 lg:px-48">
-
     <!-- Carousel Body -->
-
     <div class="slides flex overflow-hidden rounded-lg bg-gray-100 shadow-md shadow-xl shadow-gray-400 lg:m-auto carousel-box h-full">
 
       <!-- slider 1 -->
