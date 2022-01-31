@@ -15,18 +15,18 @@ async function nextPage(pagination) {
 }
 
 async function changePage(pagination) {
-    let btn_next = querySelector("#btn-next");
-    let btn_prev = querySelector("#btn-prev");
+    let btn_next = document.querySelector("#btn-next");
+    let btn_prev = document.querySelector("#btn-prev");
 
     // Validate page
-    querySelector(".cards").innerHTML = "";
+    document.querySelector(".cards").innerHTML = "";
     if ("args" in pagination) {
         await pagination["show_fn"](pagination.args)
     } else {
         await pagination["show_fn"]()
 
     }
-    querySelector("#page-span").innerHTML = pagination["cur_page"];
+    document.querySelector("#page-span").innerHTML = pagination["cur_page"];
     document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 

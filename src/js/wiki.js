@@ -389,21 +389,11 @@ getBirdsFromAPI()
     displayBirds(struct_data)
   })
 
-// document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 pagination = {
   ...pagination,
   show_fn: getBirdsFromAPI,
 }
-
-// const searchInput = document.querySelector("#search");
-// searchInput.addEventListener("keyup", () => searchBirds(searchInput.value))
-
-
-// const searchInputFamily = document.querySelector("#searchFamily");
-// searchInputFamily.addEventListener("keyup", () => searchBirdsFamily(searchInputFamily.value))
-
-
 
 qs("#btn-next").addEventListener("click", async () => {
   await nextPage(pagination)

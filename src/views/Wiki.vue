@@ -4,7 +4,6 @@ import { qs } from '../js/utils.js';
 import { birdSummary } from "../js/birdsSummary.js";
 import { 
   getPagination,
-  getStructData,
   getBirdsFromAPI,
   resetBirds,
   displayBirds 
@@ -14,7 +13,6 @@ console.log("entered script tag")
 
 let pagination = getPagination()
 
-
 export default {
   name: "Wiki", 
   created() {
@@ -23,13 +21,39 @@ export default {
   },
   mounted() {
     console.log("mounted!")
+    console.log(`birds seen mounted `)
+    console.log(pagination)
     getBirdsFromAPI()
     .then(res => {
       console.log(`entered mounted and ran getbirds ${res}`)
+      pagination = getPagination()
       resetBirds()
-      let struct_data = getStructData()
-      displayBirds(struct_data)
+      displayBirds()
+      console.log(`birds seen after fetch `)
+      console.log(pagination)
+
     })
+    pagination["show_fn"] = getBirdsFromAPI,
+    
+
+   
+
+  qs("#btn-next").addEventListener("click", async () => {
+    pagination = getPagination()
+    console.log(`birds seen in event `)
+    console.log(pagination)
+    await nextPage(pagination)
+    pagination["birds_seen"] += pagination["birds_in_this_call"]
+    displayBirds()
+
+  })
+
+  qs("#btn-prev").addEventListener("click", async () => {
+    pagination["birds_seen"] -= pagination["birds_in_this_call"]
+    await prevPage(pagination)
+    displayBirds()
+  })
+
   }
 }
 </script>

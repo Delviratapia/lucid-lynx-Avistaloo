@@ -142,7 +142,8 @@ function dataAnimals(name, imageFirst) {
     return html;
 }
 
-let displayBirds = (data) => {
+let displayBirds = () => {
+    let data = struct_data
     // PETICION PARA GORRIONES
     const clickedCard = document.getElementsByClassName("card-clickable");
     let parentNames = document.querySelector(".otherNames-animal")
@@ -188,13 +189,13 @@ let displayBirds = (data) => {
   
     const birds_family = await fillBirdsFamilies(q)
     struct_data = await structureBirdData(birds_family, q)
+    console.log("the structure data was just defined, and is:")
     console.log(struct_data)
-    pagination = {
-      ...pagination,
-      birds_in_this_call: struct_data[0]["birds"].length
-    }
+    pagination["birds_in_this_call"] = struct_data[0]["birds"].length
     if (pagination["birds_seen"] == 0)
       pagination["birds_seen"] += pagination["birds_in_this_call"]
+    console.log("and pagination is:")
+    console.log(pagination)
   
   }
 
