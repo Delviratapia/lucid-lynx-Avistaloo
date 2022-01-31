@@ -17,9 +17,6 @@ let pagination = {
   records_per_page: 30,
   birds_seen: 0
 }
-window.onload = function () {
-  document.querySelector("form").reset();
-}
 
 
 let struct_data = []

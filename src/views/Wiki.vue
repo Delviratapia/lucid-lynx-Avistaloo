@@ -1,6 +1,112 @@
 <script>
 import { nextPage, prevPage} from '../js/pagination.js';
-console.log("testing script tag")
+import { qs } from '../js/utils.js';
+import { birdSummary } from "../js/birdsSummary.js";
+import { fillBirdsFamilies, displayBirds } from "../js/apiUtils.js";
+
+console.log("entered script tag")
+
+let pagination = {
+  cur_page: 1,
+  records_per_page: 30,
+  birds_seen: 0
+}
+let struct_data = []
+
+let knowIfExtinct = (birdIsExtinct) => {
+  let bird_status = "";
+  if (birdIsExtinct) {
+    bird_status = "Si";
+  } else {
+    bird_status = "no";
+  }
+  return bird_status;
+}
+
+let knowIfNative = (birdIsNative) => {
+  let bird_establishment = "";
+  if (birdIsNative === "native") {
+    bird_establishment = "Nativo";
+  } else {
+    bird_establishment = "Introducido";
+  }
+  return bird_establishment;
+}
+
+
+let structureBirdData = (birds_family, q = null) => {
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  let url = `https://api.inaturalist.org/v1/observations/species_counts?is_active=true&place_id=6774&iconic_taxa=Aves&rank=species&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`
+  if (q != null) {
+    url = `https://api.inaturalist.org/v1/observations/species_counts?is_active=true&q=${q}&place_id=6774&iconic_taxa=Aves&rank=species&locale=es&preferred_place_id=6774&per_page=${pagination["records_per_page"]}&page=${pagination["cur_page"]}`
+  }
+  return new Promise((resolve, reject) => {
+    fetch(url, requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          reject(new Error("Error getting the birds species"))
+        }
+        return response.json()
+      })
+      .then(data => {
+        pagination.total_results = data.total_results
+        let results = data.results
+        let struct_data = [{
+          "birds": []
+        }]
+        for (let bird of results) {
+          let birdFamilyId = bird.taxon.ancestor_ids[5]
+          let photo = bird.taxon.default_photo["medium_url"]
+          struct_data[0]['birds'].push({
+            "id": bird.id,
+            "category": birds_family[birdFamilyId],
+            "name": bird.taxon.preferred_common_name,
+            "images": [{
+              "image1": photo,
+              "noimage": "/assets/styles/images/birds/no-image.jpg",
+            }],
+            "description": bird.taxon.wikipedia_url,
+            "location": bird.atlas_id,
+            "ejemplares": bird.taxon.observations_count,
+            // "otherNames":getNames(bird.names),
+            "extinct": knowIfExtinct(bird.taxon.extinct),
+            "specie": bird.taxon.name,
+            "summary": bird.extract,
+            "establishment": knowIfNative(bird.taxon.preferred_establishment_means),
+            "scientificName": bird.taxon.name
+          })
+        }
+        resolve(struct_data)
+      })
+      .catch(error => {
+        return reject(Error(error.message))
+      })
+  })
+}
+
+async function getBirdsFromAPI(q = null) {
+  console.log("entered birds from api")
+
+  const birds_family = await fillBirdsFamilies(q)
+  struct_data = await structureBirdData(birds_family, q)
+  console.log(struct_data)
+  pagination = {
+    ...pagination,
+    birds_in_this_call: struct_data[0]["birds"].length
+  }
+  if (pagination["birds_seen"] == 0)
+    pagination["birds_seen"] += pagination["birds_in_this_call"]
+
+}
+
+let resetBirds = () => {
+  const cards = document.querySelector(".cards");
+  cards.innerHTML = ""
+}
 
 export default {
   name: "Wiki", 
@@ -11,6 +117,12 @@ export default {
   mounted() {
    
     console.log("mounted!")
+  getBirdsFromAPI()
+  .then(res => {
+    console.log(`entered mounted and ran getbirds ${res}`)
+    resetBirds()
+    displayBirds(struct_data)
+  })
   }
 }
 </script>
