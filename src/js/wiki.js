@@ -154,31 +154,31 @@ let knowIfNative = (birdIsNative) => {
 
 
 // MENU HAMBURGUER WIKI
-const modal = document.querySelector(".main-modal");
-const closeButton = document.querySelectorAll(".modal-close");
+// const modal = document.querySelector(".main-modal");
+// const closeButton = document.querySelectorAll(".modal-close");
 
-const modalClose = () => {
-  modal.classList.remove("fadeIn");
-  modal.classList.add("fadeOut");
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 200);
-};
+// const modalClose = () => {
+//   modal.classList.remove("fadeIn");
+//   modal.classList.add("fadeOut");
+//   setTimeout(() => {
+//     modal.style.display = "none";
+//   }, 200);
+// };
 
-const openModal = () => {
-  modal.classList.remove("fadeOut");
-  modal.classList.add("fadeIn");
-  modal.style.display = "flex";
-};
+// const openModal = () => {
+//   modal.classList.remove("fadeOut");
+//   modal.classList.add("fadeIn");
+//   modal.style.display = "flex";
+// };
 
-for (let i = 0; i < closeButton.length; i++) {
-  const elements = closeButton[i];
-  elements.onclick = (e) => modalClose();
-  modal.style.display = "none";
-  window.onclick = function (event) {
-    if (event.target === modal) modalClose();
-  };
-}
+// for (let i = 0; i < closeButton.length; i++) {
+//   const elements = closeButton[i];
+//   elements.onclick = (e) => modalClose();
+//   modal.style.display = "none";
+//   window.onclick = function (event) {
+//     if (event.target === modal) modalClose();
+//   };
+// }
 // WIKI PAGE
 
 function dataAnimals(name, imageFirst) {
@@ -389,11 +389,21 @@ getBirdsFromAPI()
     displayBirds(struct_data)
   })
 
+// document.querySelector(".total-birds").textContent = `${pagination["birds_seen"]} / ${pagination["total_results"]}`;
 
 pagination = {
   ...pagination,
   show_fn: getBirdsFromAPI,
 }
+
+// const searchInput = document.querySelector("#search");
+// searchInput.addEventListener("keyup", () => searchBirds(searchInput.value))
+
+
+// const searchInputFamily = document.querySelector("#searchFamily");
+// searchInputFamily.addEventListener("keyup", () => searchBirdsFamily(searchInputFamily.value))
+
+
 
 qs("#btn-next").addEventListener("click", async () => {
   await nextPage(pagination)

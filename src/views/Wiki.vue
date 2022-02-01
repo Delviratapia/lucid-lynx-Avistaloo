@@ -4,6 +4,7 @@ import { qs } from '../js/utils.js';
 import { birdSummary } from "../js/birdsSummary.js";
 import { 
   getPagination,
+  turnSearchBarOn,
   getBirdsFromAPI,
   resetBirds,
   displayBirds 
@@ -15,33 +16,21 @@ let pagination = getPagination()
 
 export default {
   name: "Wiki", 
-  created() {
-  
-    console.log("created!")
-  },
   mounted() {
     console.log("mounted!")
-    console.log(`birds seen mounted `)
-    console.log(pagination)
     getBirdsFromAPI()
     .then(res => {
-      console.log(`entered mounted and ran getbirds ${res}`)
       pagination = getPagination()
       resetBirds()
       displayBirds()
-      console.log(`birds seen after fetch `)
-      console.log(pagination)
 
     })
     pagination["show_fn"] = getBirdsFromAPI,
     
-
-   
+    turnSearchBarOn()
 
   qs("#btn-next").addEventListener("click", async () => {
     pagination = getPagination()
-    console.log(`birds seen in event `)
-    console.log(pagination)
     await nextPage(pagination)
     pagination["birds_seen"] += pagination["birds_in_this_call"]
     displayBirds()
@@ -61,11 +50,11 @@ export default {
 <template>
 <section class="container mx-auto p-5 flex justify-center">
     <div class="top-page flex items-center flex-col gap-10 lg:w-3/6 wikiOptions">
-      <div class="search-box w-3/5 min-w-full">
-        <form onsubmit="event.preventDefault();" role="search">
+      <div class="search-box w-3/5 min-w-full mt-40">
+      <div class="search-box w-3/5 min-w-full m">
           <input id="search" class="text-center" type="search" placeholder="Buscar" autofocus required />
           <button type="submit"><i class="birds-searchbtn fas fa-search"></i></button>
-        </form>
+        </div>
       </div>
 
       <!-- searchbar family -->
@@ -180,7 +169,7 @@ export default {
                   <p><span class="font-bold">Familia: </span><span class="family-animal">lorem</span></p>
                   <p><span class="font-bold">Nombre científico: </span><span class="sciName-animal">lorem</span></p>
                   <p><span class="font-bold">Situación: </span><span class="establishment-animal">lorem</span></p>
-                  <p><span class="font-bold">Extinto: </span><span class="extinct-animal">lorem</span></p>
+                  <p><span class="font-bold">Estado: </span><span class="extinct-animal">lorem</span></p>
                   <p><span class="font-bold">Resumen: </span><span class="aboutBird"></span></p>
                   <!-- localización -->
                   <p><span class="font-bold"></span><span class="location-animal"></span></p>
