@@ -44,7 +44,7 @@ export default ({
 
 <style scoped>
 header {
-   background-color:#335963;
+   background:url('../assets/images/background-header.png');
    opacity:1;
 
 }
