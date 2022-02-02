@@ -6,7 +6,7 @@
           <h3 class="text-2xl mb-8 text-white">Te presentamos Avistaloo</h3>
           <h3 class="text-2xl mb-20 text-white">La web donde podrás subir tus avistamientos y compartirlos con la comunidad</h3>
           <button class="unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">
-            <a href="login">UNIRSE AHORA</a>
+            <router-link to="/login">UNIRSE AHORA</router-link>
           </button>
 
         </div>
