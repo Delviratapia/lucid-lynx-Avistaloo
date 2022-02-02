@@ -4,7 +4,7 @@ import {
 
 let modal = null
 let closeButton = null
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     modal = document.querySelector(".main-modal");
     closeButton = document.querySelectorAll(".modal-close");
     console.log(modal)
@@ -16,6 +16,24 @@ window.addEventListener('load', function() {
             if (event.target === modal) modalClose();
         };
     }
+
+    // pagination numbers
+    // const NUMBER_OF_NUMBERS = 3
+
+    // let pageSpan = document.querySelector("#page-span")
+    // let continue_ = pageSpan.parentElement.lastChild
+    // pageSpan.parentElement.removeChild(continue_)
+    // let cur_numbers_shown = 1
+    // let initial_number = pagination["cur_page"] + 1
+    // //logic
+    //     while(cur_numbers_shown < NUMBER_OF_NUMBERS) {
+    //         let newSpan = pageSpan.cloneNode(true)
+    //         newSpan.innerHTML = initial_number++
+    //         pageSpan.parentElement.appendChild(newSpan)
+    //         cur_numbers_shown++
+    //     }
+    // //logic
+    // pageSpan.parentElement.appendChild(continue_)
 })
 
 const modalClose = () => {
@@ -293,6 +311,8 @@ const turnSearchBarOn = () => {
         displayBirds(search_struct)
     }
 }
+
+
 
 export {
     getPagination,
