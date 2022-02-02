@@ -231,9 +231,7 @@ let resetBirds = () => {
 function dataAnimals(name, imageFirst) {
     const html = `<div class="card-clickable" href="#">
 <div class="card-text rounded overflow-hidden shadow-lg">
-  <img
-  class="w-full h-48 object-cover"
-    src="${imageFirst}"
+  <img class="w-full h-48 object-cover" src="${imageFirst}"
     alt="${name}"
   />
   <div class="px-6 py-4 text-center">
@@ -243,7 +241,6 @@ function dataAnimals(name, imageFirst) {
 </div>`;
     return html;
 }
-
 
 
 async function getBirdsFromAPI(q = null) {
@@ -270,7 +267,8 @@ const turnSearchBarOn = () => {
     // search all
     let btnSearch = document.querySelector(".birds-searchbtn")
     btnSearch.addEventListener("click", async () => {
-        let textInput = qs("#search")
+
+        let textInput = document.querySelector("#search")
         let textwritten = textInput.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
         pagination.args = textwritten
         resetBirds()
@@ -284,11 +282,11 @@ const turnSearchBarOn = () => {
         loading.style.display = "block"
         loading.style.margin = "0 auto"
 
-        qs(".wikiOptions").appendChild(loading);
+        document.querySelector(".wikiOptions").appendChild(loading);
         await getBirdsFromAPI(textwritten)
         loading.style.display = "none"
 
-        qs("#page-span").innerHTML = pagination["cur_page"];
+        document.querySelector("#page-span").innerHTML = pagination["cur_page"];
         displayBirds()
     })
 
