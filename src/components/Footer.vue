@@ -51,9 +51,9 @@
         <!-- Añadir los enlaces del footer -->
         <router-link to="/sobre-nosotros">¿Quiénes somos?</router-link>
         <router-link to="/politica-de-privacidad">Política de privacidad</router-link>
-        <router-link to="/">Contáctanos</router-link>
+        <!--<router-link to="/">Contáctanos</router-link>-->
         <!--Modal Contact-->
-        <div
+        <!-- <div
           class="
             modal-contact
             hidden
@@ -68,7 +68,7 @@
             bg-black bg-opacity-70
           "
         >
-          <!-- modal -->
+           modal 
           <div
             class="
               bg-white
@@ -82,7 +82,7 @@
             "
           >
             <form class="space-y-6" action="#">
-              <!-- modal header -->
+              modal header 
               <div class="border-b py-2 flex justify-between items-center">
                 <h3 class="font-bold text-lg text-primary-color">
                   Contáctanos
@@ -91,7 +91,7 @@
                   &cross;
                 </button>
               </div>
-              <!-- modal body -->
+               modal body 
               <div>
                 <label
                   for="name-contact"
@@ -248,7 +248,7 @@
               </div>
             </form>
           </div>
-        </div>
+        </div>-->
       </div>
   </footer>
 </template>
