@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="headerLanding py-20 bg-center bg-no-repeat" style="background-image: url('/src/assets/images/background-header.png')">
+    <div class="headerLanding py-20 bg-center bg-no-repeat">
         <div class="headerContent container m-auto text-center px-6 opacity-100">
           <h1 class="text-4xl mb-12 font-bold mb-12 text-white">¡BIENVENIDO OBSERVADOR!</h1>
           <h3 class="text-2xl mb-8 text-white">Te presentamos Avistaloo</h3>
@@ -112,6 +112,7 @@ export default ({
 <style lang="scss" scoped>
 
 .headerLanding{
+    background-image: url(../assets/images/background-header.png);
     height: 730px;
 }
 
