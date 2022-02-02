@@ -628,7 +628,7 @@ export default {
     }
   }
 }
-</script
+</script>
 <style scoped>
 .container-comments {
   padding: 40px 0px;
