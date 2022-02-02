@@ -3,25 +3,26 @@
     <form
       @submit.prevent="submit"
       @reset="onReset"
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex items-center justify-center"
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex items-center justify-around navxs:flex-col navsm:flex-col"
     >
       <div class="lg:w-3/6 lg:pr-0 pr-0">
-        <h1 class="font-medium text-5xl text-black">¿En qué podemos ayudarte</h1>
-        <p class="leading-relaxed mt-4 text-black">
+        <h1 class="font-medium text-5xl text-black">¿En qué podemos ayudarte?</h1>
+        <p class="leading-relaxed align-baseline mt-4 text-black text-center">
           Si has llegado a esta página, probablemente quieres contactar con nosotros.
           Hay varias formas de contactar con el equipo de Avistaloo.com:
         </p>
-        <p class="leading-relaxed mt-4 text-black">
-          También tienes disponible el formulario de contacto :
+        <p class="leading-relaxed align-baseline mt-4 text-black text-center">
+          Tienes disponible el formulario de contacto en esta misma página:
           Introduce un correo, un mensaje que entre en detalles y, opcionalmente, un nombre.
         </p>
         <p
-          class="leading-relaxed mt-4 text-black"
-        >Tienes la opción de contactar con nosotros a través de nuestras redes sociales, accesibles en los enlaces bajo este texto y desde la parte inferior de la página.</p>
+          class="leading-relaxed align-baseline mt-4 text-black text-center"
+        >También puedes contactar contactar con nosotros a través de nuestras redes sociales, accesibles en los enlaces de la parte inferior de la página.</p>
       </div>
       <div
         class="lg:w-3/6 xl:w-2/5 md:w-full bg-white p-8 flex flex-col lg:ml-auto w-full mt-10 lg:mt-0 rounded-2xl"
       >
+        <div v-html="successContactNotification"></div>
         <div class="relative mb-4">
           <label for="full-name" class="leading-7 text-sm text-gray-600">Nombre:</label>
           <input
@@ -50,9 +51,9 @@
             v-model="message"
             id="message"
             name="message"
-            rows="4"
+            rows="3"
             class="w-full bg-white rounded-md border border-gray-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-150 ease-in-out"
-            placeholder="Escriba aquí el motivo de su contacto..."
+            placeholder="Escribe aquí el motivo de su contacto..."
           ></textarea>
         </div>
         <button
@@ -73,17 +74,21 @@ export default {
       name: "",
       email: "",
       message: "",
+      successContactNotification: "",
     };
   },
   methods: {
     onReset() {
       if (this.name.length > 0 && /(.+)@(.+){2,}.(.+){2,}/.test(this.email) && this.message.length > 0) {
-        alert('Funciona bien'); //Cambia esto por un cartelito de enviado
+        this.successContactNotification = '<p class="success-contact">Contacto procesado correctamente, recibirás una respuesta a la mayor brevedad posible, muchas gracias por tu tiempo.</p>';
         this.name = "";
         this.email = "";
         this.message = "";
       } else {
-        alert('No funciona'); //Esto también, cartelito de fallo
+        this.successContactNotification = '<p class="failed-contact">Alguno de los campos no ha sido completado o es incorrecto.</p>';
+        this.name = "";
+        this.email = "";
+        this.message = "";
       }
     }
   },
@@ -91,4 +96,11 @@ export default {
 </script>
 
 <style>
+.success-contact {
+  color: green;
+  animation: vanished 3s linear 2s 1 normal forwards running;
+}
+.failed-contact {
+  color: red;
+}
 </style>
