@@ -214,7 +214,7 @@ function dataAnimals(name, imageFirst) {
     const html = `<div class="card-clickable" href="#">
 <div class="card-text rounded overflow-hidden shadow-lg">
   <img
-    class="w-full"
+  class="w-full h-48 object-cover"
     src="${imageFirst}"
     alt="${name}"
   />
