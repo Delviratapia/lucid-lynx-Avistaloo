@@ -9,6 +9,7 @@ import RegisterPage from "../views/RegisterPage.vue";
 import LandingPage from "../views/LandingPage.vue";
 import PathNotFound from "../views/PathNotFound.vue";
 import MyAccount from "../views/MyAccount.vue";
+import ContactPages from "../views/ContactPage.vue";
 import store from "../store.js";
 
 const routes = [
@@ -91,6 +92,13 @@ const routes = [
     meta: {
       scrollTop: 0,
       rutaProtegida: true,
+    },
+  },
+  {
+    path: "/Contacto",
+    component: ContactPages,
+    meta: {
+      scrollTop: 0,
     },
   },
 ];
