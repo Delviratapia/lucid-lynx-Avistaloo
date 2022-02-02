@@ -2,23 +2,24 @@
   <!--navbar normal-->
   <nav id="nav-normal" class="flex navbar navbar-fixed-position items-center justify-between lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
     <div class="flex items-center flex-shrink-0 text-dark md:text-right ">
-      <a v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" href="/">
+      <router-link v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
         <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
         <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-      </a>
-      <a v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" href="/app">
+      </router-link>
+
+      <router-link v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/app">
         <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
         <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-      </a>  
+      </router-link>  
     </div>
     <div class="text-sm justify-center hidden lg:flex">
       <router-link v-if="usuarioAutenticado" to="/app" class="text-xl mt-1 lg:inline-block lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
       <router-link v-if="!usuarioAutenticado" to="/" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
-      <a v-if="!usuarioAutenticado" href="/#Que-es" class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Que es?</a>
-      <a v-if="!usuarioAutenticado" href="/#Caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</a>
-      <a href="/wiki" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</a>
-      <a v-if="usuarioAutenticado" href="/app/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
-      <router-link v-if="usuarioAutenticado" to="/app/locations" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110">Mapa</router-link>
+      <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Que es?</router-link>
+      <router-link v-if="!usuarioAutenticado" to="/caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</router-link>
+      <router-link to="/wiki" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
+      <router-link v-if="usuarioAutenticado" to="/app/galeria" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</router-link>
+      <router-link v-if="usuarioAutenticado" to="/app/mapa" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110">Mapa</router-link>
     </div>
     <div class="block lg:hidden">
       <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
@@ -78,11 +79,11 @@
       <div class="text-sm lg:flex-grow flex flex-col mb-2">
         <router-link to="/app" v-if="usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
         <router-link to="/" v-if="!usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
-        <a v-if="!usuarioAutenticado" href="/#Que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</a>
-        <a v-if="!usuarioAutenticado" href="/#Caracteristicas" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Características</a>
-        <a href="/wiki" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</a>
-        <a v-if="usuarioAutenticado" href="/app/#gallery" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Galería</a>
-        <router-link v-if="usuarioAutenticado" to="/app/locations" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Mapa</router-link>
+        <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</router-link>
+        <router-link v-if="!usuarioAutenticado" to="/caracteristicas" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Características</router-link>
+        <router-link to="/wiki" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</router-link>
+        <router-link v-if="usuarioAutenticado" to="/app/galeria-phone" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Galería</router-link>
+        <router-link v-if="usuarioAutenticado" to="/app/mapa" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Mapa</router-link>
       </div>
       <div class="flex flex-col mx-auto mb-2">
         <router-link
