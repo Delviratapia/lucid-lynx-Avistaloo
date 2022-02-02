@@ -34,14 +34,12 @@
       <router-link
         to="/login"
         v-if="!usuarioAutenticado"
-        href="#"
         class="show-modal block px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
         >Iniciar Sesión</router-link
       >
       <router-link
         to="/registro"
         v-if="!usuarioAutenticado"
-        href="#"
         class="show-modal-register block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
         >Registrarse</router-link
       >
@@ -55,14 +53,14 @@
   <nav id="nav-mobile" class="navbar hidden flex-col items-center justify-between flex-wrap lg:hidden lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
     <div class="flex justify-between items-center w-full">
       <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
-        <a v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" href="/">
+        <router-link v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
           <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
           <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-        </a>
-        <a v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" href="/app">
+        </router-link>
+        <router-link v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/app">
           <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
           <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-        </a> 
+        </router-link> 
       </div>
       <div class="block lg:hidden">
         <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
@@ -89,14 +87,12 @@
         <router-link
           to="/login"
           v-if="!usuarioAutenticado"
-          href="#"
           class="block px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
           >Iniciar Sesión</router-link
         >
         <router-link
           to="/registro"
           v-if="!usuarioAutenticado"
-          href="#"
           class="mt-1 block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
           >Registrarse</router-link
         >
@@ -105,7 +101,7 @@
         <div v-if="usuarioAutenticado" class="flex  items-center justify-center session-text">
           <ul class="flex">
             <li class="mb-2 mr-4">
-              <a href="/mi-cuenta" class="flex justify-center" title="Mi cuenta">
+              <router-link to="/mi-cuenta" class="flex justify-center" title="Mi cuenta">
                 <div class="mr-2 text-center">
                   <svg viewBox="0 0 496 512">
                     <path
@@ -115,7 +111,7 @@
                   </svg>
                 </div>
                 <div>Mi cuenta</div>
-              </a>
+              </router-link>
             </li>
             <li class="mb-2">
               <a href="#" class="flex justify-center" title="Desconectar">
