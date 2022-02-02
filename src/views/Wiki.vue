@@ -48,12 +48,13 @@ export default {
 </script>
 
 <template>
-<section class="container mx-auto p-5 flex justify-center">
+<section class="container mx-auto p-5 flex flex-col justify-center space-y-6 items-center">
     <div class="top-page flex items-center flex-col gap-10 lg:w-3/6 wikiOptions">
       <div class="search-box w-3/5 min-w-full mt-40">
-      <div class="search-box w-3/5 min-w-full m">
+       <form onsubmit="event.preventDefault();" role="search">
           <input id="search" class="text-center" type="search" placeholder="Buscar" autofocus required />
           <button type="submit"><i class="birds-searchbtn fas fa-search"></i></button>
+          </form>
         </div>
       </div>
 
