@@ -35,11 +35,41 @@ const routes = [
     },
   },
   {
+    path: "/que-es",
+    component: LandingPage,
+    meta: {
+      scrollTop: 730,
+    },
+  },
+  {
+    path: "/caracteristicas",
+    component: LandingPage,
+    meta: {
+      scrollTop: 1000,
+    },
+  },
+  {
     path: "/app",
     component: Home,
     meta: {
       rutaProtegida: true,
       scrollTop: 0,
+    },
+  },
+  {
+    path: "/app/galeria",
+    component: Home,
+    meta: {
+      rutaProtegida: true,
+      scrollTop: 3200,
+    },
+  },
+  {
+    path: "/app/galeria-phone",
+    component: Home,
+    meta: {
+      rutaProtegida: true,
+      scrollTop: 7500,
     },
   },
   {
@@ -71,7 +101,7 @@ const routes = [
     },
   },
   {
-    path: "/app/locations",
+    path: "/app/mapa",
     component: Locations,
     meta: {
       rutaProtegida: true,
@@ -93,14 +123,18 @@ const routes = [
       rutaProtegida: true,
     },
   },
-];
+]
+
+;
 
 const scrollBehavior = (to, from, savedPosition) => {
-  return (
+  console.log(to);
+  return (  
     savedPosition || {
       top: to.meta?.scrollTop || 0,
       left: 0,
     }
+    
   );
 };
 
