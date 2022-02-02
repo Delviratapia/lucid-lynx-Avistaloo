@@ -90,6 +90,33 @@ const store = new Vuex.Store({
             body: JSON.stringify({
               email: user.email,
               password: user.password,
+              displayName: user.displayName,
+              photoUrl: user.photoUrl,
+              returnSecureToken: true,
+            }),
+          }
+        );
+        const userDB = await res.json();
+        this.state.loading = "display-none";
+        if (userDB.error) {
+          return commit("setError", userDB.error.message);
+        }
+        console.log(userDB);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async userUpdate({ commit }, user) {
+      try {
+        this.state.loading = "display-flex";
+        const res = await fetch(
+          "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCTdbVErkjtJ-KPt0UynIE9dXbjWP1TLW4",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              email: user.email,
+              password: user.password,
+              displayName: user.displayName,
               returnSecureToken: true,
             }),
           }
