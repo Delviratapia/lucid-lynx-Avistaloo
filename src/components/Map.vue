@@ -1,14 +1,17 @@
 <template>
-  <div class="flex items-center border-y mb-5 px-5 pt-0">
-    <div class="cont flex flex-col justify-around mr-6">
-      <div class="flex flex-col">
+  <div class="flex border-y mb-5 px-5 pt-0">
+    <div class="cont flex flex-col mt-6 mr-6">
+      <div class="flex flex-col mt-6 mb-6">
         <span>Radio de busqueda:</span>
-        <select class="border mt-2" name="select" v-model.model="zoom">
+        <select class="border mt-2 mb-6" name="select" v-model.model="zoom">
           <option :value="15">2km</option>
           <option :value="12">15Km</option>
           <option :value="10">50Km</option>
           <option :value="5">España</option>
         </select>
+      </div>
+      <div>
+        <img class="mt-6" style="height: 30vh;" src="../assets/images/pin-world.gif" alt="">
       </div>
       <!--<div>
         <span>Buscar en un lugar concreto:</span>
