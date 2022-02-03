@@ -218,12 +218,13 @@ export default {
             </div>-->
           </div>
           <!--Footer-->
-          <div class="flex justify-end m-6">
+          
+        </div>
+        <div class="flex justify-end m-6">
             <button
               class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400"
             >Salir</button>
           </div>
-        </div>
       </div>
     </div>
   </div>
