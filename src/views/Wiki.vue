@@ -278,7 +278,7 @@ export default {
 
   & .name-logo {
     font-size: 2rem;
-    font-weighty: 600;
+    font-weight: 600;
     color: #335963;
   }
   & .searchbar-container {
