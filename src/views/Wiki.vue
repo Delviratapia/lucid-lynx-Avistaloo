@@ -50,12 +50,14 @@ export default {
   },
 
   methods: {
-    resetInput(){
-       let reset = document.querySelector("#search");
-       reset.value = "";
-    }
+    resetInput() {
+      let reset = document.querySelector("#search");
+      setTimeout(function (){reset.value = "";},500);
+    },
+
   }
 }
+
 </script>
 
 <template>
@@ -65,6 +67,7 @@ export default {
         <form onsubmit="event.preventDefault();" role="search">
           <input
             id="search"
+           
             class="text-center"
             type="search"
             placeholder="Buscar"
@@ -218,13 +221,12 @@ export default {
             </div>-->
           </div>
           <!--Footer-->
-          
         </div>
         <div class="flex justify-end m-6">
-            <button
-              class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400"
-            >Salir</button>
-          </div>
+          <button
+            class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400"
+          >Salir</button>
+        </div>
       </div>
     </div>
   </div>

@@ -308,6 +308,8 @@ const turnSearchBarOn = () => {
         resetBirds()
         displayBirds(search_struct)
     }
+
+    
 }
 
 
