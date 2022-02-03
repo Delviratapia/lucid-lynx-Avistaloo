@@ -50,7 +50,7 @@
               <div
                 class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400"
               >
-                <font-awesome-icon :icon="['fas', 'envelope']" />
+                <font-awesome-icon :icon="['fas', 'user']" />
               </div>
               <input
                 v-model.trim="displayName"
