@@ -50,7 +50,7 @@
   </nav>
 
   <!--navbar mobile-->
-  <nav id="nav-mobile" class="navbar hidden flex-col items-center justify-between flex-wrap lg:hidden lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+  <nav tabindex="0" id="nav-mobile" class="navbar hidden flex-col items-center justify-between flex-wrap lg:hidden lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1 "  @blur="nofocus">
     <div class="flex justify-between items-center w-full">
       <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
         <router-link v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
@@ -140,7 +140,6 @@ import store from "../store.js";
 export default {
   data() {
     return {
-      menuShow: false,
     };
   },
   computed: {
@@ -148,19 +147,26 @@ export default {
   },
   methods: {
     ...mapActions(["logout"]),
+    hideNav(){
+      let navMobile = document.querySelector("#nav-mobile");
+      navMobile.classList.remove("flex");
+      navMobile.classList.add("hidden");
+    },
     showMobileNavbar() {
-      let navMobile = document.getElementById("nav-mobile");
-      if (this.menuShow == false) {
-        navMobile.classList.remove("hidden");
-        navMobile.classList.add("flex");
-        this.menuShow = true;
+      let navMobile = document.getElementById("nav-mobile").classList;
+      if (navMobile.contains("hidden")) {
+        navMobile.remove("hidden");
+        navMobile.add("flex");
+        document.querySelector("#nav-mobile").focus();
       } else {
-        navMobile.classList.remove("flex");
-        navMobile.classList.add("hidden");
-        this.menuShow = false;
+        this.hideNav();
       }
     },
+    nofocus(){
+      setTimeout(this.hideNav, 300);
+    },
   },
+  
   mounted() {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
@@ -267,4 +273,5 @@ svg{
 .user-bubble{
   width: 210.39px;
 }
+
 </style>

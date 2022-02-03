@@ -60,7 +60,7 @@
           <label
             for="contact-agreement"
             class="leading-7 text-sm text-gray-600"
-          >Estoy de acuerdo con la política de privacidad de Avistaloo</label>
+          >Estoy de acuerdo con la <router-link to="/politica-de-privacidad" class="text-primary font-semibold">política de privacidad de Avistaloo</router-link></label>
           <input id="contact-agreement" type="checkbox" v-model="contactAgreements" />
         </div>
         <button
