@@ -182,6 +182,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 import router from "../router/router";
+import JSConfetti from 'js-confetti'
 export default {
   data() {
     return {
@@ -206,8 +207,8 @@ export default {
 
     ...mapActions(["userRegister"]),
     submitFormRegister() {
-      this.userRegister({ email: this.email, password: this.pass1, displayName: this.displayName});
       if (this.email !== "" && this.pass1 !== "" && this.displayName) {
+        this.userRegister({ email: this.email, password: this.pass1, displayName: this.displayName});
         this.email = "";
         this.pass1 = "";
         this.pass2 = "";
