@@ -100,12 +100,19 @@
 </template>
 <script>
 import { useMeta } from 'vue-meta'
-
+import JSConfetti from 'js-confetti'
 export default ({
    name: "LandingPage",
    setup() {
       useMeta({ title: 'Portal del Avistador' })
    },
+   mounted() {
+     const jsConfetti = new JSConfetti()
+     jsConfetti.addConfetti({
+       confettiRadius: 6,
+      confettiNumber: 500,
+     })
+   }
 })
 </script>
 

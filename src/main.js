@@ -25,4 +25,5 @@ library.add(faEnvelope, faLock);
 import './index.css'
 import './assets/css/globals.css'
 
+
 createApp(App).use(router).use(createMetaManager()).use(store).use(VueSweetalert2).component("font-awesome-icon", FontAwesomeIcon).mount('#app')
