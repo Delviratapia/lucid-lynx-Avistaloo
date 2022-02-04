@@ -118,7 +118,7 @@ export default ({
         jsConfetti.addConfetti({
       confettiRadius: 6,
       confettiNumber: 100,
-      emojis: ['🐱', '🌺', '🐦', '🦆', ],
+      emojis: ['🐱', '🐨', '🐐', '🦆', ],
     })
      }
    }

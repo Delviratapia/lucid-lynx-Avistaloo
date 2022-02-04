@@ -58,13 +58,13 @@
           />
         </div>
       </div>
-      <button
+      <!--<button
         href="#"
         class="submit-button block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
         data-v-5752a6c6=""
       >
         Guardar cambios
-      </button>
+      </button>-->
     </form>
   </div>
 </template>
@@ -97,6 +97,7 @@ export default {
 .form-container {
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 103px;
 }
 .submit-button {
   margin: 0px auto 50px auto;
