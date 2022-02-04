@@ -5,10 +5,16 @@
           <h1 class="text-4xl mb-12 font-bold mb-12 text-white">¡BIENVENIDO OBSERVADOR!</h1>
           <h3 class="text-2xl mb-8 text-white">Te presentamos Avistaloo</h3>
           <h3 class="text-2xl mb-20 text-white">La web donde podrás subir tus avistamientos y compartirlos con la comunidad</h3>
+          <div class="buttons-landing flex">
           <button class="unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">
             <router-link to="/login">UNIRSE AHORA</router-link>
+            <a href=""></a>
           </button>
-
+          <button @click="confettiPrueba()" class="unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">
+            <a>NO HAGAS CLICK</a>
+            <a href=""></a>
+          </button>
+          </div>
         </div>
       </div>
   </header>
@@ -100,12 +106,32 @@
 </template>
 <script>
 import { useMeta } from 'vue-meta'
-
+import JSConfetti from 'js-confetti'
 export default ({
    name: "LandingPage",
    setup() {
       useMeta({ title: 'Portal del Avistador' })
    },
+   methods: {
+     confettiPrueba() {
+       const jsConfetti = new JSConfetti()
+        jsConfetti.addConfetti({
+      confettiRadius: 6,
+      confettiNumber: 100,
+      emojis: ['🐱', '🌺', '🐦', '🦆', ],
+    })
+     }
+   }
+/*    mounted() {
+     const jsConfetti = new JSConfetti()
+     const confettiPrueba = function() {
+       jsConfetti.addConfetti({
+      confettiRadius: 6,
+      confettiNumber: 100,
+      emojis: ['🐱', '🌺', '🐦', '🦆', ],
+    })
+     }
+   } */
 })
 </script>
 
@@ -126,5 +152,11 @@ export default ({
 
 .imgSection:hover, .unirse:hover {
   transform: scale(1.2);
+}
+.buttons-landing {
+  flex-direction: column;
+  width:300px;
+  gap:1rem;
+  margin:0 auto;
 }
 </style>

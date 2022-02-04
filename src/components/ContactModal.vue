@@ -24,7 +24,7 @@
       >
         <div v-html="successContactNotification"></div>
         <div class="relative mb-4">
-          <label for="full-name" class="leading-7 text-sm text-gray-600">Nombre:</label>
+          <label for="name" class="leading-7 text-sm text-gray-600">Nombre:</label>
           <input
             v-model="name"
             type="text"
@@ -46,7 +46,7 @@
           />
         </div>
         <div class="relative mb-4">
-          <label for="email" class="leading-7 text-sm text-gray-600">Mensaje:</label>
+          <label for="message" class="leading-7 text-sm text-gray-600">Mensaje:</label>
           <textarea
             v-model="message"
             id="message"
@@ -55,6 +55,13 @@
             class="w-full bg-white rounded-md border border-gray-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-150 ease-in-out"
             placeholder="Escribe aquí el motivo de su contacto..."
           ></textarea>
+        </div>
+        <div class="relative mb-4 flex justify-around items-center">
+          <label
+            for="contact-agreement"
+            class="leading-7 text-sm text-gray-600"
+          >Estoy de acuerdo con la <router-link to="/politica-de-privacidad" class="text-primary font-semibold">política de privacidad de Avistaloo</router-link></label>
+          <input id="contact-agreement" type="checkbox" v-model="contactAgreements" />
         </div>
         <button
           id="contact-submit-button"
@@ -74,21 +81,24 @@ export default {
       name: "",
       email: "",
       message: "",
+      contactAgreements: false,
       successContactNotification: "",
     };
   },
   methods: {
     onReset() {
-      if (this.name.length > 0 && /(.+)@(.+){2,}.(.+){2,}/.test(this.email) && this.message.length > 0) {
+      if (this.name.length > 0 && /(.+)@(.+){2,}.(.+){2,}/.test(this.email) && this.message.length > 0 && this.contactAgreements) {
         this.successContactNotification = '<p class="success-contact">Contacto procesado correctamente, recibirás una respuesta a la mayor brevedad posible, muchas gracias por tu tiempo.</p>';
         this.name = "";
         this.email = "";
         this.message = "";
+        this.contactAgreements = false;
       } else {
         this.successContactNotification = '<p class="failed-contact">Alguno de los campos no ha sido completado o es incorrecto.</p>';
         this.name = "";
         this.email = "";
         this.message = "";
+        this.contactAgreements = false;
       }
     }
   },
