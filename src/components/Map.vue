@@ -1,5 +1,7 @@
 <template>
-  <div class="flex border-y mb-5 px-5 pt-0">
+  <div
+    class="flex border-y mb-5 px-5 pt-0 navsm:flex-col navsm:justify-center navxs:flex-col navxs:justify-center"
+  >
     <div class="cont flex flex-col mt-6 mr-6">
       <div class="flex flex-col mt-6 mb-6">
         <span>Radio de busqueda:</span>
@@ -10,9 +12,10 @@
           <option :value="5">España</option>
         </select>
       </div>
-      <div>
-        <img class="mt-6" style="height: 30vh;" src="../assets/images/pin-world.gif" alt="">
+      <!-- <div>
+        <img class="mt-6" style="height: 30vh;" src="../assets/images/pin-world.gif" alt />
       </div>
+      -->
       <!--<div>
         <span>Buscar en un lugar concreto:</span>
         <div class="flex justify-between mt-2">
@@ -23,7 +26,7 @@
       <button class="rounded-md bg-primary p-2 text-white self-center w-32">Buscar</button>
       -->
     </div>
-    <div style="height: 80vh; width: 55vw;">
+    <div style="height: 80vh; width: 70vw;">
       <l-map
         ref="map"
         :zoom.sync="zoom"
@@ -59,6 +62,12 @@
           <l-popup>
             Christian Winschenhaussen
             <img class="rounded" src="../assets/images/bird-3.jpg" />
+          </l-popup>
+        </l-marker>
+        <l-marker :lat-lng="[35.01167, 135.76833]">
+          <l-popup>
+            Ash Ketchum
+            <img class="rounded" src="../assets/images/Ho-Oh.png" />
           </l-popup>
         </l-marker>
       </l-map>
