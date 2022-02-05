@@ -1,5 +1,7 @@
 <template>
-  <div class="flex border-y mb-5 px-5 pt-0">
+  <div
+    class="flex border-y mb-5 px-5 pt-0 navsm:flex-col navsm:justify-center navxs:flex-col navxs:justify-center"
+  >
     <div class="cont flex flex-col mt-6 mr-6">
       <div class="flex flex-col mt-6 mb-6">
         <span>Radio de busqueda:</span>
@@ -10,9 +12,10 @@
           <option :value="5">España</option>
         </select>
       </div>
-      <div>
-        <img class="mt-6" style="height: 30vh;" src="../assets/images/pin-world.gif" alt="">
+      <!-- <div>
+        <img class="mt-6" style="height: 30vh;" src="../assets/images/pin-world.gif" alt />
       </div>
+      -->
       <!--<div>
         <span>Buscar en un lugar concreto:</span>
         <div class="flex justify-between mt-2">
