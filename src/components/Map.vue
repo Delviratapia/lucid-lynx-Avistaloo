@@ -26,7 +26,7 @@
       <button class="rounded-md bg-primary p-2 text-white self-center w-32">Buscar</button>
       -->
     </div>
-    <div style="height: 80vh; width: 55vw;">
+    <div style="height: 80vh; width: 70vw;">
       <l-map
         ref="map"
         :zoom.sync="zoom"
@@ -62,6 +62,12 @@
           <l-popup>
             Christian Winschenhaussen
             <img class="rounded" src="../assets/images/bird-3.jpg" />
+          </l-popup>
+        </l-marker>
+        <l-marker :lat-lng="[35.01167, 135.76833]">
+          <l-popup>
+            Ash Ketchum
+            <img class="rounded" src="../assets/images/Ho-Oh.png" />
           </l-popup>
         </l-marker>
       </l-map>
