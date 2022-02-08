@@ -8,12 +8,14 @@
     <div class="loader"></div>
   </div>
   <router-view></router-view>
+  <ScrollToTop />
   <Footer />
 </template>
 
 <script>
 import NavBar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import ScrollToTop from './components/ScrollToTop.vue'
 import store from './store.js'
 import { useMeta } from 'vue-meta'
 import { mapActions, mapState } from 'vuex'
@@ -21,6 +23,7 @@ export default {
   name: 'App',
   components: {
     NavBar,
+    ScrollToTop,
     Footer
   },
   setup() {
