@@ -1,19 +1,21 @@
 <template>
-<metainfo>
+  <metainfo>
     <template v-slot:title="{ content }">{{ content ? `${content} | Avistaloo` : `SITE_NAME` }}</template>
   </metainfo>
-<NavBar />
-<div class="loader-container"  :class="loading">
-  {{loading}}
-  <div class="loader"></div>
-</div>
-<router-view></router-view>
-<Footer />
+  <NavBar />
+  <div class="loader-container" :class="loading">
+    {{ loading }}
+    <div class="loader"></div>
+  </div>
+  <router-view></router-view>
+  <ScrollToTop />
+  <Footer />
 </template>
 
 <script>
 import NavBar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import ScrollToTop from './components/ScrollToTop.vue'
 import store from './store.js'
 import { useMeta } from 'vue-meta'
 import { mapActions, mapState } from 'vuex'
@@ -21,9 +23,10 @@ export default {
   name: 'App',
   components: {
     NavBar,
+    ScrollToTop,
     Footer
   },
-  setup () {
+  setup() {
     console.log(store.state.user)
     useMeta({
       title: '',
@@ -36,47 +39,46 @@ export default {
     },
     ...mapState(['loading'])
   },
-  methods:{
-      ...mapActions(['localStorageUserLogged']),
-    },
-    created(){
-      this.localStorageUserLogged()
-    }
+  methods: {
+    ...mapActions(['localStorageUserLogged']),
+  },
+  created() {
+    this.localStorageUserLogged()
+  }
 }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 html {
   scroll-behavior: smooth;
 }
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .container {
-  max-width:100% !important;
-  padding:0px 20px;
-}
-
+    max-width: 100% !important;
+    padding: 0px 20px;
+  }
 }
 
 .display-flex {
-  display:flex !important;
+  display: flex !important;
 }
 .display-none {
-  display:none !important;
+  display: none !important;
 }
 .loader-container {
-  opacity:0.4;
-  background-color:#000;
-  width:100%;
-  height:100vh;
-  position:fixed;
-  display:flex;
-  z-index:2;
-  top:0px;
-  justify-content:center;
-  align-items:center;
+  opacity: 0.4;
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  top: 0px;
+  justify-content: center;
+  align-items: center;
   overflow: hidden; /* Hide scrollbars */
 }
 .loader,
@@ -119,4 +121,5 @@ html {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}</style>
+}
+</style>
