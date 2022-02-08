@@ -51,7 +51,7 @@
         <p>Avistaloo surgió como un proyecto para el Curso de Programación y Diseño Web Front-End de la <a href="https://www.eoi.es/es">Escuela de Organización Industrial</a> gracias a:</p> <br>
     </main>
     <div class="logos flex flex-wrap justify-center items-end mb-5">
-        <img class="w-96 h-16" src="../assets/images/logo_eoi.jpg" alt="">
+        <img @click="confettiPrueba()" class="w-96 h-16" src="../assets/images/logo_eoi.jpg" alt="">
         <img class="w-80 h-20" src="../assets/images/logo_union_europea.jpg" alt="">
         <img class="w-52 h-28" src="../assets/images/logo_garantia_juvenil.jpg" alt="">
         <img class="w-96 h-32" src="../assets/images/logo_fundacion_once.jpg" alt="">
@@ -60,11 +60,22 @@
 
 <script>
 import { useMeta } from 'vue-meta'
+import JSConfetti from 'js-confetti'
 export default {
   name: "About",
   setup () {
     useMeta({ title: 'Sobre Nosotros' })
-  }
+  },
+         methods: {
+     confettiPrueba() {
+       const jsConfetti = new JSConfetti()
+        jsConfetti.addConfetti({
+      confettiRadius: 6,
+      confettiNumber: 100,
+      emojis: ['🐱', '🐨', '🐐', '🦆', ],
+    })
+     }
+   }
 };
 </script>
 <style lang="scss" scoped>
