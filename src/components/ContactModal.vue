@@ -61,12 +61,13 @@
             for="contact-agreement"
             class="leading-7 text-sm text-gray-600"
           >Estoy de acuerdo con la <router-link to="/politica-de-privacidad" class="text-primary font-semibold">política de privacidad de Avistaloo</router-link></label>
-          <input id="contact-agreement" type="checkbox" v-model="contactAgreements" />
+          <input id="contact-agreement" type="checkbox" v-model="contactAgreements" @change="validation"/>
         </div>
         <button
           id="contact-submit-button"
           type="reset"
-          class="text-white bg-[#335963] rounded-2xl border-0 py-2 px-8 focus:outline-none text-lg transition hover:bg-[#223b42] duration-150 ease-in"
+          class="text-white rounded-2xl border-0 py-2 px-8 focus:outline-none text-lg transition duration-150 ease-in"
+          disabled
         >Enviar</button>
       </div>
     </form>
@@ -100,6 +101,19 @@ export default {
         this.message = "";
         this.contactAgreements = false;
       }
+      this.validation();
+    },
+    validation(){
+      let btn = document.querySelector("#contact-submit-button");
+      if(this.contactAgreements == true){
+        btn.style.backgroundColor = "#335963";
+        btn.disabled = false;
+        btn.addEventListener("mouseenter", e => { btn.style.backgroundColor = "#223b42";});
+        btn.addEventListener("mouseleave", e => { btn.style.backgroundColor = "#335963";});
+      }else{
+        btn.style.backgroundColor = "#8d8d8d";
+        btn.disabled = true;
+      }
     }
   },
 };
@@ -112,5 +126,11 @@ export default {
 }
 .failed-contact {
   color: red;
+}
+#contact-submit-button {
+  background-color: #8d8d8d;
+}
+#contact-submit-button:hover { 
+  background-color: #8d8d8d;
 }
 </style>

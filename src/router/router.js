@@ -6,7 +6,6 @@ import Privacy from "../views/Privacy.vue";
 import LoginPage from "../views/LoginPage.vue";
 import Locations from "../views/Locations.vue";
 import RegisterPage from "../views/RegisterPage.vue";
-import LandingPage from "../views/LandingPage.vue";
 import PathNotFound from "../views/PathNotFound.vue";
 import MyAccount from "../views/MyAccount.vue";
 import ContactPages from "../views/ContactPage.vue";
@@ -27,30 +26,9 @@ const routes = [
     meta: {
       scrollTop: 0,
     },
-  },
+  },  
   {
     path: "/",
-    component: LandingPage,
-    meta: {
-      scrollTop: 0,
-    },
-  },
-  {
-    path: "/que-es",
-    component: LandingPage,
-    meta: {
-      scrollTop: 730,
-    },
-  },
-  {
-    path: "/caracteristicas",
-    component: LandingPage,
-    meta: {
-      scrollTop: 1000,
-    },
-  },
-  {
-    path: "/app",
     component: Home,
     meta: {
       rutaProtegida: true,
@@ -58,7 +36,7 @@ const routes = [
     },
   },
   {
-    path: "/app/galeria",
+    path: "/galeria",
     component: Home,
     meta: {
       rutaProtegida: true,
@@ -66,7 +44,7 @@ const routes = [
     },
   },
   {
-    path: "/app/galeria-phone",
+    path: "/galeria-phone",
     component: Home,
     meta: {
       rutaProtegida: true,
@@ -102,7 +80,7 @@ const routes = [
     },
   },
   {
-    path: "/app/mapa",
+    path: "/mapa",
     component: Locations,
     meta: {
       rutaProtegida: true,
