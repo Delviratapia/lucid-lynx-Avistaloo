@@ -3,12 +3,15 @@ import { useMeta } from 'vue-meta'
 import { nextPage, prevPage } from '../js/pagination.js';
 import { qs } from '../js/utils.js';
 import { birdSummary } from "../js/birdsSummary.js";
+import Spinner from "../components/Spinner.vue";
 import {
   getPagination,
   turnSearchBarOn,
   getBirdsFromAPI,
   resetBirds,
-  displayBirds
+  displayBirds,
+  searchBirdsEvent,
+  loadSpinner
 } from "../js/apiUtils.js";
 
 console.log("entered script tag")
@@ -17,11 +20,17 @@ let pagination = getPagination()
 
 export default {
   name: "Wiki",
+  components: {
+    Spinner
+  },
+  
   mounted() {
-    console.log("mounted!")
+    console.log("mounted")
+    loadSpinner()
     getBirdsFromAPI()
       .then(res => {
         pagination = getPagination()
+        loadSpinner({disable: true})
         resetBirds()
         displayBirds()
 
@@ -54,20 +63,26 @@ export default {
       let reset = document.querySelector("#search");
       setTimeout(function (){reset.value = "";},500);
     },
-
+    searchOnEnter(e) {
+      if (e.keyCode === 13) {
+        searchBirdsEvent()
+        this.resetInput()
+      }
+      
+    },
   }
 }
 
 </script>
 
 <template>
-  <section class="container mx-auto p-5 flex flex-col justify-center space-y-6 items-center">
+  <section class="container mx-auto p-4 flex flex-col justify-center space-y-6 items-center">
     <div class="top-page flex items-center flex-col gap-10 lg:w-3/6 wikiOptions">
       <div class="search-box w-3/5 min-w-full mt-40">
         <form onsubmit="event.preventDefault();" role="search">
           <input
             id="search"
-           
+            @keyup="searchOnEnter"
             class="text-center"
             type="search"
             placeholder="Buscar"
@@ -114,7 +129,7 @@ export default {
     </div>-->
   </section>
 
-  <section class="container mx-auto p-5">
+  <section class="container lg:px-36 mx-auto">
     <div class="text-center mb-10 text-3xl">
       <!-- <h2>Categoría: Gorriones</h2> -->
     </div>
@@ -149,7 +164,7 @@ export default {
       style="background: rgba(0,0,0,.7);"
     >
       <div
-        class="border border-teal-500 shadow-lg modal-container bg-white w-2/4 mx-auto rounded shadow-lg z-50 overflow-y-auto"
+        class="border border-teal-500 shadow-lg modal-container bg-white w-3/4 mx-auto rounded shadow-lg z-50 overflow-y-auto"
       >
         <div class="modal-content text-left">
           <!--Title-->
@@ -681,7 +696,7 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   & img {
-    height: 300px;
+    
     object-fit: cover;
   }
 }
@@ -720,93 +735,82 @@ export default {
 }
 
 /* roller spinner  */
-.lds-roller,
-.lds-roller div,
-.lds-roller div:after {
-  box-sizing: border-box;
-}
-.lds-roller {
+.lds-spinner {
+  color: official;
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
-.lds-roller div {
-  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+.lds-spinner div {
   transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
 }
-.lds-roller div:after {
+.lds-spinner div:after {
   content: " ";
   display: block;
   position: absolute;
-  width: 7.2px;
-  height: 7.2px;
-  border-radius: 50%;
-  background: currentColor;
-  margin: -3.6px 0 0 -3.6px;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: black;
 }
-.lds-roller div:nth-child(1) {
-  animation-delay: -0.036s;
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
 }
-.lds-roller div:nth-child(1):after {
-  top: 62.62742px;
-  left: 62.62742px;
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
 }
-.lds-roller div:nth-child(2) {
-  animation-delay: -0.072s;
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
 }
-.lds-roller div:nth-child(2):after {
-  top: 67.71281px;
-  left: 56px;
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
 }
-.lds-roller div:nth-child(3) {
-  animation-delay: -0.108s;
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
 }
-.lds-roller div:nth-child(3):after {
-  top: 70.90963px;
-  left: 48.28221px;
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
 }
-.lds-roller div:nth-child(4) {
-  animation-delay: -0.144s;
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
 }
-.lds-roller div:nth-child(4):after {
-  top: 72px;
-  left: 40px;
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
 }
-.lds-roller div:nth-child(5) {
-  animation-delay: -0.18s;
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
 }
-.lds-roller div:nth-child(5):after {
-  top: 70.90963px;
-  left: 31.71779px;
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
 }
-.lds-roller div:nth-child(6) {
-  animation-delay: -0.216s;
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
 }
-.lds-roller div:nth-child(6):after {
-  top: 67.71281px;
-  left: 24px;
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
 }
-.lds-roller div:nth-child(7) {
-  animation-delay: -0.252s;
-}
-.lds-roller div:nth-child(7):after {
-  top: 62.62742px;
-  left: 17.37258px;
-}
-.lds-roller div:nth-child(8) {
-  animation-delay: -0.288s;
-}
-.lds-roller div:nth-child(8):after {
-  top: 56px;
-  left: 12.28719px;
-}
-@keyframes lds-roller {
+@keyframes lds-spinner {
   0% {
-    transform: rotate(0deg);
+    opacity: 1;
   }
   100% {
-    transform: rotate(360deg);
+    opacity: 0;
   }
 }
 </style>
