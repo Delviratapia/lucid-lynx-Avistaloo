@@ -1,11 +1,8 @@
 <template>
   <div>
-    <button
-      id="toTopButton"
-      v-on:click="scrollToTop"
-      type="button"
-      alt="Botón de vuelta al inicio"
-    >🠕</button>
+    <button id="toTopButton" v-on:click="scrollToTop" type="button" alt="Botón de vuelta al inicio">
+      <img src="../assets/images/logos/scrollUp.svg" alt="Botón de vuelta al inicio" />
+    </button>
   </div>
 </template>
 
