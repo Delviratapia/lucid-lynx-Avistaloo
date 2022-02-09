@@ -108,10 +108,15 @@
               />
             </div>
           </div>
+          <div>
+            <label for="">Estoy de acuerdo con la <a href="/politica-de-privacidad" target="_blank" class="text-primary font-semibold">política de privacidad de Avistaloo</a>. <input type="checkbox" id="check" @change="validation"></label>
+          </div>
           <div class="flex w-full">
             <button
+              id="access"
               type="submit"
               class="flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in"
+              disabled
             >
               <span class="mr-2 uppercase">Acceder</span>
               <span>
@@ -232,6 +237,19 @@ export default {
         })
       }
     },
+    validation(){
+      let check = document.querySelector("#check");
+      let btn = document.querySelector("#access");
+      if(check.checked == true){
+        btn.style.backgroundColor = "#335963";
+        btn.disabled = false;
+        btn.addEventListener("mouseenter", e => { btn.style.backgroundColor = "#223b42";});
+        btn.addEventListener("mouseleave", e => { btn.style.backgroundColor = "#335963";});
+      }else{
+        btn.style.backgroundColor = "#8d8d8d";
+        btn.disabled = true;
+      }
+    }
   },
 };
 </script>
@@ -240,10 +258,10 @@ export default {
   height: 80.2vh;
 }
 button {
-  background-color: #335963;
+  background-color: #8d8d8d;
 }
-button:hover {
-  background-color: #223b42;
+button:hover { 
+  background-color: #8d8d8d;
 }
 .error-message {
   border-radius: 20px;
