@@ -230,8 +230,8 @@ let resetBirds = () => {
 
 function dataAnimals(name, imageFirst) {
     const html = `<div class="card-clickable" href="#">
-<div class="card-text rounded overflow-hidden shadow-lg">
-  <img class="w-full h-48 object-cover" src="${imageFirst}"
+<div class="card-text rounded overflow-hidden shadow-lg xl:px-8">
+  <img class="w-full h-48 object-fit cursor-pointer" src="${imageFirst}"
     alt="${name}"
   />
   <div class="px-6 py-4 text-center">
@@ -253,21 +253,24 @@ async function getBirdsFromAPI(q = null) {
         pagination["birds_seen"] += pagination["birds_in_this_call"]
 }
 
-const turnSearchBarOn = () => {
-
-    async function searchBirds(text) {
-        let birds = struct_data[0]["birds"]
-        birds = birds.filter((bird) => bird["name"].normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(text.toLowerCase()));
-        let search_struct = [{
-            "birds": birds
-        }]
-
-        displayBirds(search_struct)
+const loadSpinner = ({disable = false} = {})=> {
+    console.log("entered loadSpinner function")
+    console.log(disable)
+    if (disable) {
+        let spinner = document.querySelector(".lds-spinner")
+        spinner.parentNode.removeChild(spinner)
+        return
     }
-    // search all
-    let btnSearch = document.querySelector(".birds-searchbtn")
-    btnSearch.addEventListener("click", async () => {
-
+        const loading = document.createElement("div")
+        loading.classList.add("lds-spinner")
+        loading.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>"
+        loading.style.display = "block"
+        loading.style.margin = "0 auto"
+        console.log(loading)
+        document.querySelector(".wikiOptions").appendChild(loading);
+        
+}
+const searchBirdsEvent = async ()=> {
         let textInput = document.querySelector("#search")
         let textwritten = textInput.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
         pagination.args = textwritten
@@ -275,41 +278,19 @@ const turnSearchBarOn = () => {
 
         pagination["cur_page"] = 1;
         pagination["birds_seen"] = 0;
-
-        const loading = document.createElement("div")
-        loading.classList.add("lds-roller")
-        loading.innerHTML = "<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>"
-        loading.style.display = "block"
-        loading.style.margin = "0 auto"
-
-        document.querySelector(".wikiOptions").appendChild(loading);
+        loadSpinner()
         await getBirdsFromAPI(textwritten)
-        loading.style.display = "none"
-
+        loadSpinner({disable: true})
         document.querySelector("#page-span").innerHTML = pagination["cur_page"];
         displayBirds()
-    })
+}
 
-    // searchbox family
-    async function searchBirdsFamily(text) {
-        let birds = struct_data[0]["birds"]
-        console.log("boku no birds: ", birds)
-        birds = birds.filter((bird) => {
-            if (bird["category"] === undefined) {
-                return false;
-            }
-
-            return bird["category"].toLowerCase().includes(text)
-        });
-        let search_struct = [{
-            "birds": birds
-        }]
-
-        resetBirds()
-        displayBirds(search_struct)
-    }
-
+const turnSearchBarOn = () => {
     
+    // search all
+    let btnSearch = document.querySelector(".birds-searchbtn")
+    btnSearch.addEventListener("click", searchBirdsEvent)
+
 }
 
 
@@ -320,5 +301,7 @@ export {
     turnSearchBarOn,
     getBirdsFromAPI,
     resetBirds,
-    displayBirds
+    displayBirds,
+    searchBirdsEvent,
+    loadSpinner
 };

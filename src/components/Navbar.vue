@@ -74,7 +74,7 @@
 
     <div id="nav-content" class="w-full flex flex-col justify-center  text-center">
       <hr  />
-      <div class="text-sm lg:flex-grow flex flex-col mb-2">
+      <div class="text-sm lg:flex-grow flex flex-col mb-2"></div>
         <router-link to="/app" v-if="usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
         <router-link to="/" v-if="!usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
         <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</router-link>
