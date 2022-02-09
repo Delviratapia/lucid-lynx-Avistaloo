@@ -4,16 +4,16 @@
   >
     <div class="flex flex-row gap-x-3 mt-4 md:mt-0">
       <!-- Añadir los enlaces de las RRSS -->
-      <a href="https://www.facebook.com/profile.php?id=100075282414569">
+      <a href="https://www.facebook.com/profile.php?id=100075282414569" target="_blank">
         <img class="rrss" src="../assets/images/fcbk.png" alt="Logo de Facebook" />
       </a>
-      <a href="https://www.pinterest.com/">
+      <a href="https://www.pinterest.com/" target="_blank">
         <img class="rrss" src="../assets/images/pntrst.png" alt="Logo de Pinterest" />
       </a>
-      <a href="https://www.instagram.com/avistaloo/">
+      <a href="https://www.instagram.com/avistaloo/" target="_blank">
         <img class="rrss" src="../assets/images/instg.png" alt="Logo de Instagram" />
       </a>
-      <a href="https://twitter.com/avistaloo">
+      <a href="https://twitter.com/avistaloo" target="_blank">
         <img class="rrss" src="../assets/images/twtr.png" alt="Logo de Twitter" />
       </a>
     </div>
