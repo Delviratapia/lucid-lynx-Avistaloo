@@ -1,7 +1,7 @@
 <template>
-<div class="fix-container-fixed-navbar text-center">
-<h1> ERROR 404 </h1>
-</div>
+   <div class="fix-container-fixed-navbar flex justify-center align-center">
+      <img src="../assets/images/404.png" alt="Error 404: Página no encontrada" />
+   </div>
 </template>
 <script>
 export default {

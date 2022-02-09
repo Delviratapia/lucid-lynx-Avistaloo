@@ -7,8 +7,8 @@
         <div class="flex items-center">
           <img class="h-11 w-11 rounded-full" src="../assets/images/logos/logo.png" />
           <div class="ml-1.5 text-sm leading-tight">
-            <span class="text-black font-bold block ">Avistaloo</span>
-            <span class="text-gray-500 font-normal block">@AvistalooES</span>
+            <span class="text-black font-bold block ">Avistaloo ES</span>
+            <span class="text-gray-500 font-normal block">@avistaloo</span>
           </div>
         </div>
       </div>
@@ -54,8 +54,8 @@
         <div class="flex items-center">
           <img class="h-11 w-11 rounded-full" src="../assets/images/logos/logo.png" />
           <div class="ml-1.5 text-sm leading-tight">
-            <span class="text-black font-bold block ">Avistaloo</span>
-            <span class="text-gray-500 font-normal block">@AvistalooES</span>
+            <span class="text-black font-bold block ">Avistaloo ES</span>
+            <span class="text-gray-500 font-normal block">@avistaloo</span>
           </div>
         </div>
       </div>
@@ -99,8 +99,8 @@
         <div class="flex items-center">
           <img class="h-11 w-11 rounded-full" src="../assets/images/logos/logo.png" />
           <div class="ml-1.5 text-sm leading-tight">
-            <span class="text-black font-bold block ">Avistaloo</span>
-            <span class="text-gray-500 font-normal block">@AvistalooES</span>
+            <span class="text-black font-bold block ">Avistaloo ES</span>
+            <span class="text-gray-500 font-normal block">@avistaloo</span>
           </div>
         </div>
       </div>

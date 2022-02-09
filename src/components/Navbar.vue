@@ -17,7 +17,7 @@
       <router-link v-if="!usuarioAutenticado" to="/" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
       <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Que es?</router-link>
       <router-link v-if="!usuarioAutenticado" to="/caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</router-link>
-      <router-link to="/wiki" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
+      <a href="/wiki" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</a>
       <router-link v-if="usuarioAutenticado" to="/app/galeria" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</router-link>
       <router-link v-if="usuarioAutenticado" to="/app/mapa" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110">Mapa</router-link>
     </div>
@@ -79,7 +79,7 @@
         <router-link to="/" v-if="!usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
         <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</router-link>
         <router-link v-if="!usuarioAutenticado" to="/caracteristicas" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Características</router-link>
-        <router-link to="/wiki" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</router-link>
+        <a href="/wiki" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</a>
         <router-link v-if="usuarioAutenticado" to="/app/galeria-phone" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Galería</router-link>
         <router-link v-if="usuarioAutenticado" to="/app/mapa" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Mapa</router-link>
       </div>

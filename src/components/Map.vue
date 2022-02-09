@@ -12,19 +12,6 @@
           <option :value="5">España</option>
         </select>
       </div>
-      <!-- <div>
-        <img class="mt-6" style="height: 30vh;" src="../assets/images/pin-world.gif" alt />
-      </div>
-      -->
-      <!--<div>
-        <span>Buscar en un lugar concreto:</span>
-        <div class="flex justify-between mt-2">
-          <input v-model.number="lat" class="border w-24" type="text" placeholder="ej: 40.4165" />
-          <input v-model.number="long" class="border w-24" type="text" placeholder="ej: -3.70256" />
-        </div>
-      </div>
-      <button class="rounded-md bg-primary p-2 text-white self-center w-32">Buscar</button>
-      -->
     </div>
     <div style="height: 80vh; width: 70vw;">
       <l-map
@@ -36,16 +23,7 @@
         :max-zoom="maxZoom"
       >
         <l-tile-layer :url="url" :attribution="attribution" />
-        <!--<l-marker
-          v-for="marker in markers"
-          :key="marker.id"
-          :visible="marker.visible"
-          :lat-lng.sync="marker.position"
-          @click="showSighting(marker.id)"
-        >
-          <l-popup :content="marker.tooltip" />
-          <l-tooltip :content="marker.tooltip" />
-        </l-marker>-->
+        
         <l-marker :lat-lng="[39.47733, -0.40869]">
           <l-popup>
             Sara García
@@ -76,8 +54,6 @@
 </template>
 <script >
 import "leaflet/dist/leaflet.css"
-
-/*import { latLngBounds } from 'leaflet';*/
 import {
   LMap,
   LTileLayer,
