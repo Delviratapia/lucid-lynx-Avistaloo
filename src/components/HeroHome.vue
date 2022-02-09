@@ -32,10 +32,8 @@ export default ({
    },
    methods: {
       getUserName() {
-         const user = JSON.parse(localStorage.getItem("userLogged")).email;
-         const character = user.indexOf("@")
-        const salida = user.substring(0, character);
-        return salida
+         const user = JSON.parse(localStorage.getItem("userLogged")).displayName;
+         return user;
       },
       ...mapState(["user"]),
    }
@@ -44,7 +42,7 @@ export default ({
 
 <style scoped>
 header {
-   background-color:#335963;
+   background:url('../assets/images/background-header.png');
    opacity:1;
 
 }

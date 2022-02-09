@@ -18,6 +18,50 @@
       </div>
       <div class="mt-10">
         <form @submit.prevent="submitFormRegister">
+          <!-- <div class="flex flex-col mb-5">
+            <label
+              for="displayName"
+              class="mb-1 text-xs tracking-wide text-gray-600 px-2"
+              >Foto perfil:</label
+            >
+            <div class="relative">
+              <div
+                class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400"
+              >
+                <font-awesome-icon :icon="['fas', 'envelope']" />
+              </div>
+              <input
+                v-on:change="photoUrl"
+                id="displayName"
+                type="file"
+                name="displayName"
+                class="text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
+                placeholder="Usuario"
+              />
+            </div>
+          </div> -->
+          <div class="flex flex-col mb-5">
+            <label
+              for="displayName"
+              class="mb-1 text-xs tracking-wide text-gray-600 px-2"
+              >Usuario:</label
+            >
+            <div class="relative">
+              <div
+                class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400"
+              >
+                <font-awesome-icon :icon="['fas', 'user']" />
+              </div>
+              <input
+                v-model.trim="displayName"
+                id="displayName"
+                type="text"
+                name="displayName"
+                class="text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
+                placeholder="Usuario"
+              />
+            </div>
+          </div>
           <div class="flex flex-col mb-5">
             <label
               for="email"
@@ -134,44 +178,17 @@
       </p>
     </div>
   </div>
-  <!-- <div class="w-full max-w-xs fix-container-fixed-navbar ">
-  <form @submit.prevent="submitFormRegister" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div class="mb-4">
-      <label name="email" class="block text-gray-700 text-sm font-bold mb-2" for="email">
-        Email
-      </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" v-model.trim="email">
-    </div>
-    <div class="mb-6">
-      <label name="pass1" class="block text-gray-700 text-sm font-bold mb-2" for="pass1">
-        Password
-      </label>
-      <input v-model.trim="pass1" class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
-      <p class="text-red-500 text-xs italic">Please choose a password.</p>
-    </div>
-    <div class="flex items-center justify-between">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        Sign In
-      </button>
-      <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-        Forgot Password?
-      </a>
-    </div>
-  </form>
-  <p class="text-center text-gray-500 text-xs">
-    &copy;2020 Acme Corp. All rights reserved.
-  </p>
-</div> -->
 </template>
 <script>
 import { mapActions, mapState } from "vuex";
 import router from "../router/router";
+import JSConfetti from 'js-confetti'
 export default {
   data() {
     return {
       email: "",
       pass1: "",
-      pass2: "",
+      displayName: "",
     };
   },
   computed: {
@@ -187,13 +204,15 @@ export default {
     ...mapState(["error"]),
   },
   methods: {
+
     ...mapActions(["userRegister"]),
     submitFormRegister() {
-      this.userRegister({ email: this.email, password: this.pass1 });
-      if (this.email !== "" && this.pass1 !== "") {
+      if (this.email !== "" && this.pass1 !== "" && this.displayName) {
+        this.userRegister({ email: this.email, password: this.pass1, displayName: this.displayName});
         this.email = "";
         this.pass1 = "";
         this.pass2 = "";
+        this.displayName = "";
         this.$swal({
           icon: "success",
           title: "Registro realizado correctamente",
@@ -205,6 +224,12 @@ export default {
           }
         });
       } else {
+        this.$swal({
+          icon: "error",
+          title: "Este usuario ya está registrado",
+          text: "Introduce otros datos",
+          confirmButtonText: "Acceder",
+        })
       }
     },
   },

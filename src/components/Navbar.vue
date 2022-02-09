@@ -1,14 +1,25 @@
 <template>
   <!--navbar normal-->
-  <nav id="nav-normal" class="flex navbar navbar-fixed-position items-center justify-between flex-wrap lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
-    <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
-      <a v-if="!usuarioAutenticado" class="logo-fix-size navbar-item transition duration-500 hover:scale-125" href="/">
-        <img class="w-24" src="../assets/images/logos/logo.png" alt="" />
-      </a>
-      <a v-if="usuarioAutenticado" class="logo-fix-size navbar-item transition duration-500 hover:scale-125" href="/app">
-        <img class="w-24" src="../assets/images/logos/logo.png" alt="" />
-      </a>
-      <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+  <nav id="nav-normal" class="flex navbar navbar-fixed-position items-center justify-between lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+    <div class="flex items-center flex-shrink-0 text-dark md:text-right ">
+      <router-link v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
+        <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
+        <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+      </router-link>
+
+      <router-link v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/app">
+        <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
+        <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+      </router-link>  
+    </div>
+    <div class="text-sm justify-center hidden lg:flex">
+      <router-link v-if="usuarioAutenticado" to="/app" class="text-xl mt-1 lg:inline-block lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
+      <router-link v-if="!usuarioAutenticado" to="/" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
+      <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Que es?</router-link>
+      <router-link v-if="!usuarioAutenticado" to="/caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</router-link>
+      <a href="/wiki" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</a>
+      <router-link v-if="usuarioAutenticado" to="/app/galeria" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</router-link>
+      <router-link v-if="usuarioAutenticado" to="/app/mapa" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110">Mapa</router-link>
     </div>
     <div class="block lg:hidden">
       <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
@@ -18,47 +29,38 @@
         </svg>
       </button>
     </div>
-    <div id="nav-content" class="navbar-desktop w-full flex-grow lg:flex items-center justify-center lg:w-auto hidden md:text-center">
-      <hr class="block lg:hidden mb-4" />
-      <div class="text-sm lg:flex-grow">
-        <router-link v-if="usuarioAutenticado" to="/app" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
-        <router-link v-if="!usuarioAutenticado" to="/" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
-        <a v-if="!usuarioAutenticado" href="/#Que-es" class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">¿Que es?</a>
-        <a v-if="!usuarioAutenticado" href="/#Caracteristicas" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Características</a>
-        <router-link to="/wiki" class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Wiki</router-link>
-        <a v-if="usuarioAutenticado" href="/app/#gallery" class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Galería</a>
-        <router-link v-if="usuarioAutenticado" to="/app/locations" class="block text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Mapa</router-link>
-      </div>
-      <div class="flex flex-col lg:flex-row items-center justify-center">
-        <router-link
-          to="/login"
-          v-if="!usuarioAutenticado"
-          href="#"
-          class="show-modal block px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
-          >Iniciar Sesión</router-link
-        >
-        <router-link
-          to="/registro"
-          v-if="!usuarioAutenticado"
-          href="#"
-          class="show-modal-register block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
-          >Registrarse</router-link
-        >
-        <div v-if="usuarioAutenticado" class="user-bubble">
-          <BubbleUser />
-        </div>
+    
+    <div class="lg:flex hidden flex-col lg:flex-row items-center justify-center">
+      <router-link
+        to="/login"
+        v-if="!usuarioAutenticado"
+        class="show-modal block px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
+        >Iniciar Sesión</router-link
+      >
+      <router-link
+        to="/registro"
+        v-if="!usuarioAutenticado"
+        class="show-modal-register block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
+        >Registrarse</router-link
+      >
+      <div v-if="usuarioAutenticado" class="user-bubble">
+        <BubbleUser />
       </div>
     </div>
   </nav>
 
   <!--navbar mobile-->
-  <nav id="nav-mobile" class="navbar hidden flex-col items-center justify-between flex-wrap lg:hidden lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
+  <nav tabindex="0" id="nav-mobile" class="navbar hidden flex-col items-center justify-between flex-wrap lg:hidden lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1 "  @blur="nofocus">
     <div class="flex justify-between items-center w-full">
-      <div class="items-center flex-shrink-0 text-dark md:text-right mr-6 flex">
-        <a class="navbar-item transition duration-500 hover:scale-125" href="/">
-          <img class="w-24" src="../assets/images/logos/logo.png" alt="" />
-        </a>
-        <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+      <div class="flex items-center flex-shrink-0 text-dark md:text-right mr-6">
+        <router-link v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
+          <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
+          <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+        </router-link>
+        <router-link v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/app">
+          <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
+          <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
+        </router-link> 
       </div>
       <div class="block lg:hidden">
         <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
@@ -70,21 +72,64 @@
       </div>
     </div>
 
-    <div id="nav-content" class="w-full items-center justify-center lg:w-auto pt-6 md:text-center">
-      <hr class="block lg:hidden" />
-      <div class="text-sm lg:flex-grow flex flex-col justify-center h-80 mb-2">
+    <div id="nav-content" class="w-full flex flex-col justify-center  text-center">
+      <hr  />
+      <div class="text-sm lg:flex-grow flex flex-col mb-2">
         <router-link to="/app" v-if="usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
         <router-link to="/" v-if="!usuarioAutenticado" class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2">Inicio</router-link>
-        <a v-if="!usuarioAutenticado" href="/#Que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</a>
-        <a v-if="!usuarioAutenticado" href="/#Caracteristicas" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Características</a>
-        <router-link to="/wiki" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</router-link>
-        <a v-if="usuarioAutenticado" href="/app/#gallery" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Galería</a>
-        <router-link v-if="usuarioAutenticado" to="/app/locations" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Mapa</router-link>
+        <router-link v-if="!usuarioAutenticado" to="/que-es" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">¿Que es?</router-link>
+        <router-link v-if="!usuarioAutenticado" to="/caracteristicas" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Características</router-link>
+        <a href="/wiki" class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Wiki</a>
+        <router-link v-if="usuarioAutenticado" to="/app/galeria-phone" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Galería</router-link>
+        <router-link v-if="usuarioAutenticado" to="/app/mapa" class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2">Mapa</router-link>
       </div>
-      <div class="flex flex-col items-center justify-center my-2">
-        <router-link to="/login" v-if="!usuarioAutenticado" href="#" class="show-modal block px-4 py-2 mb-2 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md">Iniciar Sesión</router-link>
-        <router-link to="/registro" v-if="!usuarioAutenticado" href="#" class="show-modal-register block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md">Registrarse</router-link>
+      <div class="flex flex-col mx-auto mb-2">
+        <router-link
+          to="/login"
+          v-if="!usuarioAutenticado"
+          class="block px-4 py-2 mb-0.5 text-center lg:mr-3 bg-white border border-primary-color text-primary-color transition duration-500 hover:scale-110 rounded-md"
+          >Iniciar Sesión</router-link
+        >
+        <router-link
+          to="/registro"
+          v-if="!usuarioAutenticado"
+          class="mt-1 block px-4 py-2 mb-0.5 text-center bg-primary-color border border-primary-color text-white transition duration-500 hover:scale-110 rounded-md"
+          >Registrarse</router-link
+        >
       </div>
+      
+        <div v-if="usuarioAutenticado" class="flex  items-center justify-center session-text">
+          <ul class="flex">
+            <li class="mb-2 mr-4">
+              <router-link to="/mi-cuenta" class="flex justify-center" title="Mi cuenta">
+                <div class="mr-2 text-center">
+                  <svg viewBox="0 0 496 512">
+                    <path
+                      fill="currentColor"
+                      d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm128 421.6c-35.9 26.5-80.1 42.4-128 42.4s-92.1-15.9-128-42.4V416c0-35.3 28.7-64 64-64 11.1 0 27.5 11.4 64 11.4 36.6 0 52.8-11.4 64-11.4 35.3 0 64 28.7 64 64v13.6zm30.6-27.5c-6.8-46.4-46.3-82.1-94.6-82.1-20.5 0-30.4 11.4-64 11.4S204.6 320 184 320c-48.3 0-87.8 35.7-94.6 82.1C53.9 363.6 32 312.4 32 256c0-119.1 96.9-216 216-216s216 96.9 216 216c0 56.4-21.9 107.6-57.4 146.1zM248 120c-48.6 0-88 39.4-88 88s39.4 88 88 88 88-39.4 88-88-39.4-88-88-88zm0 144c-30.9 0-56-25.1-56-56s25.1-56 56-56 56 25.1 56 56-25.1 56-56 56z"
+                    />
+                  </svg>
+                </div>
+                <div>Mi cuenta</div>
+              </router-link>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="flex justify-center" title="Desconectar">
+                <div class="mr-2">
+                  <svg viewBox="0 0 576 512">
+                    <path
+                      fill="currentColor"
+                      d="M512 32H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm32 384c0 17.6-14.4 32-32 32H64c-17.6 0-32-14.4-32-32V96c0-17.6 14.4-32 32-32h448c17.6 0 32 14.4 32 32v320zm-72-128H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0-64H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0-64H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM208 288c44.2 0 80-35.8 80-80s-35.8-80-80-80-80 35.8-80 80 35.8 80 80 80zm0-128c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48 21.5-48 48-48zm46.8 144c-19.5 0-24.4 7-46.8 7s-27.3-7-46.8-7c-21.2 0-41.8 9.4-53.8 27.4C100.2 342.1 96 355 96 368.9V392c0 4.4 3.6 8 8 8h16c4.4 0 8-3.6 8-8v-23.1c0-7 2.1-13.8 6-19.6 5.6-8.3 15.8-13.2 27.3-13.2 12.4 0 20.8 7 46.8 7 25.9 0 34.3-7 46.8-7 11.5 0 21.7 5 27.3 13.2 3.9 5.8 6 12.6 6 19.6V392c0 4.4 3.6 8 8 8h16c4.4 0 8-3.6 8-8v-23.1c0-13.9-4.2-26.8-11.4-37.5-12.3-18-32.9-27.4-54-27.4z"
+                    />
+                  </svg>
+                </div>
+                <div @click="logout">
+                  Desconectar
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
     </div>
   </nav>
 </template>
@@ -95,7 +140,6 @@ import store from "../store.js";
 export default {
   data() {
     return {
-      menuShow: false,
     };
   },
   computed: {
@@ -103,19 +147,26 @@ export default {
   },
   methods: {
     ...mapActions(["logout"]),
+    hideNav(){
+      let navMobile = document.querySelector("#nav-mobile");
+      navMobile.classList.remove("flex");
+      navMobile.classList.add("hidden");
+    },
     showMobileNavbar() {
-      let navMobile = document.getElementById("nav-mobile");
-      if (this.menuShow == false) {
-        navMobile.classList.remove("hidden");
-        navMobile.classList.add("flex");
-        this.menuShow = true;
+      let navMobile = document.getElementById("nav-mobile").classList;
+      if (navMobile.contains("hidden")) {
+        navMobile.remove("hidden");
+        navMobile.add("flex");
+        document.querySelector("#nav-mobile").focus();
       } else {
-        navMobile.classList.remove("flex");
-        navMobile.classList.add("hidden");
-        this.menuShow = false;
+        this.hideNav();
       }
     },
+    nofocus(){
+      setTimeout(this.hideNav, 300);
+    },
   },
+  
   mounted() {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
@@ -144,7 +195,7 @@ export default {
 
   & .name-logo {
     font-size: 2rem;
-    font-weighty: 600;
+    font-weight: 600;
     color: #335963;
   }
   & .searchbar-container {
@@ -209,7 +260,18 @@ export default {
   position:absolute;
 }
 
-.navbar-desktop {
-
+svg{
+  width: 1.5rem;
+  height: 1.5rem;
+  color:#94a2b0;
 }
+
+.session-text{
+  color:#94a2b0;
+}
+
+.user-bubble{
+  width: 210.39px;
+}
+
 </style>
