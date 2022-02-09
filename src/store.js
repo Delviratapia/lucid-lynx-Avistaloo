@@ -74,7 +74,7 @@ const store = new Vuex.Store({
         }
         commit("setUser", userDB);
         commit("setError", null);
-        router.push("/app");
+        router.push("/");
         localStorage.setItem("userLogged", JSON.stringify(userDB));
       } catch (error) {
         console.log(error);
