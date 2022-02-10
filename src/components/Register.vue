@@ -12,28 +12,6 @@
       </div>
       <div class="mt-10">
         <form @submit.prevent="submitFormRegister">
-          <!-- <div class="flex flex-col mb-5">
-            <label
-              for="displayName"
-              class="mb-1 text-xs tracking-wide text-gray-600 px-2"
-              >Foto perfil:</label
-            >
-            <div class="relative">
-              <div
-                class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400"
-              >
-                <font-awesome-icon :icon="['fas', 'envelope']" />
-              </div>
-              <input
-                v-on:change="photoUrl"
-                id="displayName"
-                type="file"
-                name="displayName"
-                class="text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
-                placeholder="Usuario"
-              />
-            </div>
-          </div>-->
           <div class="flex flex-col mb-5">
             <label for="displayName" class="mb-1 text-xs tracking-wide text-gray-600 px-2">Usuario:</label>
             <div class="relative">
@@ -179,7 +157,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 import router from "../router/router";
-import JSConfetti from 'js-confetti'
+import JSConfetti from 'js-confetti';
 export default {
   data() {
     return {
@@ -192,10 +170,10 @@ export default {
     validateMail() {
       if (!this.email.includes("@")) {
         return true;
-      }
+      };
       if (this.pass1.length > 5 && this.pass1 === this.pass2) {
         return false;
-      }
+      };
       return true;
     },
     ...mapState(["error"]),
@@ -217,7 +195,7 @@ export default {
           confirmButtonText: "Acceder",
         }).then((result) => {
           if (result.isConfirmed) {
-            router.push("/app");
+            router.push("/");
           }
         });
       } else {
@@ -226,7 +204,7 @@ export default {
           title: "Revisa la información",
           text: "Introduce otros datos",
           confirmButtonText: "Acceder",
-        })
+        });
       }
     },
     validation() {
@@ -241,10 +219,11 @@ export default {
         btn.style.backgroundColor = "#8d8d8d";
         btn.disabled = true;
       }
-    }
+    },
   },
 };
 </script>
+
 <style scoped>
 .login-container {
   height: 80.2vh;
@@ -262,20 +241,4 @@ button:hover {
 .login-container .card {
   min-width: 400px;
 }
-
-.login-container {
-  height: 80.2vh;
-}
-button {
-  background-color: #8d8d8d;
-}
-button:hover {
-  background-color: #8d8d8d;
-}
-.error-message {
-  border-radius: 20px;
-  border: 2px solid rgb(185 28 28);
-}
-.login-container .card {
-  min-width: 400px;
-}
+</style>
