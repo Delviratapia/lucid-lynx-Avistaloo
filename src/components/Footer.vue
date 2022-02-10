@@ -4,17 +4,33 @@
   >
     <div class="flex flex-row gap-x-3 mt-4 md:mt-0">
       <!-- Añadir los enlaces de las RRSS -->
-      <a href="https://www.facebook.com/profile.php?id=100075282414569" target="_blank">
-        <img class="rrss" src="../assets/images/fcbk.png" alt="Logo de Facebook" />
+      <a
+        href="https://www.facebook.com/profile.php?id=100075282414569"
+        target="_blank"
+        alt="Botón que lleva al Facebook de Avistaloo"
+      >
+        <img class="rrss" src="../assets/images/fcbk.png" />
       </a>
-      <a href="https://www.pinterest.com/" target="_blank">
-        <img class="rrss" src="../assets/images/pntrst.png" alt="Logo de Pinterest" />
+      <a
+        href="https://www.pinterest.com/"
+        target="_blank"
+        alt="Botón que lleva al Pinterest de Avistaloo"
+      >
+        <img class="rrss" src="../assets/images/pntrst.png" />
       </a>
-      <a href="https://www.instagram.com/avistaloo/" target="_blank">
-        <img class="rrss" src="../assets/images/instg.png" alt="Logo de Instagram" />
+      <a
+        href="https://www.instagram.com/avistaloo/"
+        target="_blank"
+        alt="Botón que lleva al Instagram de Avistaloo"
+      >
+        <img class="rrss" src="../assets/images/instg.png" />
       </a>
-      <a href="https://twitter.com/avistaloo" target="_blank">
-        <img class="rrss" src="../assets/images/twtr.png" alt="Logo de Twitter" />
+      <a
+        href="https://twitter.com/avistaloo"
+        target="_blank"
+        alt="Botón que lleva al Twitter de Avistaloo"
+      >
+        <img class="rrss" src="../assets/images/twtr.png" />
       </a>
     </div>
     <div class="flex flex-col items-center flex-nowrap mt-4">
@@ -27,9 +43,15 @@
       <p class="text-white text-sm mb-10">© 2022 Avistaloo</p>
     </div>
     <div class="flex flex-col items-center text-white font-medium mb-4 md:mb-0">
-      <router-link to="/sobre-nosotros">¿Quiénes somos?</router-link>
-      <router-link to="/politica-de-privacidad">Política de privacidad</router-link>
-      <router-link to="/Contacto">Contáctanos</router-link>
+      <router-link
+        to="/sobre-nosotros"
+        alt="Botón que lleva a la página sobre nosotros"
+      >¿Quiénes somos?</router-link>
+      <router-link
+        to="/politica-de-privacidad"
+        alt="Botón que lleva a la página sobre políticas de privacidad"
+      >Política de privacidad</router-link>
+      <router-link to="/Contacto" alt="Botón que lleva a la página de contacto">Contáctanos</router-link>
     </div>
   </footer>
 </template>

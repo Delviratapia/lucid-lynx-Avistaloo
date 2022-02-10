@@ -3,10 +3,10 @@
     <form
       @submit.prevent="submit"
       @reset="onReset"
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex items-center justify-around navxs:flex-col navsm:flex-col"
+      class="max-w-7xl mx-auto sm:px-6 lg:px-4 flex items-center justify-around navxs:flex-col navsm:flex-col"
     >
       <div class="lg:w-3/6 lg:pr-0 pr-0">
-        <h1 class="font-medium text-5xl text-black">¿En qué podemos ayudarte?</h1>
+        <h1 class="title">¿En qué podemos ayudarte?</h1>
         <p class="leading-relaxed align-baseline mt-4 text-black text-center">
           Si has llegado a esta página, probablemente quieres contactar con nosotros.
           Hay varias formas de contactar con el equipo de Avistaloo.com:
@@ -32,6 +32,7 @@
             name="name"
             class="w-full bg-white rounded-md border border-gray-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-150 ease-in-out"
             placeholder="Escribe un nombre al que referirnos..."
+            alt="Campo de escritura para el nombre"
           />
         </div>
         <div class="relative mb-4">
@@ -43,6 +44,7 @@
             name="email"
             class="w-full bg-white rounded-md border border-gray-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-150 ease-in-out"
             placeholder="Escribe un email de contacto..."
+            alt="Campo de escritura para el email"
           />
         </div>
         <div class="relative mb-4">
@@ -54,20 +56,31 @@
             rows="3"
             class="w-full bg-white rounded-md border border-gray-300 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 text-sm outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-150 ease-in-out"
             placeholder="Escribe aquí el motivo de su contacto..."
+            alt="Campo de escritura para el motivo de su contacto"
           ></textarea>
         </div>
         <div class="relative mb-4 flex justify-around items-center">
-          <label
-            for="contact-agreement"
-            class="leading-7 text-sm text-gray-600"
-          >Estoy de acuerdo con la <router-link to="/politica-de-privacidad" class="text-primary font-semibold">política de privacidad de Avistaloo</router-link></label>
-          <input id="contact-agreement" type="checkbox" v-model="contactAgreements" @change="validation"/>
+          <label for="contact-agreement" class="leading-7 text-sm text-gray-600">
+            Estoy de acuerdo con la
+            <router-link
+              to="/politica-de-privacidad"
+              class="text-primary font-semibold"
+            >política de privacidad de Avistaloo</router-link>
+          </label>
+          <input
+            id="contact-agreement"
+            type="checkbox"
+            v-model="contactAgreements"
+            @change="validation"
+            alt="Marque esta casilla si está de acuerdo con las políticas de privacidad de Avistaloo"
+          />
         </div>
         <button
           id="contact-submit-button"
           type="reset"
           class="text-white rounded-2xl border-0 py-2 px-8 focus:outline-none text-lg transition duration-150 ease-in"
           disabled
+          alt="Botón para enviar los datos de contacto"
         >Enviar</button>
       </div>
     </form>
@@ -103,14 +116,14 @@ export default {
       }
       this.validation();
     },
-    validation(){
+    validation() {
       let btn = document.querySelector("#contact-submit-button");
-      if(this.contactAgreements == true){
+      if (this.contactAgreements == true) {
         btn.style.backgroundColor = "#335963";
         btn.disabled = false;
-        btn.addEventListener("mouseenter", e => { btn.style.backgroundColor = "#223b42";});
-        btn.addEventListener("mouseleave", e => { btn.style.backgroundColor = "#335963";});
-      }else{
+        btn.addEventListener("mouseenter", e => { btn.style.backgroundColor = "#223b42"; });
+        btn.addEventListener("mouseleave", e => { btn.style.backgroundColor = "#335963"; });
+      } else {
         btn.style.backgroundColor = "#8d8d8d";
         btn.disabled = true;
       }
@@ -130,7 +143,15 @@ export default {
 #contact-submit-button {
   background-color: #8d8d8d;
 }
-#contact-submit-button:hover { 
+#contact-submit-button:hover {
   background-color: #8d8d8d;
+}
+h1.title {
+  color: #335963;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 2px solid #33596338;
+  text-transform: uppercase;
 }
 </style>

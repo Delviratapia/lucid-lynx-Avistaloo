@@ -1,3 +1,11 @@
 .fix-container-fixed-navbar {
    margin-top:120px;
 }
+
+.cards .card-clickable {
+   transition:transform 0.3s;
+   border-radius:5px;
+}
+.cards .card-clickable:hover {
+   transform: scale(1.05);
+ }

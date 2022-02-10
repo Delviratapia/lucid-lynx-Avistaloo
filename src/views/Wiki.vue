@@ -14,7 +14,7 @@ import {
   loadSpinner
 } from "../js/apiUtils.js";
 
-console.log("entered script tag")
+/* console.log("entered script tag") */
 
 let pagination = getPagination()
 
@@ -23,14 +23,14 @@ export default {
   components: {
     Spinner
   },
-  
+
   mounted() {
     console.log("mounted")
     loadSpinner()
     getBirdsFromAPI()
       .then(res => {
         pagination = getPagination()
-        loadSpinner({disable: true})
+        loadSpinner({ disable: true })
         resetBirds()
         displayBirds()
 
@@ -61,14 +61,14 @@ export default {
   methods: {
     resetInput() {
       let reset = document.querySelector("#search");
-      setTimeout(function (){reset.value = "";},500);
+      setTimeout(function () { reset.value = ""; }, 500);
     },
     searchOnEnter(e) {
       if (e.keyCode === 13) {
         searchBirdsEvent()
         this.resetInput()
       }
-      
+
     },
   }
 }
@@ -88,8 +88,9 @@ export default {
             placeholder="Buscar"
             autofocus
             required
+            alt="Campo de escritura en el que introducir el ave que desea buscar"
           />
-          <button type="submit" @click="resetInput">
+          <button type="submit" @click="resetInput" alt="Botón de búsqueda">
             <i class="birds-searchbtn fas fa-search"></i>
           </button>
         </form>
@@ -145,6 +146,7 @@ export default {
           id="btn-prev"
           href="#"
           class="hidden flex items-center px-4 py-2 text-gray-500 bg-gray-300 rounded-md"
+          alt="Botón que le llevará a las 30 aves anteriores"
         >Anterior</a>
         <a
           id="page-span"
@@ -154,6 +156,7 @@ export default {
         <a
           id="btn-next"
           class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md cursor-pointer hover:bg-blue-400 hover:text-white"
+          alt="Botón que le llevará a las 30 aves siguientes"
         >Siguiente</a>
       </div>
     </div>
@@ -240,6 +243,7 @@ export default {
         <div class="flex justify-end m-6">
           <button
             class="focus:outline-none modal-close px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400"
+            alt="Botón que cerrará el menú del ave seleccionada"
           >Salir</button>
         </div>
       </div>
@@ -696,7 +700,6 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   & img {
-    
     object-fit: cover;
   }
 }

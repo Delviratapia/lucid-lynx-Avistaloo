@@ -66,7 +66,7 @@ const store = new Vuex.Store({
         const loading = this.state.loading;
         commit("setLoading", loading);
         const userDB = await res.json();
-        console.log("USERDB", userDB);
+        /* console.log("USERDB", userDB); */
         this.state.loading = "display-none";
         if (userDB.error) {
           console.log(userDB.error);
@@ -101,9 +101,9 @@ const store = new Vuex.Store({
         if (userDB.error) {
           return commit("setError", userDB.error.message);
         }
-        console.log(userDB);
+        /* console.log(userDB); */
       } catch (error) {
-        console.log(error);
+        /* console.log(error); */
       }
     },
     async userUpdate({ commit }, user) {

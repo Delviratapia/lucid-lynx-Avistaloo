@@ -12,7 +12,7 @@
             <div class="w-auto h-auto rounded-full border-2 border-pink-500">
               <img
                 class="w-12 h-12 object-cover rounded-full shadow cursor-pointer"
-                alt="User avatar"
+                alt="Avatar de usuario"
                 src="../assets/images/usuario1.jpg"
               />
             </div>
@@ -171,7 +171,7 @@
           >
             <img
               class="w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer"
-              alt="User avatar"
+              alt="Avatar de usuario"
               src="../assets/images/usuario4.jpg"
             />
             <span class="absolute inset-y-0 right-0 flex items-center pr-6">
@@ -219,7 +219,7 @@
             <div class="w-auto h-auto rounded-full border-2 border-pink-500">
               <img
                 class="w-12 h-12 object-cover rounded-full shadow cursor-pointer"
-                alt="User avatar"
+                alt="Avatar de usuario"
                 src="../assets/images/usuario3.jpg"
               />
             </div>
@@ -376,7 +376,7 @@
           >
             <img
               class="w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer"
-              alt="User avatar"
+              alt="Avatar de usuario"
               src="../assets/images/usuario4.jpg"
             />
             <span class="absolute inset-y-0 right-0 flex items-center pr-6">
@@ -424,7 +424,7 @@
             <div class="w-auto h-auto rounded-full border-2 border-pink-500">
               <img
                 class="w-12 h-12 object-cover rounded-full shadow cursor-pointer"
-                alt="User avatar"
+                alt="Avatar de usuario"
                 src="../assets/images/usuario2.jpg"
               />
             </div>
@@ -581,7 +581,7 @@
           >
             <img
               class="w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer"
-              alt="User avatar"
+              alt="Avatar de usuario"
               src="../assets/images/usuario4.jpg"
             />
             <span class="absolute inset-y-0 right-0 flex items-center pr-6">

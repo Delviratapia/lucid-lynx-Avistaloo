@@ -7,7 +7,7 @@ let closeButton = null
 window.addEventListener('load', function () {
     modal = document.querySelector(".main-modal");
     closeButton = document.querySelectorAll(".modal-close");
-    console.log(modal)
+    /* console.log(modal) */
     for (let i = 0; i < closeButton.length; i++) {
         const elements = closeButton[i];
         elements.onclick = (e) => modalClose();
@@ -268,7 +268,7 @@ const loadSpinner = ({disable = false} = {})=> {
         loading.style.margin = "0 auto"
         console.log(loading)
         document.querySelector(".wikiOptions").appendChild(loading);
-        
+
 }
 const searchBirdsEvent = async ()=> {
         let textInput = document.querySelector("#search")
@@ -286,7 +286,7 @@ const searchBirdsEvent = async ()=> {
 }
 
 const turnSearchBarOn = () => {
-    
+
     // search all
     let btnSearch = document.querySelector(".birds-searchbtn")
     btnSearch.addEventListener("click", searchBirdsEvent)
