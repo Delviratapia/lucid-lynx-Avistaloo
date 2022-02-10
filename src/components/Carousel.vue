@@ -39,7 +39,7 @@
             </p>
             <a class="flex items-baseline mt-3" href>
               <span>
-                <strong>Aprende mas sobre ellos</strong>
+                <strong>Aprende más sobre ellos</strong>
               </span>
               <span class="text-xs ml-1">&#x279c;</span>
             </a>
@@ -88,7 +88,7 @@
             </p>
             <a class="flex items-baseline mt-3" href>
               <span>
-                <strong>Aprende mas sobre ellos</strong>
+                <strong>Aprende más sobre ellos</strong>
               </span>
               <span class="text-xs ml-1">&#x279c;</span>
             </a>
@@ -137,7 +137,7 @@
             </p>
             <a class="flex items-baseline mt-3" href>
               <span>
-                <strong>Aprende mas sobre ellos</strong>
+                <strong>Aprende más sobre ellos</strong>
               </span>
               <span class="text-xs ml-1">&#x279c;</span>
             </a>
@@ -185,7 +185,7 @@
             </p>
             <a class="flex items-baseline mt-3" href>
               <span>
-                <strong>Aprende mas sobre ellos</strong>
+                <strong>Aprende más sobre ellos</strong>
               </span>
               <span class="text-xs ml-1">&#x279c;</span>
             </a>
@@ -234,7 +234,7 @@
             </p>
             <a class="flex items-baseline mt-3" href>
               <span>
-                <strong>Aprende mas sobre ellos</strong>
+                <strong>Aprende más sobre ellos</strong>
               </span>
               <span class="text-xs ml-1">&#x279c;</span>
             </a>
