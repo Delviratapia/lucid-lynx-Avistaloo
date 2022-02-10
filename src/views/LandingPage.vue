@@ -10,10 +10,6 @@
             <router-link to="/login">UNIRSE AHORA</router-link>
             <a href=""></a>
           </button>
-          <button @click="confettiPrueba()" class="unirse bg-white text-primary-color font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border border-white hover:text-white hover:bg-primary-color">
-            <a>NO HAGAS CLICK</a>
-            <a href=""></a>
-          </button>
           </div>
         </div>
       </div>
@@ -106,7 +102,6 @@
 </template>
 <script>
 import { useMeta } from 'vue-meta'
-import JSConfetti from 'js-confetti'
 export default ({
    name: "LandingPage",
    setup() {
