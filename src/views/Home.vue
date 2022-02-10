@@ -30,7 +30,7 @@
       <img class="h-48 mx-auto" src="../assets/images/bird-icon.png" alt="" />
       <div class="px-4">
         <h2 class="mt-3 text-gray-800 text-2xl font-bold my-2">Cuida de ellos</h2>
-        <p class="text-gray-700 mb-2">No olvides respetar las aves, ¡Manten la distancia! </p>
+        <p class="text-gray-700 mb-2">No olvides respetar las aves, ¡Mantén la distancia! </p>
       </div>
     </div>
   </div>

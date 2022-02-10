@@ -49,7 +49,7 @@
         href="https://www.avistaloo.com/#Que-es"
         class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110"
         alt="Botón que lleva a las características de la página"
-      >¿Que es?</a>
+      >¿Qué es?</a>
       <a
         v-if="!usuarioAutenticado"
         href="https://www.avistaloo.com/#Caracteristicas"
@@ -176,7 +176,7 @@
           href="https://www.avistaloo.com/#Que-es"
           class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2"
           alt="Botón que lleva a las características de la página"
-        >¿Que es?</a>
+        >¿Qué es?</a>
         <a
           v-if="!usuarioAutenticado"
           href="https://www.avistaloo.com/#Caracteristicas"
