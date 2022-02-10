@@ -206,9 +206,20 @@ export default {
         scrollNav() {
             let section = document.querySelectorAll('section');
             let navLinks = document.querySelectorAll('div nav a');
+            section.forEach(sec =>{
+                let top = window.scrollY;
+                let offset = sec.offsetTop -250;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
 
-            section.forEac h(                        let top = window.s                        let offset = sec.off setTo                        let height = sec.offset                        let id = sec.getAttribute(                             if(top >= offset && top < offs et                                navLinks.forE ac                                    links.classList.remove                                    document.querySelector('div nav a[hr ef*=' + id +']').classList.add                                                      
-            })          },
+                if(top >= offset && top < offset + height){
+                    navLinks.forEach(links =>{
+                        links.classList.remove('active');
+                        document.querySelector('div nav a[href*=' + id + ']').classList.add('active');
+                    });
+                }
+            });
+        },
    },
 
 }
