@@ -1,7 +1,15 @@
 <template>
   <div>
-    <button id="toTopButton" v-on:click="scrollToTop" type="button" alt="Botón de vuelta al inicio">
-      <img src="../assets/images/logos/scrollUp.svg" alt="Botón de vuelta al inicio" />
+    <button
+      id="toTopButton"
+      v-on:click="scrollToTop"
+      type="button"
+      alt="Botón que lleva a la parte superior de la página"
+    >
+      <img
+        src="../assets/images/logos/scrollUp.svg"
+        alt="Botón que lleva a la parte superior de la página"
+      />
     </button>
   </div>
 </template>
