@@ -14,7 +14,7 @@ import {
   loadSpinner
 } from "../js/apiUtils.js";
 
-console.log("entered script tag")
+/* console.log("entered script tag") */
 
 let pagination = getPagination()
 
@@ -23,7 +23,7 @@ export default {
   components: {
     Spinner
   },
-  
+
   mounted() {
     console.log("mounted")
     loadSpinner()
@@ -68,7 +68,7 @@ export default {
         searchBirdsEvent()
         this.resetInput()
       }
-      
+
     },
   }
 }
@@ -696,7 +696,7 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   & img {
-    
+
     object-fit: cover;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center bg-gray-100">
+  <div class="container-form flex justify-center items-center bg-gray-100">
     <ContactModal />
   </div>
 </template>
@@ -15,3 +15,11 @@ export default {
   },
 }
 </script>
+<style scoped>
+@media (max-width:768px) {
+  .container-form {
+    padding:0px 20px;
+    margin: auto;
+  }
+}
+</style>

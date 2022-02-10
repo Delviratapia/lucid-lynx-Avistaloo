@@ -26,7 +26,7 @@ const routes = [
     meta: {
       scrollTop: 0,
     },
-  },  
+  },
   {
     path: "/",
     component: Home,
@@ -112,13 +112,13 @@ const routes = [
 ];
 
 const scrollBehavior = (to, from, savedPosition) => {
-  console.log(to);
-  return (  
+  /* console.log(to); */
+  return (
     savedPosition || {
       top: to.meta?.scrollTop || 0,
       left: 0,
     }
-    
+
   );
 };
 

@@ -1,6 +1,6 @@
 <template>
     <div class="fix-container-fixed-navbar flex justify-center">
-        <div class="flex items-center mb-5 px-5 pt-0">
+        <div class="flex items-center mb-5 pt-0">
             <div class="ml-4">
                 <Map />
             </div>

@@ -1,6 +1,6 @@
 <template>
 <div class="container-twitter-card ">
-   
+
    <div class="bg-#eee flex flex-col pb-0 sm:justify-between w-full">
     <div class="flex flex-col bg-white p-4 rounded-xl h-full shadow-md shadow-xl border max-w-xl w-full order-2 sm:order-1 justify-between">
       <div class="flex justify-between">
@@ -166,6 +166,14 @@
 .twitter-call .flex {
   justify-content:center;
   align-items:center;
+}
+@media(max-width:768px) {
+  .twitter-call .flex {
+    flex-direction: column;
+  }
+  .twitter-call .lottie-twitter {
+    display:none;
+  }
 }
 .twitter-call .twitter-inner {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

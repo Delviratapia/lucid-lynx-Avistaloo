@@ -231,7 +231,7 @@ export default {
       } else {
         this.$swal({
           icon: "error",
-          title: "Este usuario ya está registrado",
+          title: "Revisa la información",
           text: "Introduce otros datos",
           confirmButtonText: "Acceder",
         })
@@ -260,7 +260,7 @@ export default {
 button {
   background-color: #8d8d8d;
 }
-button:hover { 
+button:hover {
   background-color: #8d8d8d;
 }
 .error-message {

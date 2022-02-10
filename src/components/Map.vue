@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex border-y mb-5 px-5 pt-0 navsm:flex-col navsm:justify-center navxs:flex-col navxs:justify-center"
+    class="flex border-y mb-5 pt-0 navsm:flex-col navsm:justify-center navxs:flex-col navxs:justify-center"
   >
     <div class="cont flex flex-col mt-6 mr-6">
-      <div class="flex flex-col mt-6 mb-6">
+      <div class="flex flex-col mt-6 mb-6 text-center">
         <span>Radio de busqueda:</span>
         <select class="border mt-2 mb-6" name="select" v-model.model="zoom">
           <option :value="15">2km</option>
@@ -23,7 +23,7 @@
         :max-zoom="maxZoom"
       >
         <l-tile-layer :url="url" :attribution="attribution" />
-        
+
         <l-marker :lat-lng="[39.47733, -0.40869]">
           <l-popup>
             Sara García
@@ -126,7 +126,7 @@ export default {
       console.log(this.center);
     };
     const error = (err) => {
-      console.log("Error al obtener localización" + err);
+      /* console.log("Error al obtener localización" + err); */
     };
 
     navigator.geolocation.getCurrentPosition(success, error);

@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto fix-container-fixed-navbar">
-    <h1 class="title">Mi cuenta</h1>
+    <h1 class="title mb-3">Mi cuenta</h1>
     <form class="form-container w-full max-w-lg">
       <div class="flex flex-wrap -mx-3 mb-3">
         <div class="w-full px-6">
@@ -92,6 +92,7 @@ export default {
   font-size: 42px;
   text-align: center;
   font-weight: 600;
+  border:none;
 }
 
 .form-container {

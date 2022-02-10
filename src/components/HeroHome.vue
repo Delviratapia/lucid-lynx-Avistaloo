@@ -4,8 +4,8 @@
 		<div class="mx-2 text-center container-hero">
          <div class="group-items flex">
             <div class="content">
-				   <h1 class="title text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">Bienvenido
-					   <span class="text-white">{{getUserName()}}</span>
+				   <h1 class="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">Bienvenido
+					   <span class="shadow text-white">{{getUserName()}}</span>
                </h1>
                <h2 class="title text-gray-200 font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight">
                   Descubre y sube <span class="text-white">tus avistamientos</span> en avistaloo.com
@@ -92,7 +92,11 @@ header {
 	  -3px 0px 7px rgba(0, 0, 0, 0.8),
 	  0px 4px 7px rgba(0, 0, 0, 0.8);
 }
-
+span.shadow {
+   text-shadow: 3px 0px 7px rgba(0, 0, 0, 0.8),
+	  -3px 0px 7px rgba(0, 0, 0, 0.8),
+	  0px 4px 7px rgba(0, 0, 0, 0.8);
+}
 h2.title {
    color:white;
    opacity:1;

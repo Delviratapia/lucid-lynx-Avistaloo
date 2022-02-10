@@ -3,10 +3,10 @@
     <form
       @submit.prevent="submit"
       @reset="onReset"
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex items-center justify-around navxs:flex-col navsm:flex-col"
+      class="max-w-7xl mx-auto sm:px-6 lg:px-4 flex items-center justify-around navxs:flex-col navsm:flex-col"
     >
       <div class="lg:w-3/6 lg:pr-0 pr-0">
-        <h1 class="font-medium text-5xl text-black">¿En qué podemos ayudarte?</h1>
+        <h1 class="title">¿En qué podemos ayudarte?</h1>
         <p class="leading-relaxed align-baseline mt-4 text-black text-center">
           Si has llegado a esta página, probablemente quieres contactar con nosotros.
           Hay varias formas de contactar con el equipo de Avistaloo.com:
@@ -130,7 +130,15 @@ export default {
 #contact-submit-button {
   background-color: #8d8d8d;
 }
-#contact-submit-button:hover { 
+#contact-submit-button:hover {
   background-color: #8d8d8d;
+}
+h1.title {
+    color:#335963;
+    text-align:center;
+  font-size:24px;
+  font-weight:600;
+  border-bottom:2px solid #33596338;
+  text-transform:uppercase;
 }
 </style>

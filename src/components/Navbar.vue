@@ -3,14 +3,14 @@
   <nav id="nav-normal" class="flex navbar navbar-fixed-position items-center justify-between lg:gap-x-20 gap-x-2 lg:px-5 px-3 order-1">
     <div class="flex items-center flex-shrink-0 text-dark md:text-right ">
       <a v-if="!usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" href="https://www.avistaloo.com/">
-        <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
+        <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="logo" />
         <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
       </a>
 
       <router-link v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
-        <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
+        <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="logo" />
         <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-      </router-link>  
+      </router-link>
     </div>
     <div class="text-sm justify-center hidden lg:flex">
       <router-link v-if="usuarioAutenticado" to="/" class="text-xl mt-1 lg:inline-block lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110">Inicio</router-link>
@@ -29,7 +29,7 @@
         </svg>
       </button>
     </div>
-    
+
     <div class="lg:flex hidden flex-col lg:flex-row items-center justify-center">
       <router-link
         to="/login"
@@ -60,7 +60,7 @@
         <router-link v-if="usuarioAutenticado" class=" navbar-item transition duration-500 hover:scale-125 flex items-center" to="/">
           <img class="w-24 logo-fix-size" src="../assets/images/logos/logo.png" alt="" />
           <span class="font-medium text-4xl tracking-tight text-primary-color">Avistaloo</span>
-        </router-link> 
+        </router-link>
       </div>
       <div class="block lg:hidden">
         <button v-on:click="showMobileNavbar" id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-primary-color border-primary-color hover:text-white hover:bg-primary-color appearance-none focus:outline-none">
@@ -97,7 +97,7 @@
           >Registrarse</router-link
         >
       </div>
-      
+
         <div v-if="usuarioAutenticado" class="flex  items-center justify-center session-text">
           <ul class="flex">
             <li class="mb-2 mr-4">
@@ -166,7 +166,7 @@ export default {
       setTimeout(this.hideNav, 300);
     },
   },
-  
+
   mounted() {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {

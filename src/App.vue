@@ -27,7 +27,7 @@ export default {
     Footer
   },
   setup() {
-    console.log(store.state.user)
+    /* console.log(store.state.user) */
     useMeta({
       title: '',
       htmlAttrs: { lang: 'es', amp: true }
