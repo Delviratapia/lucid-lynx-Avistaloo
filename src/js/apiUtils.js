@@ -291,6 +291,9 @@ const turnSearchBarOn = () => {
     let btnSearch = document.querySelector(".birds-searchbtn")
     btnSearch.addEventListener("click", searchBirdsEvent)
 
+    let btnSearchOutside = document.querySelector(".searchBtnContainer")
+    btnSearchOutside.addEventListener("click", searchBirdsEvent)
+
 }
 
 
