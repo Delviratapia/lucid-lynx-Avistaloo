@@ -82,7 +82,7 @@ export default {
         <form onsubmit="event.preventDefault();" role="search">
           <input
             id="search"
-            @keyup="searchOnEnter"
+            
             class="text-center"
             type="search"
             placeholder="Buscar"
