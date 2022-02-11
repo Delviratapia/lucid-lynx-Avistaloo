@@ -90,7 +90,7 @@ export default {
             required
             alt="Campo de escritura en el que introducir el ave que desea buscar"
           />
-          <button class="searchBtnContainer" type="submit" @click="resetInput" alt="Botón de búsqueda">
+          <button class="birds-searchbtn" type="submit" @click="resetInput" alt="Botón de búsqueda">
             <i class="birds-searchbtn fas fa-search"></i>
           </button>
         </form>

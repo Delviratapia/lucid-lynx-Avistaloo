@@ -244,8 +244,6 @@ function dataAnimals(name, imageFirst) {
 
 
 async function getBirdsFromAPI(q = null) {
-    console.log("entered birds from api")
-
     const birds_family = await fillBirdsFamilies(q)
     struct_data = await structureBirdData(birds_family, q)
     pagination["birds_in_this_call"] = struct_data[0]["birds"].length
@@ -254,7 +252,6 @@ async function getBirdsFromAPI(q = null) {
 }
 
 const loadSpinner = ({disable = false} = {})=> {
-    console.log("entered loadSpinner function")
     console.log(disable)
     if (disable) {
         let spinner = document.querySelector(".lds-spinner")
@@ -291,8 +288,6 @@ const turnSearchBarOn = () => {
     let btnSearch = document.querySelector(".birds-searchbtn")
     btnSearch.addEventListener("click", searchBirdsEvent)
 
-    let btnSearchOutside = document.querySelector(".searchBtnContainer")
-    btnSearchOutside.addEventListener("click", searchBirdsEvent)
 
 }
 
