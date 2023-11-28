@@ -8,7 +8,7 @@
       <a
         v-if="!usuarioAutenticado"
         class="navbar-item transition duration-500 hover:scale-125 flex items-center"
-        href="https://www.avistaloo.com/"
+        href="https://lucid-lynx-testing-delviratapia.vercel.app/"
       >
         <img
           class="w-24 logo-fix-size"
@@ -40,19 +40,19 @@
       >Inicio</router-link>
       <a
         v-if="!usuarioAutenticado"
-        href="https://www.avistaloo.com/"
+        href="https://lucid-lynx-testing-delviratapia.vercel.app/"
         class="text-xl mt-1 lg:inline-block text-center lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110"
         alt="Botón que lleva a la página de inicio"
       >Inicio</a>
       <a
         v-if="!usuarioAutenticado"
-        href="https://www.avistaloo.com/#Que-es"
+        href="https://lucid-lynx-testing-delviratapia.vercel.app/#Que-es"
         class="text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110"
         alt="Botón que lleva a las características de la página"
       >¿Qué es?</a>
       <a
         v-if="!usuarioAutenticado"
-        href="https://www.avistaloo.com/#Caracteristicas"
+        href="https://lucid-lynx-testing-delviratapia.vercel.app/#Caracteristicas"
         class="block text-xl my-4 lg:inline-block text-center mb-1 lg:mt-0 text-primary-color mr-4 transition duration-500 hover:scale-110"
         alt="Botón que lleva a las características de la página"
       >Características</a>
@@ -119,8 +119,8 @@
         <a
           v-if="!usuarioAutenticado"
           class="navbar-item transition duration-500 hover:scale-125 flex items-center"
-          href="https://www.avistaloo.com/"
-        >
+          href="https://lucid-lynx-testing-delviratapia.vercel.app/"
+        >h
           <img
             class="w-24 logo-fix-size"
             src="../assets/images/logos/logo.png"
@@ -166,20 +166,20 @@
           alt="Botón que lleva a la página de inicio"
         >Inicio</router-link>
         <a
-          href="https://www.avistaloo.com/"
+          href="https://lucid-lynx-testing-delviratapia.vercel.app/"
           v-if="!usuarioAutenticado"
           class="text-xl lg:inline-block text-center text-primary-color transition duration-500 hover:scale-110 mb-2 mt-2"
           alt="Botón que lleva a la página de inicio"
         >Inicio</a>
         <a
           v-if="!usuarioAutenticado"
-          href="https://www.avistaloo.com/#Que-es"
+          href="https://lucid-lynx-testing-delviratapia.vercel.app/#Que-es"
           class="text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2"
           alt="Botón que lleva a las características de la página"
         >¿Qué es?</a>
         <a
           v-if="!usuarioAutenticado"
-          href="https://www.avistaloo.com/#Caracteristicas"
+          href="https://lucid-lynx-testing-delviratapia.vercel.app/#Caracteristicas"
           class="block text-xl lg:inline-block text-center lg:mt-0 text-primary-color transition duration-500 hover:scale-110 mb-2"
         >Características</a>
         <a
